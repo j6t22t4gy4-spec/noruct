@@ -126,6 +126,30 @@ The two planes remain separate:
 - Employees receive only the smallest task-specific Evidence Pack, never the full user database.
 - Neither plane may silently mutate the other. Cross-plane actions pass through explicit policy, approval, budget, and retention controls.
 
+## Knowledge intake without mandatory labeling
+
+An external brain cannot require a user to pre-label every file. A user should be able to drop a PDF, DOCX, spreadsheet, image, link, meeting note, or conversation fragment into their Knowledge DB and ask a question later.
+
+```mermaid
+flowchart LR
+  A["Unstructured user asset"] --> V["Knowledge Asset Vault\noriginal · ownership · access scope"]
+  V --> R["Intake Router\ntype · quality · budget"]
+  R --> D["Versioned derived representations\ntext · OCR · layout · tables · image description"]
+  D --> C["Cited knowledge candidates\nclaims · entities · decisions · questions"]
+  C --> K[("User Knowledge DB")]
+  K --> E["Task-specific Evidence Pack"]
+```
+
+The original asset, its derived representations, and its semantic knowledge records are separate layers:
+
+- An extraction never overwrites the original file.
+- A low-confidence OCR or model result remains a candidate, not an established fact.
+- Every claim must be traceable to a source and revision.
+- Unsupported or unreadable files are preserved and reported, never silently treated as understood.
+- The full corpus is not inserted into model context; only a bounded Evidence Pack is compiled for a question or job.
+
+Noruct will reuse audited open-source document conversion and knowledge-processing components behind these boundaries rather than reinvent commodity parsers. Raw user assets and their derived content remain private and are never shared through collective evolution.
+
 ## Design constraints
 
 - One employee is preferred when one employee is sufficient.
