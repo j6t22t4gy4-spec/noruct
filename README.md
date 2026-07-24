@@ -8,6 +8,41 @@ The central idea is simple:
 
 > **Workflows are disposable. Organizational capability accumulates.**
 
+## At a glance
+
+```mermaid
+flowchart TB
+  U["User / organization"] --> I["One company interface\ngoal · question · decision"]
+
+  subgraph K["User Knowledge Runtime · user-owned knowledge"]
+    KDB[("Knowledge DB\nsources · claims · decisions · evidence")]
+    KR["Research and synthesis loops"]
+    KDB <--> KR
+  end
+
+  subgraph F["Dynamic Firm Runtime · Noruct operational authority"]
+    P["Governance Gate\npolicy · approval · budget · retention"]
+    C["Dynamic Workflow Compiler\ngraph engineering"]
+    G["Ephemeral Job Graph\ntasks · dependencies · reviews"]
+    E["Persistent Employees\nroles · skills · tools · procedures"]
+    L["Firm Learning\nSkill · Workflow · Roster patches"]
+    P --> C --> G --> E
+    E --> G
+    G --> L --> P
+  end
+
+  subgraph N["Shared Evolution · opt-in only"]
+    V["Signed, versioned artifacts\nskills · tools · employees · playbooks"]
+  end
+
+  I --> P
+  KR -->|"bounded Evidence Pack"| P
+  P -->|"typed Knowledge Write Candidate"| KDB
+  V -->|"reviewed install / pin / rollback"| P
+```
+
+**One product, two protected state planes:** the firm learns how to work; the user-owned Knowledge DB preserves what the user knows. They exchange only bounded, policy-gated artifacts—not full context, raw transcripts, or unrestricted write access.
+
 ## The model
 
 ```mermaid
