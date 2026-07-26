@@ -17,9 +17,13 @@ Noruct는 사용자가 하나의 회사 인터페이스에 목표를 전달하�
 
 ## 공개 개념 문서
 
-1. [01 — Dynamic Firm Runtime](docs/01-dynamic-firm-runtime.md)
-2. [02 — Persistent Employee](docs/02-persistent-employee.md)
-3. [03 — Knowledge, Intent & Firm](docs/03-knowledge-intent-firm.md)
+1. [00 — North Star](docs/00-north-star.md)
+2. [01 — Dynamic Firm Runtime](docs/01-dynamic-firm-runtime.md)
+3. [02 — Persistent Employee](docs/02-persistent-employee.md)
+4. [03 — Knowledge, Intent & Firm](docs/03-knowledge-intent-firm.md)
+5. [04 — Graph & Firm Engineering](docs/04-graph-and-firm-engineering.md)
+6. [05 — Governed Evolution & User Graph Control](docs/05-governed-evolution-and-user-graphs.md)
+7. [06 — Epistemic Control, Oracle & Outcome](docs/06-epistemic-control-and-outcome.md)
 
 이 저장소는 공개 제품 개념 문서만 제공합니다. 구현 세부, 운영 기록, 평가, 보안·거버넌스 문서와 개발 이력은
 별도 비공개 개발 환경에서 관리합니다.
