@@ -5,12 +5,15 @@
 Noruct does not assume the runtime can always discover the best graph from scratch. Users may inspect, constrain, choose, fork, pin, or share reusable graph blueprints. The system may still compile a job-specific graph, but it must make changes legible and bounded.
 
 ```mermaid
-flowchart LR
-  B[Graph Blueprint\nreusable starting structure] --> J[Job Graph\nrequest-specific plan]
-  J --> R[Graph Run Record\nwhat actually happened]
-  R --> E[Evidence and outcome]
-  E -. review .-> B
-  U[User controls] --> B
+flowchart TD
+  U["User controls\ninspect · revise · fork · pin"] --> B["Versioned Graph Blueprint\nreusable hypothesis"]
+  B --> J["Job Graph\nrequest-specific authority"]
+  J --> R["Graph Run Record\nwhat actually happened"]
+  R --> E["Evidence and outcome"]
+  E --> Q{"Repeated qualification?"}
+  Q -->|No| H["Keep as hypothesis"]
+  Q -->|Yes, reviewed| P["Verified Playbook candidate"]
+  P -. new revision .-> B
   U --> J
 ```
 
@@ -31,6 +34,18 @@ This distinction makes experimentation possible without rewriting history.
 | Bounded automatic | Apply only pre-authorized, reversible changes inside stated limits. |
 
 Graphs are interfaces, not just hidden compiler output. A future CLI, TUI, or GUI can expose the same blueprint, revision, and approval concepts without creating a different authority model.
+
+## A Blueprint can express execution replication
+
+A versioned Blueprint may state that one Employee should receive several job-local execution assignments. The declaration must include the strategy, each bounded scope, the aggregation task, and the expected marginal value. This makes the structure inspectable and editable instead of leaving it as an invisible compiler trick.
+
+The declaration remains a hypothesis. It does not mean the Employee was cloned into several durable identities, and it does not prove the structure is efficient. Users can revise, remove, lock, fork, or pin the proposal through the same Blueprint revision model used for other graph choices.
+
+## Qualification does not rewrite authority
+
+Before a replicated structure becomes a reusable recommendation, it should be compared with a single-run baseline under identical workload, environment, Employee capability, and total hard budget. The evidence set must include aggregation overhead and outcome measures rather than counting how many instances completed.
+
+A single pair can reveal a useful signal or a regression, but it is insufficient for promotion. The initial qualification rule requires at least three paired trials on distinct workloads and value signals in at least two thirds of them; safety, validation, or material quality regressions fail fast. Even a positive qualification result is advisory: changing a pinned Blueprint or promoting a Playbook remains an explicit, versioned, reviewable act.
 
 ## Evidence-gated evolution
 

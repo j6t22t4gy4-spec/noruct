@@ -52,6 +52,52 @@ Manager는 상시 감독 loop나 권한을 가진 CEO가 아닙니다. 다음 se
 dependency ready-set, lock, retry counter, approval wait, budget settlement, crash recovery는 model 호출이 아니라
 Firm Kernel이 처리합니다.
 
+## 동질 실행도 제한된 가치를 가질 수 있다
+
+Graph의 모든 node가 항상 서로 다른 Employee일 필요는 없습니다. assignment 자체에 안전한 병렬 구조가 있으면 선택된
+한 Employee를 여러 실행 instance로 배치할 수 있습니다. 이는 실행 최적화이지 Firm 수준의 다양성을 만드는 방식은
+아닙니다.
+
+```mermaid
+flowchart TD
+  T["하나의 넓은 task"] --> Q{"추가 instance의 가치를 설명할 수 있는가?"}
+  Q -->|아니오| O["한 execution instance"]
+  Q -->|Partition| P1["Instance A\nscope 1"]
+  Q -->|Partition| P2["Instance B\nscope 2"]
+  Q -->|Candidate| C1["Instance A\ncandidate 1"]
+  Q -->|Candidate| C2["Instance B\ncandidate 2"]
+  Q -->|Diagnostic| D1["Instance A\nprobe 1"]
+  Q -->|Diagnostic| D2["Instance B\nprobe 2"]
+  P1 --> A["선언된 aggregation task"]
+  P2 --> A
+  C1 --> A
+  C2 --> A
+  D1 --> A
+  D2 --> A
+  A --> R["하나의 accepted result"]
+```
+
+구조적 제한은 다음과 같습니다.
+
+- 하나의 frozen Employee capability snapshot에서 나온 2–4개의 run-only instance
+- 겹치지 않는 partition scope 또는 명시적으로 비교 가능한 candidate·probe
+- 숨은 예산 증액이 아닌 동일한 authority와 hard Job budget
+- instance의 Employee·roster·Blueprint·Playbook 수정 금지
+- 모든 member가 선언된 aggregation task를 통해 합류
+- 독립 Reviewer는 단순 복제가 아니라 실제로 다른 validator 또는 capability 사용
+
+## 같은 총예산에서 가치를 검증한다
+
+instance 수는 성공 지표가 아닙니다. 공정한 평가는 동일한 workload, environment, Employee capability revision, 총 hard
+budget에서 단일 instance 실행과 복제 실행을 비교합니다. aggregation overhead도 복제 실행의 비용에 포함됩니다.
+
+accepted quality, coverage, 완전 실패, safety·validation regression, latency, 총 resource 사용량을 함께 봅니다. 한 번의
+좋은 결과만으로는 부족합니다. 서로 다른 workload에서 반복된 paired evidence가 필요하며, safety 또는 validation
+regression이 나타나면 해당 구조를 중단하거나 rollback할 이유가 됩니다.
+
+평가기의 출력은 evidence와 recommendation입니다. Blueprint를 조용히 수정하거나 Playbook을 자동 승격하지 않습니다.
+실행 구조의 측정과 조직 권한 부여를 분리하기 위해서입니다.
+
 ## 협업 방식
 
 Employee 간 기본 primitive는 회의가 아니라 typed artifact handoff입니다.

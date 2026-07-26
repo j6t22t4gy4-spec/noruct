@@ -38,6 +38,23 @@ The runtime begins from the cheapest viable shape:
 
 Parallelism is an outcome of dependency analysis. It is not a decorative feature.
 
+A broad assignment does not always require several different Employees. The runtime may create two to four job-local execution instances of one selected Employee when the work has independent partitions, materially different candidate paths, or bounded diagnostic probes. The Employee remains one persistent capability identity; the instances receive frozen assignments and lose authority when the job ends.
+
+```mermaid
+flowchart LR
+  W["Wide assignment"] --> D{"Does another instance add bounded value?"}
+  D -->|No| S["One Employee run"]
+  D -->|Partition| P["Same Employee\nseparate scopes"]
+  D -->|Candidate| C["Same Employee\ncompeting artifacts"]
+  D -->|Diagnostic| X["Same Employee\nindependent probes"]
+  P --> A["Mandatory aggregation"]
+  C --> A
+  X --> A
+  A --> V["Validation and one firm result"]
+```
+
+This is execution replication, not roster growth. It does not create independent expertise, permission, memory, or judgment merely by multiplying instances. If diversity or independent verification is required, the graph must select a materially different capability or validation method.
+
 ## Manager and Kernel
 
 The Manager reasons about meaning: whether a goal is clear, whether a specialist is needed, whether evidence is sufficient, and whether an escalation is justified. The Firm Kernel enforces mechanical rules: budgets, approvals, mutation limits, receipts, and state transitions.
@@ -49,3 +66,5 @@ This split prevents an LLM from becoming its own unbounded policy engine. A Mana
 Plans are hypotheses, not promises. As evidence arrives, a job can be retried, rerouted, extended with a diagnostic probe, joined into a final synthesis, or canceled. Every material revision should retain the prior structure, the reason for change, and the observed result.
 
 The runtime should not create a meeting loop around ordinary work. A semantic decision boundary—not a calendar-shaped ritual—is what justifies Manager attention.
+
+Users do not need to design this structure before asking for work. They can nevertheless inspect the generated graph, revise a versioned Blueprint, pin an accepted structure, or require approval before structural changes. Automatic composition and user control are complementary, not mutually exclusive.

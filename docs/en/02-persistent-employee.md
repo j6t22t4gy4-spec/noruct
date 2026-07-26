@@ -48,3 +48,22 @@ Most outputs should end as job artifacts. A durable employee change requires str
 ## Handoffs over role-play
 
 Collaboration is valuable when an artifact crosses a real interface: research becomes a cited brief, a diagnosis becomes a patch proposal, or an implementation becomes a testable change. The handoff should include what was found, how certain it is, what remains unknown, and what the next owner must verify. Conversation without an interface is usually cost, not coordination.
+
+## One Employee, several execution instances
+
+An Employee identity and an Employee execution instance are different objects.
+
+| Object | Persists? | Owns distinct capability? | Purpose |
+| --- | --- | --- | --- |
+| Employee | Yes, until deliberately revised or retired | Yes | Reusable capability, tools, skills, bounded memory, authority, and outcome history |
+| Execution instance | No; job- or attempt-scoped | No; it receives a frozen snapshot of the Employee | Perform one bounded assignment inside a job graph |
+
+The firm may place several instances of the same Employee in one job only when the graph can name the marginal value:
+
+- **Partition:** non-overlapping scopes can shorten the critical path or increase coverage.
+- **Candidate:** bounded alternatives can be compared by a declared acceptance method.
+- **Diagnostic:** independent probes can reduce a specific unresolved uncertainty.
+
+The instances remain read-only with respect to Employee identity, skills, memory policy, permissions, and roster state. They do not converse to manufacture diversity. Their artifacts flow into a declared aggregation task, and aggregation cost is part of the job budget.
+
+A replicated run is therefore not a new Employee, a promotion signal, an independent reviewer, or evidence that the roster should grow. Only repeated outcome evidence can justify a later Skill, Workflow, or Roster proposal.

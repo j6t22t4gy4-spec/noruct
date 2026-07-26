@@ -115,3 +115,24 @@ Persistent Employee는 identity, capability revision, bounded session/memory nam
 
 성장은 무제한 transcript 저장이나 model weight training이 아닙니다. 반복 outcome과 검토를 통과한 Skill, workflow,
 roster 변경만 새 version으로 선택될 수 있습니다.
+
+## 한 Employee와 여러 실행 instance
+
+Employee identity와 Employee 실행 instance는 서로 다른 객체입니다.
+
+| 객체 | 지속 여부 | 별도 capability 보유 | 목적 |
+|---|---|---|---|
+| Employee | 명시적으로 개정·휴면·퇴역할 때까지 지속 | 예 | 재사용 가능한 capability, 도구, Skill, bounded Memory, 권한, outcome 이력 |
+| Execution instance | Job 또는 attempt 한정 | 아니오. Employee의 frozen snapshot을 받음 | Job Graph 안의 한 bounded assignment 수행 |
+
+같은 Employee의 instance를 한 Job에 여러 개 둘 수 있는 경우는 다음 세 가지입니다.
+
+- **Partition:** 겹치지 않는 scope가 임계 경로를 줄이거나 coverage를 늘릴 때
+- **Candidate:** 선언된 acceptance method로 비교할 수 있는 bounded 대안이 있을 때
+- **Diagnostic:** 특정한 미해결 불확실성을 줄이는 독립 probe가 필요할 때
+
+instance는 Employee identity, Skill, Memory policy, permission 또는 roster를 수정할 수 없습니다. 서로 대화해 인위적인
+다양성을 만들지 않으며, 산출물은 선언된 aggregation task로 모입니다. aggregation 비용도 Job 예산에 포함됩니다.
+
+따라서 복제 실행은 새 Employee, 승격 근거, 독립 Reviewer 또는 roster 확장 증거가 아닙니다. 반복된 outcome 근거만
+나중의 Skill·Workflow·Roster Patch 제안을 정당화할 수 있습니다.

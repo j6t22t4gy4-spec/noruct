@@ -65,6 +65,27 @@ flowchart TB
 Graph Engineering은 시각적 graph 제작이나 역할 분배가 아닙니다. 실제로 다른 Employee capability를 task,
 dependency, evidence, validation 관계로 연결하는 실행 구조를 설계하는 일입니다.
 
+작업 범위가 넓다고 해서 항상 서로 다른 Employee가 필요한 것은 아닙니다. 독립적인 분할 범위, 비교할 가치가 있는
+후보 경로, 불확실성을 줄이는 진단 probe가 존재하면 선택된 한 Employee의 실행 instance를 Job 안에서 2–4개로
+늘릴 수 있습니다.
+
+```mermaid
+flowchart LR
+  W["넓은 assignment"] --> D{"추가 instance의 한계가치가 있는가?"}
+  D -->|없음| S["한 Employee run"]
+  D -->|Partition| P["같은 Employee\n분리된 scope"]
+  D -->|Candidate| C["같은 Employee\n비교 가능한 산출물"]
+  D -->|Diagnostic| X["같은 Employee\n독립 probe"]
+  P --> A["필수 aggregation"]
+  C --> A
+  X --> A
+  A --> V["검증과 하나의 회사 결과"]
+```
+
+이것은 실행 복제이지 roster 확장이 아닙니다. 여러 instance는 동일한 frozen Employee capability를 사용하며 Job이
+끝나면 실행 권한을 잃습니다. instance 수를 늘렸다는 이유만으로 전문성·권한·Memory·판단 독립성이 생기지 않습니다.
+독립 검증이나 관점 차이가 필요하다면 실제로 다른 validator 또는 capability를 선택해야 합니다.
+
 ## 지속되는 것과 요청마다 끝나는 것
 
 | 지속 상태 | 요청 한정 상태 |
@@ -79,3 +100,7 @@ Job에서 재사용할 수 있는 versioned 개선 후보가 될 수 있습니�
 Manager와 Employee는 판단과 제안을 할 수 있지만, 그 자체가 권한은 아닙니다. Firm Kernel과 사용자 정책이
 permission, budget, approval, external action, 실행 구조 변경을 검증합니다. 이 분리는 더 많은 agent를 만드는
 것보다 중요합니다.
+
+사용자는 이 구조를 매번 직접 설계할 필요가 없습니다. 동시에 자동 생성된 Graph를 inspect하고, versioned Blueprint를
+수정·fork·pin하거나 구조 변경 전에 승인을 요구할 수 있어야 합니다. 자동 구성과 사용자 통제는 서로 반대되는 원칙이
+아닙니다.

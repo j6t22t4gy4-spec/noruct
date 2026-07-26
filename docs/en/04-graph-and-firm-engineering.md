@@ -30,6 +30,46 @@ The runtime adds a node only when one of these is true:
 
 Otherwise, the correct graph is one node or no job graph at all.
 
+## Homogeneous execution can still have bounded value
+
+Different nodes do not always need different Employee profiles. A single selected Employee may be instantiated more than once when the assignment itself contains safe parallel structure. This is a narrow execution optimization, not the source of Firm-level diversity.
+
+```mermaid
+flowchart TD
+  T["One broad task"] --> Q{"Marginal value can be stated?"}
+  Q -->|No| O["One execution instance"]
+  Q -->|Partition| P1["Instance A\nscope 1"]
+  Q -->|Partition| P2["Instance B\nscope 2"]
+  Q -->|Candidate| C1["Instance A\ncandidate 1"]
+  Q -->|Candidate| C2["Instance B\ncandidate 2"]
+  Q -->|Diagnostic| D1["Instance A\nprobe 1"]
+  Q -->|Diagnostic| D2["Instance B\nprobe 2"]
+  P1 --> A["Declared aggregation task"]
+  P2 --> A
+  C1 --> A
+  C2 --> A
+  D1 --> A
+  D2 --> A
+  A --> R["One accepted result"]
+```
+
+The guardrails are structural:
+
+- two to four run-only instances from one frozen Employee capability snapshot;
+- non-overlapping partition scopes or explicitly comparable candidates or probes;
+- the same authority and hard job budget, not a hidden budget multiplier;
+- no instance may mutate the Employee, roster, Blueprint, or Playbook;
+- all members must converge through a declared aggregation task;
+- a distinct reviewer must use a materially different validator or capability, not merely another copy.
+
+## Prove value under the same total budget
+
+Replica count is not a success metric. A fair evaluation compares a single-instance run and a replicated run on the same workload, environment, Employee capability revision, and total hard budget. Aggregation overhead counts against the replicated run.
+
+The comparison observes accepted quality, coverage, complete failure, safety and validation regressions, latency, and total resource usage. One attractive result is not enough. A reusable recommendation needs repeated paired evidence across distinct workloads, while any safety or validation regression is a reason to stop or roll back the candidate structure.
+
+The evaluator produces evidence and a recommendation. It does not silently edit a Blueprint or promote a Playbook. That preserves the distinction between measuring an execution shape and granting it organizational authority.
+
 ## Manager attention is scarce
 
 The Manager does not review every token or simulate conversations between employees. It intervenes at semantic boundaries: ambiguous goals, conflicting evidence, missing capability, authority escalation, a major graph revision, or a meaningful learning proposal.

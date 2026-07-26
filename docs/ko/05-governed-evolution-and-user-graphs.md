@@ -30,12 +30,16 @@ Run Record에 남겨야 합니다. 적응성은 설명 가능성을 포기하는
 ## 사용자 Graph 통제
 
 ```mermaid
-flowchart LR
-  B["Blueprint\ndraft · fork · pin"] --> W["Work Order binding"]
-  W --> J["Job Graph\ncurrent execution authority"]
+flowchart TD
+  U["사용자 통제\ninspect · revise · fork · pin"] --> B["Versioned Graph Blueprint\n재사용 가능한 hypothesis"]
+  B --> W["Work Order binding"]
+  W --> J["Job Graph\n현재 실행 authority"]
   J --> R["Graph Run Record\nrevision · evidence · outcome"]
-  R --> P["Verified playbook candidate"]
-  P -->|"reviewed promotion only"| B
+  R --> Q{"반복 qualification을 통과했는가?"}
+  Q -->|아니오| H["hypothesis로 유지"]
+  Q -->|예, reviewed| P["Verified Playbook candidate"]
+  P -. 새 revision .-> B
+  U --> J
 ```
 
 사용자는 다음을 할 수 있어야 합니다.
@@ -46,6 +50,26 @@ flowchart LR
 - 유용한 구조를 draft로 저장하고 fork·pin·share
 
 사용자 편의는 구조에 대한 폐쇄성을 뜻하지 않습니다. 자동 설계와 사용자 agency는 함께 존재해야 합니다.
+
+## Blueprint의 실행 복제 표현
+
+Versioned Blueprint는 한 Employee에 여러 Job-local execution assignment를 배치하는 구조를 선언할 수 있습니다. 이때
+strategy, 각 bounded scope, aggregation task, 기대하는 한계가치를 함께 명시해야 합니다. 그래야 복제 구조가 숨은
+compiler trick이 아니라 사용자가 inspect하고 수정할 수 있는 설계가 됩니다.
+
+이 선언은 hypothesis입니다. Employee를 여러 durable identity로 복제했다는 뜻도 아니며 효율이 입증되었다는 뜻도
+아닙니다. 사용자는 다른 Graph 선택과 같은 Blueprint revision 모델로 이 제안을 수정·제거·lock·fork·pin할 수 있습니다.
+
+## Qualification은 권한을 자동 변경하지 않는다
+
+복제 구조가 재사용 recommendation이 되기 전에는 동일한 workload, environment, Employee capability, 총 hard budget의
+단일 실행 baseline과 비교해야 합니다. evidence에는 instance 완료 개수가 아니라 aggregation overhead와 outcome
+지표가 포함되어야 합니다.
+
+한 쌍의 비교는 유용한 signal이나 regression을 찾을 수 있지만 promotion 근거로는 부족합니다. 최초 qualification
+규칙은 서로 다른 workload의 paired trial을 최소 3개 요구하고 그중 3분의 2 이상에서 value signal이 있어야 하며,
+safety, validation 또는 중요한 quality regression은 즉시 실패로 취급합니다. 긍정적인 qualification 결과도 advisory일
+뿐입니다. pinned Blueprint 변경 또는 Playbook 승격은 명시적이고 versioned이며 검토 가능한 별도 행동입니다.
 
 ## 변화가 실행 중 일어날 때
 
