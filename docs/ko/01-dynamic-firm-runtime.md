@@ -1,5 +1,7 @@
 # 01 — Dynamic Firm Runtime
 
+> 정본: [English](../en/01-dynamic-firm-runtime.md) · [← North Star](00-north-star.md) · [문서 인덱스](README.md) · [다음: Persistent Employee →](02-persistent-employee.md)
+
 ## 한 문장 정의
 
 **Dynamic Firm Runtime**은 지속되는 회사 상태와 Employee를 바탕으로, 요청마다 필요한 최소 실행 구조를 만들고,
@@ -13,6 +15,14 @@ Persistent company state
 + request-scoped execution graph
 + deterministic authority and audit
 ```
+
+## Manager와 Kernel의 분리
+
+Manager는 목표의 모호함, 필요한 capability, 근거의 충족 여부, 사람에게 올려야 할 판단을 의미 단위로 다룹니다.
+반면 Firm Kernel은 예산, 승인, 허용된 변이, 실행 상태, 영수증 같은 기계적 경계를 강제합니다. 따라서 Manager가
+구조 변경을 제안할 수는 있어도, 스스로 권한 규칙을 풀 수는 없습니다.
+
+이 구분은 LLM이 계획과 정책 집행을 동시에 독점하는 구조를 피하기 위한 것입니다.
 
 ## 왜 회사 형태인가
 

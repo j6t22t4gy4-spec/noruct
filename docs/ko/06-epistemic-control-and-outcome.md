@@ -1,8 +1,13 @@
 # 06 — Epistemic Control, Oracle & Outcome
 
+> 정본: [English](../en/06-epistemic-control-and-outcome.md) · [← Governed Evolution & User Graphs](05-governed-evolution-and-user-graphs.md) · [문서 인덱스](README.md) · [다음: Network Engineering →](07-network-engineering.md)
+
 AI agent가 약한 지점은 단순히 추론이 어려운 일이 아니라, 목적·정답·권한·책임이 외부에 있는데도 스스로 그것을
 소유해야 하는 일입니다. Noruct는 이 문제를 지식과 실행을 분리하는 것만으로 해결한다고 주장하지 않습니다.
 대신 무엇을 알고 모르며, 어떤 기준으로 결과를 판정하는지를 명시합니다.
+
+Knowledge Runtime은 기록되지 않은 암묵지, 가치 충돌의 정답, 법적·비가역적 행동을 할 정당한 권한을 만들어주지
+않습니다. 다만 근거의 출처, 모순, 최신성, 불확실성 및 과거 결정을 보존해 더 나은 판단을 돕습니다.
 
 ## 인식 상태
 

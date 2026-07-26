@@ -1,7 +1,13 @@
 # 03 — Knowledge, Intent & Firm
 
+> 정본: [English](../en/03-knowledge-intent-firm.md) · [← Persistent Employee](02-persistent-employee.md) · [문서 인덱스](README.md) · [다음: Graph & Firm Engineering →](04-graph-and-firm-engineering.md)
+
 Noruct는 지식 저장소와 실행 회사를 섞지 않습니다. 무엇을 아는지, 무엇을 원하는지, 지금 무엇을 실행할 수
 있는지는 서로 다른 권한을 가진 세 plane입니다.
+
+사용자의 PDF, 문서, 이미지, 링크, 메모처럼 날것으로 들어온 자료는 Knowledge Runtime의 원천 자료입니다.
+그 자체가 모든 작업에 자동으로 주입되는 prompt나 실행 명령이 되지 않습니다. 필요한 경우에만 근거·최신성·모순·불확실성을
+포함한 짧은 Evidence Brief로 만들어 Intent와 Firm에 전달합니다.
 
 ```mermaid
 flowchart LR
@@ -12,6 +18,12 @@ flowchart LR
   F --> O["Result and observed outcome"]
   O -->|"reviewed evidence only"| K
 ```
+
+## 명시적 Bridge
+
+세 plane의 연결은 자동 혼합이 아니라 명시적 bridge입니다. 예를 들어 “이 PDF를 가격 전략 지식에 넣어”는 Knowledge
+작업이고, “8월에 가격 결정을 재검토해”는 Intent의 일정화된 결정 기록이며, “그때 필요한 조사만 회사에 맡겨”가 Firm
+Runtime의 실행 요청입니다. 실행 결과는 곧바로 지식이나 정책이 되지 않고, 각 plane에서 검토할 후보가 됩니다.
 
 ## Knowledge — What do we know?
 

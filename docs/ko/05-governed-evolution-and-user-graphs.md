@@ -1,5 +1,7 @@
 # 05 — Governed Evolution & User Graph Control
 
+> 정본: [English](../en/05-governed-evolution-and-user-graphs.md) · [← Graph & Firm Engineering](04-graph-and-firm-engineering.md) · [문서 인덱스](README.md) · [다음: Epistemic Control, Oracle & Outcome →](06-epistemic-control-and-outcome.md)
+
 ## 실행 구조와 조직 능력의 분리
 
 Noruct에서 workflow는 무조건 사라지는 일회용 object도, 한번 성공하면 영구 규칙이 되는 object도 아닙니다.
@@ -10,6 +12,17 @@ Noruct에서 workflow는 무조건 사라지는 일회용 object도, 한번 성�
 | Graph Blueprint | 재사용 가능한 실행 설계 초안 | 저장·fork·pin·공유 가능, 단독으로 실행 권한 없음 |
 | Job Graph | 현재 Work Order에 binding된 실행 구조 | 해당 Job에서만 실행 권위 |
 | Graph Run Record | initial graph, revision, evidence, result 기록 | 감사·비교·학습용, 실행 권한 없음 |
+
+## 사용자가 고르는 구조 변경 범위
+
+| 모드 | Runtime 동작 |
+|---|---|
+| Locked | 선언된 구조를 따르고, 부족하면 변경을 요청합니다. |
+| Propose | 변경 이유, 예상 비용, 기대 효과와 함께 제안합니다. |
+| Bounded automatic | 미리 허용된 가역적 변경만 제한 안에서 적용합니다. |
+
+그래프 변경이 생기면 이전 revision, 변경을 유발한 근거, 승인한 사람 또는 정책, 예약·소비 비용, 품질·지연에 미친 결과를
+Run Record에 남겨야 합니다. 적응성은 설명 가능성을 포기하는 이유가 될 수 없습니다.
 
 이 분리 덕분에 사용자는 자동으로 생성된 Graph를 볼 수 있고, 제약을 걸고, 수정하고, 저장하고, 공유할 수 있습니다.
 동시에 저장된 설계가 사용자 승인 없이 미래 실행을 지배하지는 않습니다.

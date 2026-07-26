@@ -1,5 +1,7 @@
 # 02 — Persistent Employee
 
+> 정본: [English](../en/02-persistent-employee.md) · [← Dynamic Firm Runtime](01-dynamic-firm-runtime.md) · [문서 인덱스](README.md) · [다음: Knowledge, Intent & Firm →](03-knowledge-intent-firm.md)
+
 ## 정의
 
 Noruct의 **Employee**는 역할 이름, prompt persona, 일회성 sub-agent 또는 한 번의 model call이 아닙니다.

@@ -1,10 +1,15 @@
 # 00 — North Star
 
+> 정본: [English](../en/00-north-star.md) · [문서 인덱스](README.md) · [다음: Dynamic Firm Runtime →](01-dynamic-firm-runtime.md)
+
 ## 우리가 만드는 것
 
 Noruct는 전통적인 회사의 유용한 운영 원리를 AI runtime에 적용합니다. 사용자는 여러 agent를 조립하거나
 workflow를 설계하는 대신, 하나의 회사 인터페이스에 목표를 전달합니다. 회사는 현재 목표에 필요한 최소 실행
 구조를 만들고, 근거와 결과를 통합해 보고합니다.
+
+Noruct의 목표는 사용자의 목표를 대신 정하는 자율 기업이 되는 것이 아닙니다. 사용자가 정한 방향과 권한 안에서,
+매번 새로 만들어지는 작업 흐름보다 더 오래 남는 **조직 능력**을 축적하는 것입니다.
 
 ```mermaid
 flowchart LR
@@ -14,6 +19,13 @@ flowchart LR
   O -->|"qualified evidence only"| P["Versioned improvement"]
   P --> F
 ```
+
+## 무엇을 하지 않는가
+
+- agent 수가 많다는 사실을 지능의 증거로 취급하지 않습니다.
+- 회사 조직도를 대화형 역할극으로 재현하지 않습니다.
+- 사용자 가치, 계약 권한, 비가역적 약속을 AI가 소유한다고 가정하지 않습니다.
+- 모든 실행 결과를 장기 기억이나 정책으로 자동 승격하지 않습니다.
 
 ## 회사라는 말의 의미
 

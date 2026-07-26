@@ -1,5 +1,7 @@
 # 04 — Graph & Firm Engineering
 
+> 정본: [English](../en/04-graph-and-firm-engineering.md) · [← Knowledge, Intent & Firm](03-knowledge-intent-firm.md) · [문서 인덱스](README.md) · [다음: Governed Evolution & User Graphs →](05-governed-evolution-and-user-graphs.md)
+
 ## 다섯 계층
 
 ```mermaid
@@ -9,6 +11,16 @@ flowchart LR
   G --> F["Firm\ncapability supply · priority · outcome · evolution"]
   F --> N["Network\nopt-in artifact distribution · pin · rollback"]
 ```
+
+Graph Engineering은 시각적 지식 그래프를 뜻하지 않으며, 같은 agent를 여러 개 만드는 것과도 다릅니다. 의존관계,
+artifact 흐름, 병렬 가능한 경로를 설계하는 방식입니다. Firm Engineering은 그 노드가 서로 다른 capability·도구·권한·
+검증 계약을 지닌 지속 Employee가 되도록 한 단계 확장합니다.
+
+## 그래프가 복잡해질 조건
+
+노드는 독립 작업으로 임계 경로를 줄이거나, 별도 capability 또는 도구 경계가 필요하거나, 불확실성을 줄이는 진단 probe,
+독립 검증, 혹은 사용자가 선택한 유효한 Blueprint라는 근거가 있을 때만 추가됩니다. 그렇지 않으면 단일 Employee 또는
+직접 응답이 더 낫습니다.
 
 | 계층 | 다루는 질문 |
 |---|---|
