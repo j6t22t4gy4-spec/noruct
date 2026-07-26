@@ -86,6 +86,17 @@ flowchart TD
 - 모든 member가 선언된 aggregation task를 통해 합류
 - 독립 Reviewer는 단순 복제가 아니라 실제로 다른 validator 또는 capability 사용
 
+## Performance-first 제안, hard-capped 실행
+
+managed Job의 기본 제안 자세는 performance-first입니다. Manager와 Compiler는 work가 분리 가능한 넓은 범위,
+비교할 가치가 있는 복수 candidate 또는 별도 probe가 유용한 불명확 원인을 가질 때 2–4개 replica 가설을 적극
+검토합니다. 한 번의 실행이 기술적으로 완료 가능하다는 사실만으로 이 가설을 거절하지 않습니다.
+
+hard budget은 ceiling이지 소비 목표가 아닙니다. concrete quality·coverage·recovery·latency 이득을 얻는 가장 작은
+2–3개 group을 우선하고, 네 번째 instance는 scope 또는 candidate set 이유가 명확할 때만 씁니다. exact safe scope와
+aggregation을 만들 수 없거나 provider가 실패하거나 Kernel admission을 통과하지 못하거나 사용자가 single/no-parallel을
+요청하면 solo를 유지합니다. 제안은 공격적일 수 있지만 authority admission은 엄격하게 남습니다.
+
 ## 같은 총예산에서 가치를 검증한다
 
 instance 수는 성공 지표가 아닙니다. 공정한 평가는 동일한 workload, environment, Employee capability revision, 총 hard
@@ -112,8 +123,8 @@ assignment
 이 방식은 숨은 사고 과정을 공유하지 않으면서 context 오염과 role-play token을 줄이고, 결과의 provenance를
 추적하게 합니다.
 
-## 한 명으로 충분하면 한 명
+## 결과 기준으로 한 명이 충분하면 한 명
 
 Team은 기본값이 아닙니다. independent deliverable, 실제 capability gap, 독립 검증 가치 또는 dependency-derived
-parallelism이 있을 때만 team이 됩니다. 그렇지 않으면 direct 또는 solo 경로가 더 낮은 비용·지연·오류 표면을
-가집니다.
+parallelism이나 replica-value가 있을 때 team이 됩니다. 여기서 충분성은 단순 완료 가능성이 아니라 acceptance 품질과
+coverage·진단·지연을 포함합니다. 그렇지 않으면 direct 또는 solo 경로가 더 낮은 비용·지연·오류 표면을 가집니다.

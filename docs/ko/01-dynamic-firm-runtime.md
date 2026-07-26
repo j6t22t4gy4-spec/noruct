@@ -60,7 +60,7 @@ flowchart TB
 |---|---|
 | Direct | Manager 또는 한 Employee가 bounded task를 직접 수행합니다. |
 | Solo | 한 specialist가 필요하지만 별도 팀은 필요하지 않습니다. |
-| Team | 실제 capability 차이와 dependency·review 가치가 있을 때만 최소 팀을 구성합니다. |
+| Team | 실제 capability 차이, dependency·review 또는 bounded replica-value가 있을 때 필요한 팀을 구성합니다. |
 
 Graph Engineering은 시각적 graph 제작이나 역할 분배가 아닙니다. 실제로 다른 Employee capability를 task,
 dependency, evidence, validation 관계로 연결하는 실행 구조를 설계하는 일입니다.
@@ -85,6 +85,11 @@ flowchart LR
 이것은 실행 복제이지 roster 확장이 아닙니다. 여러 instance는 동일한 frozen Employee capability를 사용하며 Job이
 끝나면 실행 권한을 잃습니다. instance 수를 늘렸다는 이유만으로 전문성·권한·Memory·판단 독립성이 생기지 않습니다.
 독립 검증이나 관점 차이가 필요하다면 실제로 다른 validator 또는 capability를 선택해야 합니다.
+
+managed work의 planning 기본값은 **performance-first**입니다. Manager는 넓은 partition, 비교할 가치가 있는 후보,
+원인이 불명확한 실패에서 작은 replica group을 적극 검토합니다. “한 번 실행해도 끝낼 수 있음”만으로 거절하지 않고,
+기존 hard ceiling 안에서 accepted quality·coverage·진단 회복·유효 지연을 기준으로 충분성을 판단합니다. 사용자는
+single/no-parallel을 명시할 수 있으며, 어떤 preference도 permission이나 budget을 늘리지는 않습니다.
 
 ## 지속되는 것과 요청마다 끝나는 것
 

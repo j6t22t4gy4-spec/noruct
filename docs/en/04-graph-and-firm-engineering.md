@@ -62,6 +62,12 @@ The guardrails are structural:
 - all members must converge through a declared aggregation task;
 - a distinct reviewer must use a materially different validator or capability, not merely another copy.
 
+## Performance-first planning, hard-capped execution
+
+Managed jobs default to a performance-first proposal posture. The Manager and Compiler actively test a two-to-four-run replica hypothesis when the work has disjoint breadth, multiple candidates worth comparing, or an unclear cause that benefits from separate probes. A single run being technically capable of finishing is not enough to reject that hypothesis.
+
+The hard budget remains a ceiling, not a spending target. The preferred proposal is the smallest two- or three-run group that captures a concrete quality, coverage, recovery, or latency gain; a fourth run needs an explicit scope or candidate-set reason. If exact safe scopes and aggregation cannot be stated, the provider fails, the Kernel rejects admission, or the user requests single/no-parallel execution, the graph stays solo. Proposal can be aggressive while authority admission remains strict.
+
 ## Prove value under the same total budget
 
 Replica count is not a success metric. A fair evaluation compares a single-instance run and a replicated run on the same workload, environment, Employee capability revision, and total hard budget. Aggregation overhead counts against the replicated run.

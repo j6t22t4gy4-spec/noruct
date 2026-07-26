@@ -6,7 +6,7 @@ Noruct is a runtime for a persistent AI firm: a user gives a goal, while the sys
 
 > **Workflows are temporary. Organizational capability compounds.**
 
-The default is still one capable Employee. When a wide task has genuinely independent partitions, candidate paths, or diagnostic probes, the firm may place several job-local execution instances of that same Employee inside a governed graph. Those instances are not new employees, and their value must be demonstrated against a single-run baseline under the same total budget.
+For managed work, Noruct plans performance-first rather than cost-minimum. One Employee remains the baseline, but technical feasibility alone does not suppress bounded replication: independent partitions, candidate paths, or diagnostic probes can justify two to four job-local instances of that same Employee under the existing hard budget. Those instances are not new employees, and reusable value must still be demonstrated against a single-run baseline under the same total budget.
 
 Start with the [English canonical concept map](docs/en/README.md). The Korean documentation is a maintained translation for Korean readers.
 

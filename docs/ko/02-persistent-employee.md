@@ -30,8 +30,9 @@ Persistent Employee
 - validator와 acceptance method
 - 검증된 성과·비용·실패 이력
 
-이름, task label, role prompt만 다른 instance는 다른 전문 Employee가 아닙니다. 한 명이 충분하면 team을 만들지
-않습니다.
+이름, task label, role prompt만 다른 instance는 다른 전문 Employee가 아닙니다. acceptance 품질·coverage·진단·지연까지
+고려해 한 명이 충분하면 team을 만들지 않습니다. 단순히 완료 가능하다는 이유만으로 가치 있는 bounded replica를
+억제하지는 않습니다.
 
 ## 받는 것 · 사용하는 것 · 반환하는 것
 

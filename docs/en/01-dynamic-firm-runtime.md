@@ -30,13 +30,13 @@ The job graph is not the company. It is a temporary work order placed inside the
 
 ## Direct, solo, or team execution
 
-The runtime begins from the cheapest viable shape:
+The runtime begins from the smallest shape that can protect the accepted outcome:
 
 1. **Direct response** when no tool use, durable state, or independent verification is necessary.
 2. **Solo execution** when one capable employee can own the work end to end.
-3. **Temporary team execution** only when real dependency separation, capability separation, or independent verification creates enough value.
+3. **Temporary team execution** when real dependency separation, capability separation, independent verification, or a bounded replica-value opportunity creates enough value.
 
-Parallelism is an outcome of dependency analysis. It is not a decorative feature.
+Parallelism is an outcome of dependency and marginal-value analysis. It is not a decorative feature, but minimizing spend is not allowed to silently lower expected result quality either.
 
 A broad assignment does not always require several different Employees. The runtime may create two to four job-local execution instances of one selected Employee when the work has independent partitions, materially different candidate paths, or bounded diagnostic probes. The Employee remains one persistent capability identity; the instances receive frozen assignments and lose authority when the job ends.
 
@@ -54,6 +54,8 @@ flowchart LR
 ```
 
 This is execution replication, not roster growth. It does not create independent expertise, permission, memory, or judgment merely by multiplying instances. If diversity or independent verification is required, the graph must select a materially different capability or validation method.
+
+For managed work, the planning preference is **performance-first**. The Manager actively considers a small replica group for broad partitions, valuable alternatives, and unclear failure causes. “One run can probably finish” is not by itself a rejection criterion; sufficiency is judged against expected accepted quality, coverage, diagnostic recovery, and useful latency under the existing hard ceiling. A user can explicitly request single/no-parallel execution, and neither preference increases permissions or budget.
 
 ## Manager and Kernel
 

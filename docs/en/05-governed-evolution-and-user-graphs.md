@@ -41,6 +41,8 @@ A versioned Blueprint may state that one Employee should receive several job-loc
 
 The declaration remains a hypothesis. It does not mean the Employee was cloned into several durable identities, and it does not prove the structure is efficient. Users can revise, remove, lock, fork, or pin the proposal through the same Blueprint revision model used for other graph choices.
 
+Automatic proposal and durable reuse have different thresholds. A performance-first Manager may propose a bounded replica group early when the current work exposes a clear partition, candidate, or diagnostic opportunity. That does not make the pattern a verified organizational asset: only later paired outcomes can qualify it for reusable recommendation, and the qualification still cannot rewrite authority on its own.
+
 ## Qualification does not rewrite authority
 
 Before a replicated structure becomes a reusable recommendation, it should be compared with a single-run baseline under identical workload, environment, Employee capability, and total hard budget. The evidence set must include aggregation overhead and outcome measures rather than counting how many instances completed.

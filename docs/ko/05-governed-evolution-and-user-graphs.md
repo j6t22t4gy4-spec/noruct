@@ -60,6 +60,11 @@ compiler trick이 아니라 사용자가 inspect하고 수정할 수 있는 설�
 이 선언은 hypothesis입니다. Employee를 여러 durable identity로 복제했다는 뜻도 아니며 효율이 입증되었다는 뜻도
 아닙니다. 사용자는 다른 Graph 선택과 같은 Blueprint revision 모델로 이 제안을 수정·제거·lock·fork·pin할 수 있습니다.
 
+자동 proposal과 durable reuse의 기준은 다릅니다. performance-first Manager는 현재 work에서 명확한 partition,
+candidate 또는 diagnostic opportunity를 발견하면 bounded replica group을 일찍 제안할 수 있습니다. 하지만 이것이
+검증된 조직 자산이라는 뜻은 아닙니다. 이후의 paired outcome만 reusable recommendation을 qualification할 수 있고,
+그 결과조차 스스로 authority를 바꾸지는 못합니다.
+
 ## Qualification은 권한을 자동 변경하지 않는다
 
 복제 구조가 재사용 recommendation이 되기 전에는 동일한 workload, environment, Employee capability, 총 hard budget의

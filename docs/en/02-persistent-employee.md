@@ -64,6 +64,8 @@ The firm may place several instances of the same Employee in one job only when t
 - **Candidate:** bounded alternatives can be compared by a declared acceptance method.
 - **Diagnostic:** independent probes can reduce a specific unresolved uncertainty.
 
+For managed work, this check is performance-first: one instance being technically able to finish does not prove it is sufficient. The comparison includes expected accepted quality, coverage, diagnostic recovery, and useful latency within the unchanged hard ceiling.
+
 The instances remain read-only with respect to Employee identity, skills, memory policy, permissions, and roster state. They do not converse to manufacture diversity. Their artifacts flow into a declared aggregation task, and aggregation cost is part of the job budget.
 
 A replicated run is therefore not a new Employee, a promotion signal, an independent reviewer, or evidence that the roster should grow. Only repeated outcome evidence can justify a later Skill, Workflow, or Roster proposal.
