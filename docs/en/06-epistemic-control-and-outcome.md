@@ -4,6 +4,10 @@
 
 The central limitation of an AI firm is not that it cannot generate ideas. It is that it often cannot independently establish what is true, what should be valued, or whether a long chain of action genuinely succeeded.
 
+## Abstract
+
+This paper defines the control model for an AI system operating under incomplete information. Noruct does not solve the oracle problem by asserting confidence. It records the difference between evidence, inference, assumption, authorized decision, executable check, and later observed outcome.
+
 ## Epistemic status is first-class
 
 Noruct should distinguish at least these states:
@@ -46,3 +50,15 @@ For high-impact actions, Noruct should prefer deterministic tests, external data
 ## Outcome is part of learning
 
 The firm should separate “the output looked good” from “the action produced the intended effect.” Delayed feedback, user correction, real-world metrics, and failed acceptance should influence future recommendations. They should not be converted blindly into a permanent skill or policy without attribution and review.
+
+## A limit-and-response matrix
+
+| Limitation | What the runtime can contribute | What it must not claim |
+| --- | --- | --- |
+| Missing recorded context | Retrieve cited material and surface gaps | Recover unrecorded tacit knowledge |
+| Competing evidence | Mark conflict, freshness, and uncertainty | Declare a winner without a basis |
+| Value conflict | Produce options and consequences | Own the user's preference |
+| No reliable acceptance test | Narrow the claim or escalate | Manufacture verification from self-review |
+| Delayed real-world result | Keep an outcome ledger and review date | Treat terminal task success as real success |
+
+This matrix is a product boundary. It explains why knowledge and verification improve a firm without making it an autonomous moral or legal actor.

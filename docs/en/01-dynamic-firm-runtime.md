@@ -4,6 +4,14 @@
 
 A Dynamic Firm Runtime is an execution system that maintains a firm over time while creating, reshaping, and retiring the smallest job structure required for each request.
 
+## Abstract
+
+This paper defines the runtime-level separation that makes the firm metaphor operational rather than theatrical. The company persists as an authority and capability boundary. The job graph exists only to execute a particular work order. The Manager interprets meaning and the Kernel enforces rules. No one of these objects is a substitute for the others.
+
+## Operating hypothesis
+
+Given the same user goal, the best execution structure may be direct, solo, or a temporary team. Therefore planning is a reversible hypothesis under hard limits, not a workflow script that becomes correct merely because it was generated first.
+
 ```mermaid
 flowchart TD
   U[User goal and authority] --> M[Manager]
@@ -27,6 +35,27 @@ flowchart TD
 | Run record | Inputs, evidence, mutations, outputs, outcome | Durable audit record |
 
 The job graph is not the company. It is a temporary work order placed inside the company.
+
+## Request lifecycle
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant M as Manager
+  participant K as Firm Kernel
+  participant E as Selected Employee(s)
+  participant V as Validator or outcome source
+  U->>M: Goal, constraints, authority
+  M->>K: Proposed execution shape
+  K->>K: Validate budget, permissions, graph rules
+  K->>E: Frozen assignment and bounded context
+  E-->>K: Artifact, evidence, receipts, uncertainty
+  K->>V: Deterministic or declared verification
+  V-->>M: Acceptance signal or unresolved result
+  M-->>U: One integrated report
+```
+
+The sequence is deliberately asymmetric. The Manager may propose; the Kernel admits; Employees execute; validators observe. An Employee result does not directly rewrite the graph, the roster, the budget, or the user's authority.
 
 ## Direct, solo, or team execution
 
@@ -70,3 +99,7 @@ Plans are hypotheses, not promises. As evidence arrives, a job can be retried, r
 The runtime should not create a meeting loop around ordinary work. A semantic decision boundary—not a calendar-shaped ritual—is what justifies Manager attention.
 
 Users do not need to design this structure before asking for work. They can nevertheless inspect the generated graph, revise a versioned Blueprint, pin an accepted structure, or require approval before structural changes. Automatic composition and user control are complementary, not mutually exclusive.
+
+## Boundary conditions
+
+The runtime does not promise that every ambiguous request deserves a team, that every task can be verified automatically, or that a later graph is necessarily better than the first. It promises a narrower discipline: structural changes are bounded, attributable, and reviewable; costly or irreversible effects remain governed by the applicable authority policy.

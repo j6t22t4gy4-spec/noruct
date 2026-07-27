@@ -4,6 +4,10 @@
 
 Graph Engineering is not a visual graph product and not simply spawning several copies of one agent. It is the design of a dependency-aware execution structure. Firm Engineering extends it by making nodes persistent, heterogeneous capability units governed by one firm's authority and learning boundaries.
 
+## Abstract
+
+This paper distinguishes five layers of agent-system design. Graph Engineering concerns dependencies and artifact flow. Firm Engineering adds durable capability supply, authority, outcome history, and controlled evolution. The purpose is not maximal parallelism; it is to create only the structure whose marginal value can be stated and evaluated.
+
 ```mermaid
 flowchart LR
   H[Harness Engineering\nreliable tool use] --> L[Loop Engineering\nreliable iteration]
@@ -29,6 +33,25 @@ The runtime adds a node only when one of these is true:
 - a user-requested graph template has a valid operating purpose.
 
 Otherwise, the correct graph is one node or no job graph at all.
+
+## Admission test
+
+```mermaid
+flowchart TD
+  W["Work order"] --> Q{"Can a single bounded run meet acceptance?"}
+  Q -->|"Yes"| S["Direct or solo path"]
+  Q -->|"No or uncertain"| D{"State the added node's value"}
+  D -->|"Distinct capability"| T["Heterogeneous employee"]
+  D -->|"Independent partition"| P["Bounded execution replicas"]
+  D -->|"Different validator"| V["Independent verification"]
+  D -->|"No concrete value"| S
+  T --> A["Declared artifact handoff or aggregation"]
+  P --> A
+  V --> A
+  A --> K["Kernel validates budget and authority"]
+```
+
+The test is intentionally stricter than “can we run agents in parallel?” A node earns admission only when the runtime can name the affected task, the expected benefit, the input/output contract, and the budget/authority boundary.
 
 ## Homogeneous execution can still have bounded value
 
@@ -85,3 +108,7 @@ This turns the Manager into a decision and routing capability rather than a perm
 ## Evaluate the lower tail
 
 A graph should be judged by more than average output quality. Its operating quality also includes failure predictability, cost, latency, correctionability, evidence quality, and the ability to explain why a particular structure was used. A design that is occasionally brilliant but often impossible to recover may be worse than a simpler, bounded path.
+
+## Non-claim
+
+Firm Engineering does not assume every domain needs narrowly human-like specialization. An Employee is differentiated only when a material operating difference exists; otherwise the system should retain one capability identity and, where justified, use temporary execution replication instead of inventing organizational theater.

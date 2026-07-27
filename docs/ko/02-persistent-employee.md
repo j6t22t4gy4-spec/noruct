@@ -8,6 +8,12 @@ Noruct의 **Employee**는 역할 이름, prompt persona, 일회성 sub-agent 또
 여러 Job에서 다시 선택될 수 있는 persistent execution identity이며, 자신에게 허용된 capability만 사용해 bounded
 assignment를 수행하고, 검증 가능한 결과와 관찰을 회사에 반환하는 runtime unit입니다.
 
+## 초록
+
+이 문서는 직원을 지속적이고 검사 가능한 능력 경계로 정의합니다. 지속성은 무제한 개인 서사를 저장한다는 뜻이
+아닙니다. 정체성, 승인된 절차, 제한된 개인 기억, 세션 연속성, 권한, 결과 이력을 매번 역할 이름으로 다시 만들지
+않고 의도적으로 개정할 수 있다는 뜻입니다.
+
 ```text
 Persistent Employee
 = identity + capability profile + private bounded state
@@ -84,6 +90,32 @@ Employee는 다른 Employee의 hidden reasoning, 전체 Company state, raw crede
 Employee output은 proposal과 evidence입니다. 그것이 ROSTER, budget, permission, graph, Skill 또는 workflow를 직접
 바꾸지는 않습니다.
 
+## 개인 상태는 사용자의 지식 저장소가 아니다
+
+직원은 개인 운영 상태를 가질 수 있지만, 그것은 사용자의 파일을 한 번 더 복사한 저장소가 아닙니다. 각 저장소가
+답하는 질문과 보존 규칙이 다르므로 분리해야 합니다.
+
+```mermaid
+flowchart TB
+  K["사용자 지식 런타임\n원본 자료 · 사실 · 근거"] -->|"짧고 인용 가능한 근거"| R["고정된 직원 실행"]
+  I["직원 정체성\n역할 · 능력 계약"] --> R
+  M["직원 개인 기억\n승인된 수정 · 업무상 사실"] -->|"작업 관련 항목만 선택"| R
+  S["직원 기술\n버전 관리 절차 · 검증 단계"] --> R
+  H["직원 세션\n최근 업무 이력"] -->|"제한된 투영"| R
+  R --> O["산출물 · 영수증 · 불확실성"]
+  O -. "검토된 후보만" .-> M
+  O -. "검토된 절차 변경만" .-> S
+```
+
+사용자 지식은 세계에 대한 근거입니다. 직원 개인 기억은 그 직원의 업무 맥락입니다. 기술은 재사용 가능한 절차이고,
+세션은 상호작용의 연속성입니다. 어느 것도 회사 권한의 원천이 아닙니다.
+
+## 기억을 남기기 전의 질문
+
+정보를 직원의 지속 기억으로 남기기 전에 네 가지를 물어야 합니다. 현재 작업을 넘어 유용한가? 관찰 가능한 수정이나
+반복 결과에 근거하는가? 이 직원만 보관해도 안전한가? 버전 관리·검토·되돌리기가 가능한가? 원본 대화 전문,
+신뢰할 수 없는 문서, 편리해 보이는 모델 추론은 기본적으로 이 기준을 통과하지 못합니다.
+
 ## Manager와 specialist
 
 Manager는 Persistent Employee의 특수형입니다. Manager는 사용자 목표, Intent/Decision, roster capability와 Job
@@ -137,3 +169,9 @@ instance는 Employee identity, Skill, Memory policy, permission 또는 roster를
 
 따라서 복제 실행은 새 Employee, 승격 근거, 독립 Reviewer 또는 roster 확장 증거가 아닙니다. 반복된 outcome 근거만
 나중의 Skill·Workflow·Roster Patch 제안을 정당화할 수 있습니다.
+
+## 평가에 주는 의미
+
+직원 차이는 입출력 경계에서 실제로 보일 때만 신뢰할 수 있습니다. 허용된 도구, 절차, 기억 범위, 검증자, 실행 환경,
+측정된 결과 이력 중 적어도 하나가 달라야 합니다. 같은 고정 입력을 받은 이름만 다른 실행체는 두 번째 직원이 아니라
+실행 복제본입니다.

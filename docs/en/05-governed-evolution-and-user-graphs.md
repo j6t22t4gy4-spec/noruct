@@ -4,6 +4,10 @@
 
 Noruct does not assume the runtime can always discover the best graph from scratch. Users may inspect, constrain, choose, fork, pin, or share reusable graph blueprints. The system may still compile a job-specific graph, but it must make changes legible and bounded.
 
+## Abstract
+
+This paper treats a graph as a user-visible, versioned hypothesis rather than a hidden compiler artifact. The key design problem is to preserve adaptive execution without making cost, causality, or user control disappear when a graph changes during a job.
+
 ```mermaid
 flowchart TD
   U["User controls\ninspect · revise · fork · pin"] --> B["Versioned Graph Blueprint\nreusable hypothesis"]
@@ -62,3 +66,17 @@ Each proposal needs provenance, a reason, compatibility checks, and rollback. A 
 ## Revision is an auditable decision
 
 When a graph changes, the firm should retain the prior revision, the triggering evidence, the actor or policy that approved it, reserved and spent budget, and the observed effect on quality, cost, and delay. This is the price of letting a workflow adapt without making its result impossible to explain.
+
+## Causal record for a structural change
+
+```mermaid
+flowchart LR
+  A["Initial Blueprint or graph"] --> B["Observed trigger\nconflict · failure · new evidence"]
+  B --> C["Bounded proposal\nreason · delta cost · expected value"]
+  C --> D{"User mode and Kernel rule"}
+  D -->|"reject"| E["Prior graph remains authoritative"]
+  D -->|"approve or bounded automatic"| F["New immutable revision"]
+  F --> G["Run record\nquality · cost · delay · outcome"]
+```
+
+The public principle is not that every graph must mutate. It is that any material mutation must be reconstructible as a decision with a reason and a bounded effect.

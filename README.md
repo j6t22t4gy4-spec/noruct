@@ -4,6 +4,8 @@
 
 Noruct is a runtime for a persistent AI firm: a user gives a goal, while the system keeps durable organizational capability and composes only the execution structure the goal needs.
 
+The public documentation is a concept-paper series. It explains the product thesis, the operating model, the authority boundaries, and the evaluation questions without exposing private implementation or customer state.
+
 > **Workflows are temporary. Organizational capability compounds.**
 
 For managed work, Noruct plans performance-first rather than cost-minimum. One Employee remains the baseline, but technical feasibility alone does not suppress bounded replication: independent partitions, candidate paths, or diagnostic probes can justify two to four job-local instances of that same Employee under the existing hard budget. Those instances are not new employees, and reusable value must still be demonstrated against a single-run baseline under the same total budget.

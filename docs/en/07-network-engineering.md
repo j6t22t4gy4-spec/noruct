@@ -4,6 +4,10 @@
 
 Network Engineering is the optional layer above one local firm. It allows reusable capability to travel between firms without making a remote network the authority over a user's knowledge, mission, credentials, or active work.
 
+## Abstract
+
+This paper defines a local-first model for shared improvement. A network may distribute inspectable capability artifacts, but it must not turn contribution into a requirement to surrender private context or turn publication into remote execution authority.
+
 ```mermaid
 flowchart LR
   L[Local Noruct firm\nuser authority] --> A[Reviewed capability artifact]
@@ -24,6 +28,22 @@ Raw user files, private knowledge stores, credentials, active job state, private
 ## Adoption is a local decision
 
 The safe default is no automatic import and no automatic activation. A user or local policy can inspect an artifact, compare versions, pin a known version, stage it in a bounded environment, accept or reject it, and roll it back later. “Always latest” is a user-selectable update policy, not a network right.
+
+## Artifact lifecycle
+
+```mermaid
+flowchart LR
+  A["Local capability or benchmark"] --> B["Package with provenance\nversion · permissions · evidence"]
+  B --> C["Optional publication"]
+  C --> D["Inspectable remote artifact"]
+  D --> E["Local stage and compatibility review"]
+  E --> F{"Local adoption decision"}
+  F -->|"accept"| G["Pinned local revision"]
+  F -->|"reject"| H["No local change"]
+  G --> I["Rollback or fork remains possible"]
+```
+
+The critical distinction is between **availability** and **authority**. A network can make an artifact available; only a local user or local policy can make it active.
 
 ## Why a network matters
 
