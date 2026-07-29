@@ -24,8 +24,9 @@
 
 Noruct에는 실행 가능한 Employee Runtime이 하나만 있습니다. historical employee-state compatibility는 local state를
 읽고 검증된 backup receipt를 만들 수 있지만, 다른 engine·runtime 선택기·현재 authority와 approval 계약을 우회하는
-경로가 아닙니다. 내부적으로는 CLI ingress, runtime, Company, Knowledge read projection을 같은 local state authority
-뒤에서 분리하여 TUI와 future GUI가 서로 다른 control path를 만들지 않도록 개편 중입니다.
+경로가 아닙니다. 내부적으로는 CLI ingress, ACTIVE JOB audit, Graph Workbench 표시부, runtime·Company·Knowledge
+projection을 같은 local state authority 뒤에서 분리하고 있습니다. 이는 제품 surface 개편입니다. CLI, TUI, future GUI가
+서로 다른 control path나 두 번째 Company state를 만들지 않고 같은 통제된 operation을 호출하게 하기 위한 것입니다.
 
 Manager는 Work Order 해석, 실행 형태 선택, typed delegation, accepted artifact 통합, 사용자 보고를 수행하는 제한된
 지속 Company 구성원으로 구현되어 있습니다. Manager는 스스로 권한을 늘리거나 external action을 승인하거나 durable
@@ -58,6 +59,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | Network | signed artifact lifecycle과 제한된 deployed registry path가 있으나 고객 운영과 broad executable adapter는 주장하지 않음 |
 | Platform과 release | 개발 검증은 있으나 Windows 폭, packaging, legal/provenance review, commercial release authorization은 별도 gate |
 | Runtime 선택 | 실행 가능한 Noruct runtime은 하나이며 historical state compatibility는 rollback engine이 아닌 read/backup 경로 |
+| Operator surface | CLI와 TUI가 현재 로컬 surface다. loopback Graph Workbench는 좁은 GUI-ready projection과 future-Job constraint 경로를 검증하지만, 범용 desktop 또는 hosted GUI는 아니다. |
 
 ## 검증 가능한 제품 질문
 

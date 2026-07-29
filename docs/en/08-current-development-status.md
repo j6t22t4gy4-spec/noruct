@@ -25,8 +25,10 @@ The local development runtime currently provides:
 
 Noruct exposes one executable Employee Runtime. Historical employee-state compatibility can inspect a local state file and
 create a verified backup receipt, but it is not an alternate engine, a runtime selector, or a way to bypass the current
-authority and approval contract. Internally, CLI ingress and the runtime, Company, and Knowledge read projections are
-being separated behind the same local state authority so that TUI and a future GUI do not create divergent control paths.
+authority and approval contract. Internally, CLI ingress, ACTIVE JOB audit, Graph Workbench presentation, and the runtime,
+Company, and Knowledge projections are being separated behind the same local state authority. This is a product-surface
+refactor: it lets the CLI, TUI, and a future GUI call the same governed operations rather than creating competing control
+paths or a second Company state.
 
 The Manager is implemented as a bounded persistent Company participant: it can interpret a Work Order, select an
 execution shape, issue typed delegation, integrate accepted artifacts, and report. It cannot grant itself authority,
@@ -60,6 +62,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 | Network | Signed artifact lifecycle and a limited deployed registry path exist; customer operation and broad executable adapters are not claimed. |
 | Platform and release | Development validation exists; Windows breadth, packaging, legal/provenance review, and commercial release authorization remain separate gates. |
 | Runtime selection | One executable Noruct runtime; historical state compatibility is a read/backup path, not a rollback engine. |
+| Operator surfaces | CLI and TUI are the active local surfaces. A loopback Graph Workbench proves a narrow GUI-ready projection and future-Job constraint path; it is not a general desktop or hosted GUI. |
 
 ## The falsifiable product question
 
