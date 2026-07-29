@@ -13,6 +13,16 @@
 지속되고, 작업 그래프는 하나의 업무 지시를 수행하기 위해서만 존재합니다. 관리자는 의미를 해석하고, 커널은 규칙을
 강제합니다. 어느 하나도 다른 하나를 대신하지 않습니다.
 
+## 현재 개발 위치
+
+현재 개발 구현에는 하나의 로컬 Company 진입점, 지속 Company·Employee 상태, graph 없는 direct 작업, managed solo
+작업, 제한된 team 작업이 있습니다. Work Order, capability snapshot, task receipt, graph revision, Patch proposal은
+서로 다른 lifecycle로 기록됩니다.
+
+이는 Manager가 이끄는 팀이 강한 단일 Employee보다 일반적으로 낫다는 주장이 아닙니다. 현재 평가는 positive와
+negative transfer evidence를 모두 보존하며, 성공한 campaign 하나만으로 Manager·Blueprint·Patch를 자동 승격하지
+않습니다. 구현 범위와 검증 한계는 [현재 개발 상태](08-current-development-status.md)에 정리합니다.
+
 ## 작동 가설
 
 같은 사용자 목표라도 가장 좋은 실행 형태는 직접 응답, 단독 실행, 임시 팀 중 달라질 수 있습니다. 그러므로 최초

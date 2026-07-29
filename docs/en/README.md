@@ -36,9 +36,14 @@ The documents move from purpose to operating model, then from execution to knowl
 | 05 | [Governed Evolution & User Graphs](05-governed-evolution-and-user-graphs.md) | How can workflows evolve without becoming opaque? | Separates reusable hypotheses from job authority and learning. |
 | 06 | [Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) | What can the firm know, decide, and safely verify? | Makes uncertainty and delayed outcomes first-class. |
 | 07 | [Network Engineering](07-network-engineering.md) | How can reusable capability travel without taking user authority with it? | Defines optional, local-first capability exchange. |
+| 08 | [Current Development Status](08-current-development-status.md) | Which parts are implemented, experimental, or not yet claimed? | Separates the concept paper from present development evidence. |
 
 Read in order for the full argument. Readers interested in one question can begin with the matching paper, but the claims about graph design depend on the Employee and authority model, and the claims about evolution depend on epistemic and outcome control.
 
 ## Public-document boundary
 
 This repository publishes product concepts, operating boundaries, and architectural principles. It does not publish customer data, private development records, internal operational configuration, security-sensitive implementation detail, or a promise of autonomous authority.
+
+The [status paper](08-current-development-status.md) is the only document in this series that summarizes present
+development evidence. The other papers define intended architecture and product boundaries; they do not by themselves
+claim that every described mechanism is generally available or commercially qualified.

@@ -53,5 +53,16 @@ flowchart LR
 핵심은 **사용 가능함**과 **권한을 가짐**의 차이입니다. 네트워크는 산출물을 사용할 수 있게 할 수 있지만, 활성화할
 수 있는 권한은 오직 로컬 사용자 또는 로컬 정책에 있습니다.
 
+## 현재 개발 위치
+
+현재 개발 구현에는 signed·versioned Artifact lifecycle이 있습니다. discover, verify, stage, review, install,
+future Job activation, pin, rollback을 지원하며, first-party·community·private-team source class를 구분합니다.
+credential은 local artifact catalog 밖에 남고, 배포된 read-only registry endpoint는 availability surface일 뿐
+local Company나 실행 중 Job을 바꾸지 못합니다.
+
+현재 공개된 first-party artifact는 의도적으로 synthetic·experimental입니다. 이는 distribution path를 보이는
+검증용 release이지 customer-ready marketplace나 automatic update channel이 아닙니다. customer self-service,
+consent operation, broad executable adapter, production qualification은 현재 주장 범위 밖입니다.
+
 Network Engineering은 Firm Engineering을 대체하지 않습니다. 로컬 회사가 상태와 권한의 정본으로 남고, 네트워크는
 선택 가능한 능력의 출처로만 작동합니다.

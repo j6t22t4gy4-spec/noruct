@@ -39,6 +39,17 @@ This distinction makes experimentation possible without rewriting history.
 
 Graphs are interfaces, not just hidden compiler output. A future CLI, TUI, or GUI can expose the same blueprint, revision, and approval concepts without creating a different authority model.
 
+## Development position
+
+The current local development path already exposes Blueprint catalog, preview, structured revision, fork, pin, user
+constraints, and retained run-lineage through terminal surfaces. A proposed live revision can pause a Job and is only
+continued after an exact approval or rejection receipt is checked against the same frozen Work Order, prior graph, and
+lease. This is deliberately narrower than general checkpoint replay: failed, in-flight, and effectful work is not
+silently resumed.
+
+Desktop and web control surfaces are still a future projection, and causal attribution of a graph revision's actual
+quality, cost, or latency effect remains an evaluation problem rather than a completed product claim.
+
 ## A Blueprint can express execution replication
 
 A versioned Blueprint may state that one Employee should receive several job-local execution assignments. The declaration must include the strategy, each bounded scope, the aggregation task, and the expected marginal value. This makes the structure inspectable and editable instead of leaving it as an invisible compiler trick.

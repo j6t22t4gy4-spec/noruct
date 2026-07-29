@@ -8,6 +8,17 @@ A Dynamic Firm Runtime is an execution system that maintains a firm over time wh
 
 This paper defines the runtime-level separation that makes the firm metaphor operational rather than theatrical. The company persists as an authority and capability boundary. The job graph exists only to execute a particular work order. The Manager interprets meaning and the Kernel enforces rules. No one of these objects is a substitute for the others.
 
+## Development position
+
+The current development implementation has one local Company entry point, persistent Company and Employee state,
+graphless direct work, managed solo work, and bounded team work. It records Work Orders, capability snapshots, task
+receipts, graph revisions, and Patch proposals under separate lifecycles.
+
+This is not a claim that a Manager-led team is generally better than a strong single Employee. Current evaluation keeps
+both positive and negative transfer evidence, and does not promote a Manager, a Blueprint, or a Patch automatically
+from a successful campaign. The current limits and evidence are summarized in
+[Current Development Status](08-current-development-status.md).
+
 ## Operating hypothesis
 
 Given the same user goal, the best execution structure may be direct, solo, or a temporary team. Therefore planning is a reversible hypothesis under hard limits, not a workflow script that becomes correct merely because it was generated first.

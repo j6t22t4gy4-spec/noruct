@@ -29,6 +29,16 @@ Noruct에서 workflow는 무조건 사라지는 일회용 object도, 한번 성�
 그래프 변경이 생기면 이전 revision, 변경을 유발한 근거, 승인한 사람 또는 정책, 예약·소비 비용, 품질·지연에 미친 결과를
 Run Record에 남겨야 합니다. 적응성은 설명 가능성을 포기하는 이유가 될 수 없습니다.
 
+## 현재 개발 위치
+
+현재 로컬 개발 경로는 terminal surface에서 Blueprint catalog, preview, structured revision, fork, pin, 사용자 제약,
+retained run lineage를 제공합니다. 실행 중 `PROPOSE` revision은 Job을 pause할 수 있고, 같은 frozen Work Order,
+prior graph, lease를 다시 대조한 정확한 승인·거절 receipt가 있을 때만 이어집니다. 이는 일반적인 checkpoint replay보다
+좁은 경계입니다. failed·in-flight·effectful 작업은 조용히 재개하지 않습니다.
+
+독립 desktop/web control surface는 아직 future projection이며, graph revision이 실제 quality·cost·latency에 미친
+인과 효과를 계산하는 일도 아직 평가 과제입니다.
+
 이 분리 덕분에 사용자는 자동으로 생성된 Graph를 볼 수 있고, 제약을 걸고, 수정하고, 저장하고, 공유할 수 있습니다.
 동시에 저장된 설계가 사용자 승인 없이 미래 실행을 지배하지는 않습니다.
 

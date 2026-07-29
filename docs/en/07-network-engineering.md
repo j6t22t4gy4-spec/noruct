@@ -45,6 +45,17 @@ flowchart LR
 
 The critical distinction is between **availability** and **authority**. A network can make an artifact available; only a local user or local policy can make it active.
 
+## Development position
+
+The current development implementation includes a signed, versioned Artifact lifecycle: discover, verify, stage,
+review, install, activate for future work, pin, and roll back. It supports first-party, community, and private-team
+source classes while keeping credentials outside the local artifact catalog. A deployed read-only registry endpoint is
+used only as an availability surface; it cannot change a local Company or a running Job.
+
+The presently published first-party artifact is deliberately synthetic and experimental. It demonstrates the
+distribution path, not a customer-ready marketplace or an automatic update channel. Customer self-service, consent
+operations, broad executable adapters, and production qualification remain outside the current claim.
+
 ## Why a network matters
 
 Open local code alone does not make every firm equally capable. Shared, tested, attributable operational knowledge can improve the floor of the ecosystem—provided that contributors and adopters retain control over what leaves their environment and what becomes active inside it.

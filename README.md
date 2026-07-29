@@ -12,6 +12,10 @@ For managed work, Noruct plans performance-first rather than cost-minimum. One E
 
 Start with the [English canonical concept map](docs/en/README.md). The Korean documentation is a maintained translation for Korean readers.
 
+For an explicit distinction between the concept and the current development implementation, read the
+[current development status](docs/en/08-current-development-status.md). Noruct is not yet a completed commercial
+release, and the status paper deliberately records both implemented paths and unqualified hypotheses.
+
 ## Scope
 
 This repository publishes product concepts, operating boundaries, and architectural principles. It does not publish customer data, internal operational configuration, security-sensitive implementation detail, or private development records.
