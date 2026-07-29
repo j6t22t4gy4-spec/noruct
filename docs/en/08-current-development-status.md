@@ -23,6 +23,11 @@ The local development runtime currently provides:
 - separate local Knowledge, Intent/Decision, and Firm state with bounded evidence bridges; and
 - versioned Skill, Workflow, and Roster Patch proposals that require their own review and application lifecycle.
 
+Noruct exposes one executable Employee Runtime. Historical employee-state compatibility can inspect a local state file and
+create a verified backup receipt, but it is not an alternate engine, a runtime selector, or a way to bypass the current
+authority and approval contract. Internally, CLI ingress and the runtime, Company, and Knowledge read projections are
+being separated behind the same local state authority so that TUI and a future GUI do not create divergent control paths.
+
 The Manager is implemented as a bounded persistent Company participant: it can interpret a Work Order, select an
 execution shape, issue typed delegation, integrate accepted artifacts, and report. It cannot grant itself authority,
 approve an external action, or directly mutate durable Company state.
@@ -54,6 +59,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 | Knowledge | Local-first raw-source intake and bounded evidence use exist; extraction is not automatic truth. |
 | Network | Signed artifact lifecycle and a limited deployed registry path exist; customer operation and broad executable adapters are not claimed. |
 | Platform and release | Development validation exists; Windows breadth, packaging, legal/provenance review, and commercial release authorization remain separate gates. |
+| Runtime selection | One executable Noruct runtime; historical state compatibility is a read/backup path, not a rollback engine. |
 
 ## The falsifiable product question
 

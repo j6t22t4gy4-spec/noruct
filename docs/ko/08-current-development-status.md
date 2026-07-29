@@ -22,6 +22,11 @@
 - bounded evidence bridge로 연결되지만 상태 권위는 분리된 local Knowledge, Intent/Decision, Firm
 - 별도 review와 apply lifecycle을 요구하는 versioned Skill·Workflow·Roster Patch proposal
 
+Noruct에는 실행 가능한 Employee Runtime이 하나만 있습니다. historical employee-state compatibility는 local state를
+읽고 검증된 backup receipt를 만들 수 있지만, 다른 engine·runtime 선택기·현재 authority와 approval 계약을 우회하는
+경로가 아닙니다. 내부적으로는 CLI ingress, runtime, Company, Knowledge read projection을 같은 local state authority
+뒤에서 분리하여 TUI와 future GUI가 서로 다른 control path를 만들지 않도록 개편 중입니다.
+
 Manager는 Work Order 해석, 실행 형태 선택, typed delegation, accepted artifact 통합, 사용자 보고를 수행하는 제한된
 지속 Company 구성원으로 구현되어 있습니다. Manager는 스스로 권한을 늘리거나 external action을 승인하거나 durable
 Company state를 직접 바꿀 수 없습니다.
@@ -52,6 +57,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | Knowledge | local-first raw-source intake와 bounded evidence 사용은 존재하지만 extraction은 자동 진실이 아님 |
 | Network | signed artifact lifecycle과 제한된 deployed registry path가 있으나 고객 운영과 broad executable adapter는 주장하지 않음 |
 | Platform과 release | 개발 검증은 있으나 Windows 폭, packaging, legal/provenance review, commercial release authorization은 별도 gate |
+| Runtime 선택 | 실행 가능한 Noruct runtime은 하나이며 historical state compatibility는 rollback engine이 아닌 read/backup 경로 |
 
 ## 검증 가능한 제품 질문
 
