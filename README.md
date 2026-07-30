@@ -16,6 +16,12 @@ For an explicit distinction between the concept and the current development impl
 [current development status](docs/en/08-current-development-status.md). Noruct is not yet a completed commercial
 release, and the status paper deliberately records both implemented paths and unqualified hypotheses.
 
+Capability intake and recursive improvement use separate trust lanes. External Tools, Skills, Plugins, and other
+Network artifacts remain pinned to an exact reviewed version and digest and are never replaced automatically. Only a
+locally derived artifact with no Network provenance may advance for a future Job when the user has selected
+`always-approve`, and only after authority and static runtime/capability compatibility checks. Running Jobs retain their
+existing pins, prior activations remain rollback targets, and Noruct does not modify the imported package source.
+
 ## Scope
 
 This repository publishes product concepts, operating boundaries, and architectural principles. It does not publish customer data, internal operational configuration, security-sensitive implementation detail, or private development records.

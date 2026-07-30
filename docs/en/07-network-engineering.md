@@ -27,7 +27,15 @@ Raw user files, private knowledge stores, credentials, active job state, private
 
 ## Adoption is a local decision
 
-The safe default is no automatic import and no automatic activation. A user or local policy can inspect an artifact, compare versions, pin a known version, stage it in a bounded environment, accept or reject it, and roll it back later. “Always latest” is a user-selectable update policy, not a network right.
+The safe default is no automatic import and no automatic activation. A user or local policy can inspect an artifact,
+compare versions, pin a known version, stage it in a bounded environment, accept or reject it, and roll it back later.
+External Tools, Skills, Plugins, and Network artifacts do not support an “always latest” automatic replacement policy.
+Each new external version and digest must be reviewed and activated explicitly.
+
+This boundary is separate from local recursive improvement. Even when the user selects `always-approve`, automatic
+advancement is limited to locally derived artifacts with no Network provenance. A candidate must pass authority checks
+and a static shadow compatibility check for the same runtime and required-capability contracts before it can affect a
+future Job. Running-Job pins, prior activation rollback, and the imported package source remain unchanged.
 
 ## Artifact lifecycle
 

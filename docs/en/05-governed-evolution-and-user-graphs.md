@@ -39,6 +39,20 @@ This distinction makes experimentation possible without rewriting history.
 
 Graphs are interfaces, not just hidden compiler output. A future CLI, TUI, or GUI can expose the same blueprint, revision, and approval concepts without creating a different authority model.
 
+## Conservative recursive improvement
+
+External Tools, Skills, Plugins, and Network artifacts remain pinned to an exact version and digest and are never
+replaced automatically. Staging, review, installation, and activation of an external package are separate explicit
+local decisions. Noruct has no path that edits the imported package source.
+
+Only when the user selects `always-approve` may a locally derived artifact with no Network provenance advance
+automatically for a future Job. Before activation, the candidate must remain inside the existing local authority and
+pass a static shadow compatibility check requiring the same runtime contract and required-capability contract as the
+active version. This is a compatibility boundary, not evidence of semantic or performance superiority.
+
+A running Job remains pinned to the artifact revision selected at admission. A new activation affects later Jobs only,
+and the prior activation remains available as a rollback target.
+
 ## Development position
 
 The current local development path already exposes Blueprint catalog, preview, structured revision, fork, pin, user

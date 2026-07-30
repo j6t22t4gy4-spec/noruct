@@ -2,7 +2,7 @@
 
 > 정본: [English](../en/08-current-development-status.md) · [← Network Engineering](07-network-engineering.md) · [문서 인덱스](README.md)
 
-**마지막 검토: 2026-07-29.** 영문판이 정본입니다.
+**마지막 검토: 2026-07-31.** 영문판이 정본입니다.
 
 ## 목적
 
@@ -57,6 +57,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | Graph mutation과 recovery | revision lineage와 좁은 receipt-bound continuation은 있으나 in-flight/effectful replay는 자동 재개하지 않음 |
 | Knowledge | local-first raw-source intake와 bounded evidence 사용은 존재하지만 extraction은 자동 진실이 아님 |
 | Network | signed artifact lifecycle과 제한된 deployed registry path가 있으나 고객 운영과 broad executable adapter는 주장하지 않음 |
+| Capability integrity | 외부 version/digest는 명시적으로 활성화해야 함. 사용자 `always-approve`, 권한 검사와 static 계약 호환성을 통과한 non-Network local derivative만 다음 Job에 승격 가능하며 실행 중 Job pin과 이전 activation rollback은 유지됨 |
 | Platform과 release | 개발 검증은 있으나 Windows 폭, packaging, legal/provenance review, commercial release authorization은 별도 gate |
 | Runtime 선택 | 실행 가능한 Noruct runtime은 하나이며 historical state compatibility는 rollback engine이 아닌 read/backup 경로 |
 | Operator surface | CLI와 TUI가 현재 로컬 surface다. loopback Graph Workbench는 좁은 GUI-ready projection과 future-Job constraint 경로를 검증하지만, 범용 desktop 또는 hosted GUI는 아니다. |

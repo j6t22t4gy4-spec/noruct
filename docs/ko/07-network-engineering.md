@@ -33,8 +33,14 @@ flowchart LR
 ## 도입은 로컬의 결정
 
 기본은 자동 import·자동 activation 없음입니다. 사용자는 artifact를 검사하고, 버전을 비교하고, 특정 버전을 pin하고,
-제한된 환경에 stage하고, 채택·거절·fork·rollback할 수 있습니다. “항상 최신”은 네트워크의 권리가 아니라 사용자가
-선택하는 업데이트 정책입니다.
+제한된 환경에 stage하고, 채택·거절·fork·rollback할 수 있습니다. 외부 Tool·Skill·Plugin과 Network artifact의
+“항상 최신” 자동 교체 정책은 제공하지 않습니다. 새 외부 버전은 exact version과 digest를 다시 검토하고 명시적으로
+활성화해야 합니다.
+
+이 경계는 로컬 재귀 개선과 분리됩니다. 사용자가 `always-approve`를 선택한 경우에도 자동 승격 대상은 Network
+provenance가 없는 local-derived artifact뿐입니다. 권한 검증과 동일 runtime/required-capability 계약의 static shadow
+compatibility 검사를 통과한 후보만 다음 Job부터 활성화될 수 있습니다. 실행 중 Job의 pin, 이전 activation의 rollback,
+외부 package 원본은 그대로 유지됩니다.
 
 ## 산출물의 생명주기
 

@@ -66,6 +66,20 @@ flowchart TD
 
 사용자 편의는 구조에 대한 폐쇄성을 뜻하지 않습니다. 자동 설계와 사용자 agency는 함께 존재해야 합니다.
 
+## 보수적 재귀 개선
+
+외부 Tool·Skill·Plugin과 Network artifact는 exact version과 digest에 고정되며 자동으로 교체되지 않습니다. 외부
+package는 stage, review, install, activate가 분리된 명시적 로컬 결정이고, Noruct가 반입된 package 원본을 수정하는
+경로는 없습니다.
+
+사용자가 `always-approve`를 선택했을 때에만 Network provenance가 없는 local-derived artifact가 다음 Job의 활성
+후보로 자동 승격될 수 있습니다. 후보는 먼저 기존 로컬 권한 안에 있는지 검증되고, 현재 활성본과 동일한 runtime
+contract와 required-capability 계약을 유지하는지 static shadow compatibility 검사를 통과해야 합니다. 이 검사는
+호환성 경계이지 품질이나 의미적 우월성의 증명은 아닙니다.
+
+실행 중인 Job은 시작할 때 선택된 artifact revision에 계속 pin됩니다. 새 activation은 이후 Job에만 적용되며 이전
+activation은 rollback 대상으로 남습니다.
+
 ## Blueprint의 실행 복제 표현
 
 Versioned Blueprint는 한 Employee에 여러 Job-local execution assignment를 배치하는 구조를 선언할 수 있습니다. 이때
