@@ -90,7 +90,10 @@ The firm may place several instances of the same Employee in one job only when t
 - **Candidate:** bounded alternatives can be compared by a declared acceptance method.
 - **Diagnostic:** independent probes can reduce a specific unresolved uncertainty.
 
-For managed work, this check is performance-first: one instance being technically able to finish does not prove it is sufficient. The comparison includes expected accepted quality, coverage, diagnostic recovery, and useful latency within the unchanged hard ceiling.
+For managed work, this check is minimum-sufficient rather than cost-minimum or replica-first. One instance being
+technically able to finish does not prove it is sufficient when an additional bounded path has concrete marginal value.
+But an unknown benefit does not justify replication. Each additional instance needs an exact scope, expected gain,
+declared aggregation owner, unchanged hard ceiling, and stop condition.
 
 The instances remain read-only with respect to Employee identity, skills, memory policy, permissions, and roster state. They do not converse to manufacture diversity. Their artifacts flow into a declared aggregation task, and aggregation cost is part of the job budget.
 
@@ -98,4 +101,10 @@ A replicated run is therefore not a new Employee, a promotion signal, an indepen
 
 ## Evaluation implication
 
-Employee differentiation is credible only when a capability difference is observable at the input or output boundary: a different permitted tool, procedure, memory scope, validator, environment, or measured outcome profile. A renamed instance with the same frozen inputs is an execution replica, not a second employee.
+Employee differentiation is credible only when a capability difference is observable at the input or output boundary:
+a different permitted tool, procedure, memory scope, validator, environment, or measured outcome profile. A renamed
+instance with the same frozen inputs is an execution replica, not a second employee.
+
+The final delivery should also explain why this Employee was selected, which material capability difference was
+actually exercised, and why a compatible alternative was excluded. If the difference was not used, the firm should
+say so rather than inventing a specialization story after the run.

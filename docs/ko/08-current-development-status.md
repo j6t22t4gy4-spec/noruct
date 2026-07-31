@@ -68,7 +68,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 
 Noruct의 핵심 가설은 의도적으로 검증 가능해야 합니다.
 
-> 같은 model access, authority, total budget에서, 가장 작은 유용한 구조를 admission·staffing·validation·revision하는
+> 같은 model access, authority, total budget에서, 최소 충분 구조를 admission·staffing·validation·revision하는
 > firm이 강한 single Employee보다 더 많은 검증된 가치를 만들 수 있는가?
 
 많은 요청의 정답은 direct 또는 solo일 수 있습니다. 더 눈에 띄는 조직이 성공은 아닙니다. 추가 구조는 측정·설명·rollback

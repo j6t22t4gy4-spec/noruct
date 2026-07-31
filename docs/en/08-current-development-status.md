@@ -72,7 +72,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 Noruct's central hypothesis remains deliberately testable:
 
 > Under the same model access, authority, and total budget, can a firm that admits, staffs, validates, and revises the
-> smallest useful structure produce more verified value than a strong single Employee?
+> minimum sufficient structure produce more verified value than a strong single Employee?
 
 The correct answer may be direct or solo execution for many requests. More visible organization is not success. The
 runtime earns complexity only when its added structure can be measured, explained, and rolled back.

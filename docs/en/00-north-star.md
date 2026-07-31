@@ -4,7 +4,9 @@
 
 Noruct is building an AI system that behaves less like a chat window and more like a continuing company. A user should be able to state an outcome without manually drawing agent trees, assigning roles, or scripting a workflow.
 
-The system's job is to choose the smallest reliable execution structure, retain only justified organizational learning, and leave the user in control of values and irreversible commitments.
+The system's job is to choose the minimum sufficient execution structure—the smallest structure that can preserve the
+accepted outcome and its risk boundary—retain only justified organizational learning, and leave the user in control of
+values and irreversible commitments.
 
 > **Workflows are temporary. Organizational capability compounds.**
 
@@ -51,10 +53,16 @@ The firm can execute inside those boundaries. It should ask rather than silently
 
 ## Evaluation implications
 
-The concept should be judged by whether it reduces repeated operational failure without increasing silent autonomy. Useful measures include accepted outcome quality, correctionability after failure, explanation of structural choices, unnecessary delegation, budget adherence, and whether users can inspect or constrain consequential work. Faster output alone is insufficient evidence of a better firm.
+The concept should be judged by whether it reduces repeated operational failure without increasing silent autonomy.
+Useful measures include accepted outcome quality, lower-tail and complete failure, correctionability, explanation of
+structural choices, unnecessary delegation, coordination and human review burden, budget adherence, and whether users
+can inspect or constrain consequential work. The terminal result should leave a short, evidence-bound conclusion rather
+than requiring the user to replay raw logs. Faster output alone is insufficient evidence of a better firm.
 
 ## What Noruct is not
 
-Noruct is not defined by a fixed organization chart, a permanent swarm, or a requirement to use multiple models. It is not a repository of chain-of-thought, and it is not an autonomous entity that can redefine a user's mission.
+Noruct is not defined by a fixed organization chart, a permanent swarm, or a requirement to use multiple models. It is
+not a repository of chain-of-thought or an archive that treats more logs as a human-readable explanation, and it is not
+an autonomous entity that can redefine a user's mission.
 
 Its form may change as better operational structures become available. The invariant is simpler: durable capability should improve future work without silently taking over direction or authority.

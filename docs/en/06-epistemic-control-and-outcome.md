@@ -51,6 +51,16 @@ For high-impact actions, Noruct should prefer deterministic tests, external data
 
 The firm should separate “the output looked good” from “the action produced the intended effect.” Delayed feedback, user correction, real-world metrics, and failed acceptance should influence future recommendations. They should not be converted blindly into a permanent skill or policy without attribution and review.
 
+## Mechanism, delivery, and outcome are different
+
+| Claim layer | What establishes it | What it does not establish |
+| --- | --- | --- |
+| Mechanism proof | The declared contract and failure paths operated as designed. | That the artifact met acceptance or helped in the real world. |
+| Delivery proof | The artifact and evidence passed the declared acceptance and verification methods. | That a delayed external outcome occurred. |
+| Outcome proof | A matched external observation or later real-world signal supports the intended effect. | That the same structure will generalize to another context. |
+
+A terminal delivery is itself an epistemic artifact. It should state what is `UNKNOWN`, what was `NOT_RUN`, and what remains `OUTCOME_NOT_ESTABLISHED`. It should answer the assignment, contribution, review, alternative, comparison, and conclusion questions defined in [Organization as Decision Architecture](09-organization-as-decision-architecture.md) using artifacts, evidence, validation, and bounded receipts—not hidden reasoning or a dump of raw prompts, transcripts, and tool logs. A successful mechanism is not automatically a successful delivery, and a successful delivery is not automatically a successful outcome.
+
 ## A limit-and-response matrix
 
 | Limitation | What the runtime can contribute | What it must not claim |

@@ -38,9 +38,9 @@ Otherwise, the correct graph is one node or no job graph at all.
 
 ```mermaid
 flowchart TD
-  W["Work order"] --> Q{"Can a single bounded run meet acceptance?"}
-  Q -->|"Yes"| S["Direct or solo path"]
-  Q -->|"No or uncertain"| D{"State the added node's value"}
+  W["Work order"] --> Q{"Is material value beyond direct or solo established?"}
+  Q -->|"No or unknown"| S["Direct or solo path"]
+  Q -->|"Yes"| D{"State the added node's value"}
   D -->|"Distinct capability"| T["Heterogeneous employee"]
   D -->|"Independent partition"| P["Bounded execution replicas"]
   D -->|"Different validator"| V["Independent verification"]
@@ -51,7 +51,7 @@ flowchart TD
   A --> K["Kernel validates budget and authority"]
 ```
 
-The test is intentionally stricter than “can we run agents in parallel?” A node earns admission only when the runtime can name the affected task, the expected benefit, the input/output contract, and the budget/authority boundary.
+The test is intentionally stricter than “can we run agents in parallel?” A node earns admission only when the runtime can name the affected task, the expected benefit, the input/output contract, the aggregation owner, the stopping condition, and the budget/authority boundary. An unknown benefit returns to the direct or solo path; uncertainty is not itself evidence for a larger graph.
 
 ## Homogeneous execution can still have bounded value
 
@@ -85,17 +85,17 @@ The guardrails are structural:
 - all members must converge through a declared aggregation task;
 - a distinct reviewer must use a materially different validator or capability, not merely another copy.
 
-## Performance-first planning, hard-capped execution
+## Minimum-sufficient planning, performance-preserving execution
 
-Managed jobs default to a performance-first proposal posture. The Manager and Compiler actively test a two-to-four-run replica hypothesis when the work has disjoint breadth, multiple candidates worth comparing, or an unclear cause that benefits from separate probes. A single run being technically capable of finishing is not enough to reject that hypothesis.
+Managed jobs seek the minimum sufficient organization: the smallest structure that can preserve the accepted outcome and risk boundary. This is not cost-minimum planning. A concrete independent partition, candidate comparison, diagnostic probe, or materially different validator can justify more structure even when one run could technically finish. But possibility alone does not. Direct or solo remains the baseline until the additional value is stated.
 
-The hard budget remains a ceiling, not a spending target. The preferred proposal is the smallest two- or three-run group that captures a concrete quality, coverage, recovery, or latency gain; a fourth run needs an explicit scope or candidate-set reason. If exact safe scopes and aggregation cannot be stated, the provider fails, the Kernel rejects admission, or the user requests single/no-parallel execution, the graph stays solo. Proposal can be aggressive while authority admission remains strict.
+Every additional execution instance needs an exact scope, expected gain, aggregation owner, hard ceiling, and stopping condition. The hard budget remains a ceiling, not a spending target. The preferred proposal is the smallest group that captures a concrete quality, coverage, recovery, or latency gain; a fourth run needs an explicit scope or candidate-set reason. If safe scopes and aggregation cannot be stated, the provider fails, the Kernel rejects admission, or the user requests single/no-parallel execution, the graph stays solo.
 
 ## Prove value under the same total budget
 
-Replica count is not a success metric. A fair evaluation compares a single-instance run and a replicated run on the same workload, environment, Employee capability revision, and total hard budget. Aggregation overhead counts against the replicated run.
+Replica count is not a success metric. A fair evaluation compares a single-instance run and a replicated run on the same workload, environment, Employee capability revision, and total hard budget. Communication, coordination, integration, verification, and human review burden all count against the replicated run.
 
-The comparison observes accepted quality, coverage, complete failure, safety and validation regressions, latency, and total resource usage. One attractive result is not enough. A reusable recommendation needs repeated paired evidence across distinct workloads, while any safety or validation regression is a reason to stop or roll back the candidate structure.
+The comparison observes accepted quality, coverage, lower-tail behavior, complete failure, safety and validation regressions, latency, total resource usage, and how much effort a person needs to understand and accept the result. One attractive result is not enough. Reusable eligibility requires matched evidence under a predefined gate, while any safety or validation regression is a reason to stop or roll back the candidate structure.
 
 The evaluator produces evidence and a recommendation. It does not silently edit a Blueprint or promote a Playbook. That preserves the distinction between measuring an execution shape and granting it organizational authority.
 
@@ -107,7 +107,7 @@ This turns the Manager into a decision and routing capability rather than a perm
 
 ## Evaluate the lower tail
 
-A graph should be judged by more than average output quality. Its operating quality also includes failure predictability, cost, latency, correctionability, evidence quality, and the ability to explain why a particular structure was used. A design that is occasionally brilliant but often impossible to recover may be worse than a simpler, bounded path.
+A graph should be judged by more than average output quality. Its operating quality also includes failure predictability, cost, latency, correctionability, evidence quality, human review burden, and the ability to explain why a particular structure was used. Its terminal delivery should make the assignment rationale, AI contribution, required review points, excluded alternatives, comparative improvement, and human-readable conclusion inspectable without replaying raw logs. A design that is occasionally brilliant but often impossible to recover may be worse than a simpler, bounded path.
 
 ## Non-claim
 

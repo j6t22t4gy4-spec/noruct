@@ -33,7 +33,11 @@ This separation makes it possible to say: “we have evidence,” “we have cho
 
 ## Firm Runtime — what should execute now?
 
-The Firm Runtime receives a bounded question, decision context, authority, and acceptance criteria. It chooses an execution shape, produces a result, and returns evidence and receipts. A result is not automatically treated as knowledge or policy; it becomes a candidate for review in the appropriate plane.
+The Firm Runtime receives a bounded question, decision context, authority, and acceptance criteria. It chooses an
+execution shape, produces a result, and returns a short reviewable delivery with evidence and opaque receipt references.
+The default delivery explains the completed scope, contribution boundaries, validation gaps, material alternatives,
+and next safe action; it does not replay raw prompts, transcripts, or tool logs. A result is not automatically treated
+as knowledge or policy; it becomes a candidate for review in the appropriate plane.
 
 ## The bridge is explicit
 

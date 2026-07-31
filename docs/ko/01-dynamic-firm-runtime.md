@@ -72,7 +72,7 @@ flowchart TB
   C --> E["One Employee or a minimal team\ndifferent capability only"]
   E --> A["Typed artifacts · evidence · receipts"]
   A --> M
-  M --> R["Integrated report"] --> U
+  M --> R["짧고 검토 가능한 결과"] --> U
 ```
 
 ## 요청의 생명주기
@@ -91,11 +91,12 @@ sequenceDiagram
   E-->>K: 산출물, 근거, 영수증, 불확실성
   K->>V: 선언된 검증 또는 관측 요청
   V-->>M: 통과 신호 또는 미해결 결과
-  M-->>U: 하나로 통합된 보고
+  M-->>U: 짧고 검토 가능한 하나의 보고
 ```
 
 이 순서는 의도적으로 비대칭입니다. 관리자는 제안하고, 커널은 허용 여부를 결정하며, 직원은 실행하고, 검증자는
-관측합니다. 직원의 결과가 그래프·직원 명부·예산·사용자 권한을 직접 바꾸지는 않습니다.
+관측합니다. 직원의 결과가 그래프·직원 명부·예산·사용자 권한을 직접 바꾸지는 않습니다. 최종 보고는 artifact,
+evidence, validation과 receipt에서 파생하며 전체 event stream을 재생하지 않습니다.
 
 ## 실행 형태
 
@@ -129,10 +130,12 @@ flowchart LR
 끝나면 실행 권한을 잃습니다. instance 수를 늘렸다는 이유만으로 전문성·권한·Memory·판단 독립성이 생기지 않습니다.
 독립 검증이나 관점 차이가 필요하다면 실제로 다른 validator 또는 capability를 선택해야 합니다.
 
-managed work의 planning 기본값은 **performance-first**입니다. Manager는 넓은 partition, 비교할 가치가 있는 후보,
-원인이 불명확한 실패에서 작은 replica group을 적극 검토합니다. “한 번 실행해도 끝낼 수 있음”만으로 거절하지 않고,
-기존 hard ceiling 안에서 accepted quality·coverage·진단 회복·유효 지연을 기준으로 충분성을 판단합니다. 사용자는
-single/no-parallel을 명시할 수 있으며, 어떤 preference도 permission이나 budget을 늘리지는 않습니다.
+Managed work의 planning 기본값은 **성능을 보존하는 최소 충분 구조**입니다. 이것은 최저비용 planning이 아닙니다.
+구체적인 partition, material alternative, diagnostic probe 또는 independent verification route에 명시된 한계가치가
+있다면 한 번의 기술적 완료 가능성만으로 충분하다고 보지 않습니다. 그러나 가치가 `UNKNOWN`이라는 이유로 구조를
+추가하지도 않습니다. 추가 scope, 기대효과, aggregation owner, 같은 예산의 비교방법과 중단조건을 제시하기 전에는
+strong Solo가 baseline입니다. 사용자는 single/no-parallel을 명시할 수 있으며 어떤 preference도 permission이나
+budget을 늘리지는 않습니다.
 
 ## 지속되는 것과 요청마다 끝나는 것
 
@@ -157,4 +160,5 @@ permission, budget, approval, external action, 실행 구조 변경을 검증합
 
 이 런타임은 모든 모호한 요청에 팀이 필요하다고 약속하지 않습니다. 모든 작업을 자동으로 검증할 수 있다고도,
 나중에 바뀐 그래프가 처음 그래프보다 항상 낫다고도 주장하지 않습니다. 더 좁은 약속은 분명합니다. 구조 변경은
-한정·기록·검토 가능해야 하며, 비용이 크거나 되돌리기 어려운 효과는 적용되는 권한 정책을 계속 통과해야 합니다.
+한정되고 귀속 가능해야 하며, 선택한 조직과 제외한 material alternative를 설명할 수 있어야 합니다. 검증 공백은
+보여야 하고, 비용이 크거나 되돌리기 어려운 효과는 적용되는 권한 정책을 계속 통과해야 합니다.

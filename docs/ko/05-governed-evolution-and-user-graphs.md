@@ -89,10 +89,11 @@ compiler trick이 아니라 사용자가 inspect하고 수정할 수 있는 설�
 이 선언은 hypothesis입니다. Employee를 여러 durable identity로 복제했다는 뜻도 아니며 효율이 입증되었다는 뜻도
 아닙니다. 사용자는 다른 Graph 선택과 같은 Blueprint revision 모델로 이 제안을 수정·제거·lock·fork·pin할 수 있습니다.
 
-자동 proposal과 durable reuse의 기준은 다릅니다. performance-first Manager는 현재 work에서 명확한 partition,
-candidate 또는 diagnostic opportunity를 발견하면 bounded replica group을 일찍 제안할 수 있습니다. 하지만 이것이
-검증된 조직 자산이라는 뜻은 아닙니다. 이후의 paired outcome만 reusable recommendation을 qualification할 수 있고,
-그 결과조차 스스로 authority를 바꾸지는 못합니다.
+자동 proposal과 durable reuse의 기준은 다릅니다. 최소 충분 조직을 편성하는 Manager는 direct·solo보다 결과나 위험
+경계를 더 잘 보존하는 정확한 partition, candidate 비교, diagnostic probe 또는 다른 실질 가치가 있을 때 bounded
+replica group을 제안할 수 있습니다. 가치를 모르면 Job은 solo로 남습니다. admission된 제안도 Job-local hypothesis일
+뿐이며, reusable recommendation이 되려면 이후의 matched evidence가 필요합니다. qualification 결과도 스스로 authority를
+바꾸지는 못합니다.
 
 ## Qualification은 권한을 자동 변경하지 않는다
 
@@ -100,16 +101,17 @@ candidate 또는 diagnostic opportunity를 발견하면 bounded replica group을
 단일 실행 baseline과 비교해야 합니다. evidence에는 instance 완료 개수가 아니라 aggregation overhead와 outcome
 지표가 포함되어야 합니다.
 
-한 쌍의 비교는 유용한 signal이나 regression을 찾을 수 있지만 promotion 근거로는 부족합니다. 최초 qualification
-규칙은 서로 다른 workload의 paired trial을 최소 3개 요구하고 그중 3분의 2 이상에서 value signal이 있어야 하며,
-safety, validation 또는 중요한 quality regression은 즉시 실패로 취급합니다. 긍정적인 qualification 결과도 advisory일
-뿐입니다. pinned Blueprint 변경 또는 Playbook 승격은 명시적이고 versioned이며 검토 가능한 별도 행동입니다.
+한 번의 matched pair는 `OBSERVE_ONLY`나 `EXPERIMENT_ELIGIBLE` 근거 또는 regression 신호가 될 수 있지만 자동 재사용을
+확정하지 못합니다. `AUTO_REUSE_ELIGIBLE`에는 exact matched context를 위한 사전 정의 gate가 필요합니다. gate는 lower-tail
+quality, 완전 실패와 safety failure, validation regression, communication·coordination·integration·verification·사람의
+review burden을 포함한 총비용을 검사해야 합니다. 표본 수나 유리한 다수결만으로는 충분하지 않습니다. 긍정 결과도
+advisory일 뿐이며 pinned Blueprint 변경 또는 Playbook 승격은 명시적이고 versioned이며 검토 가능한 별도 행동입니다.
 
 ## 변화가 실행 중 일어날 때
 
 실행 중 Graph가 바뀌면 이유와 비용을 숨기지 않습니다. 각 revision은 이전/다음 구조, 변경 종류, trigger evidence,
-승인 상태, 예상 영향과 관측 outcome을 남겨야 합니다. 그래야 최초 계획과 최종 구조의 차이, 변화가 품질·비용·지연에
-미친 영향을 설명할 수 있습니다.
+승인 상태, 예상 영향과 관측 outcome을 남겨야 합니다. 품질·비용·지연뿐 아니라 사람의 review burden도 기록하며, 최종
+전달물은 raw event를 재생하지 않고도 변경 이유와 제외된 주요 대안을 설명해야 합니다.
 
 ## 구조 변경의 인과 기록
 
@@ -120,7 +122,7 @@ flowchart LR
   C --> D{"사용자 모드와 커널 규칙"}
   D -->|"거절"| E["이전 그래프 유지"]
   D -->|"승인 또는 제한된 자동 적용"| F["새 불변 개정본"]
-  F --> G["실행 기록\n품질 · 비용 · 지연 · 결과"]
+  F --> G["실행 기록\n품질 · 비용 · 지연 · 검토 부담 · 결과"]
 ```
 
 공개 원칙은 모든 그래프가 바뀌어야 한다는 뜻이 아닙니다. 중요한 변경이라면 이유와 제한된 효과를 재구성할 수 있는

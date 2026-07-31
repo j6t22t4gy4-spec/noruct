@@ -25,6 +25,10 @@ flowchart LR
 정의, Employee capability contract, Graph Blueprint, benchmark, verification recipe, compatibility record가 이에
 해당합니다. 각 artifact에는 버전, 선언된 권한, 평가 근거, 호환성, rollback 경로가 있어야 합니다.
 
+공개 여부, 인기, 다운로드 수, 한 번의 좋은 실행은 조직 eligibility나 자동 배치 authority를 함께 전달하지 않습니다.
+로컬 Firm은 capability fit, 권한, 호환성, matched outcome evidence, 사람의 review burden을 다시 평가해야 합니다. 공유
+artifact는 evidence candidate이지 그대로 이동하는 결정이 아닙니다.
+
 ## 로컬에 남아야 하는 것
 
 사용자 원본 파일, private knowledge store, credential, 진행 중인 Job 상태, private conversation, 민감한 receipt,

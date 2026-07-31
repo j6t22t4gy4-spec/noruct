@@ -70,13 +70,13 @@ A versioned Blueprint may state that one Employee should receive several job-loc
 
 The declaration remains a hypothesis. It does not mean the Employee was cloned into several durable identities, and it does not prove the structure is efficient. Users can revise, remove, lock, fork, or pin the proposal through the same Blueprint revision model used for other graph choices.
 
-Automatic proposal and durable reuse have different thresholds. A performance-first Manager may propose a bounded replica group early when the current work exposes a clear partition, candidate, or diagnostic opportunity. That does not make the pattern a verified organizational asset: only later paired outcomes can qualify it for reusable recommendation, and the qualification still cannot rewrite authority on its own.
+Automatic proposal and durable reuse have different thresholds. A minimum-sufficient Manager may propose a bounded replica group when the current work exposes an exact partition, candidate comparison, diagnostic probe, or other material value that direct or solo execution cannot preserve as well. Unknown value keeps the Job solo. Even an admitted proposal is only a Job-local hypothesis: later matched evidence is required before it can become a reusable recommendation, and qualification still cannot rewrite authority on its own.
 
 ## Qualification does not rewrite authority
 
 Before a replicated structure becomes a reusable recommendation, it should be compared with a single-run baseline under identical workload, environment, Employee capability, and total hard budget. The evidence set must include aggregation overhead and outcome measures rather than counting how many instances completed.
 
-A single pair can reveal a useful signal or a regression, but it is insufficient for promotion. The initial qualification rule requires at least three paired trials on distinct workloads and value signals in at least two thirds of them; safety, validation, or material quality regressions fail fast. Even a positive qualification result is advisory: changing a pinned Blueprint or promoting a Playbook remains an explicit, versioned, reviewable act.
+A single matched pair can support `OBSERVE_ONLY` or `EXPERIMENT_ELIGIBLE`, or reveal a regression, but it cannot establish automatic reuse. `AUTO_REUSE_ELIGIBLE` requires a predefined gate for the exact matched context. That gate must examine lower-tail quality, complete and safety failure, validation regression, and total cost including communication, coordination, integration, verification, and human review burden. A sample count or favorable majority is never sufficient by itself. Even a positive result is advisory: changing a pinned Blueprint or promoting a Playbook remains an explicit, versioned, reviewable act.
 
 ## Evidence-gated evolution
 
@@ -90,7 +90,7 @@ Each proposal needs provenance, a reason, compatibility checks, and rollback. A 
 
 ## Revision is an auditable decision
 
-When a graph changes, the firm should retain the prior revision, the triggering evidence, the actor or policy that approved it, reserved and spent budget, and the observed effect on quality, cost, and delay. This is the price of letting a workflow adapt without making its result impossible to explain.
+When a graph changes, the firm should retain the prior revision, the triggering evidence, the actor or policy that approved it, reserved and spent budget, and the observed effect on quality, cost, delay, and human review burden. The terminal delivery should explain the change and the material alternative it excluded without requiring a raw event replay. This is the price of letting a workflow adapt without making its result impossible to explain.
 
 ## Causal record for a structural change
 
@@ -101,7 +101,7 @@ flowchart LR
   C --> D{"User mode and Kernel rule"}
   D -->|"reject"| E["Prior graph remains authoritative"]
   D -->|"approve or bounded automatic"| F["New immutable revision"]
-  F --> G["Run record\nquality · cost · delay · outcome"]
+  F --> G["Run record\nquality · cost · delay · review burden · outcome"]
 ```
 
 The public principle is not that every graph must mutate. It is that any material mutation must be reconstructible as a decision with a reason and a bounded effect.

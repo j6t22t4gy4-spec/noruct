@@ -75,6 +75,20 @@ Knowledge Runtime은 기록된 맥락 손실, 근거 없는 확신, 장기 작�
 따라서 중요한 경계에서는 사용자가 계속 판단합니다. AI는 선택지, 근거, 반론, 실행 준비와 검증 결과를 더
 잘 제공할 수 있지만 Mission, Authority, Accountability를 대신 소유하지 않습니다.
 
+## 메커니즘, 전달물, 현실 결과는 다르다
+
+| 주장 층위 | 무엇이 입증하는가 | 무엇까지 입증하지는 않는가 |
+| --- | --- | --- |
+| Mechanism proof | 선언한 contract와 failure path가 설계대로 작동 | 산출물이 acceptance를 통과하거나 현실에 도움이 됨 |
+| Delivery proof | artifact와 evidence가 선언한 acceptance·verification을 통과 | 지연된 외부 outcome이 실제로 발생함 |
+| Outcome proof | matched 외부 관측이나 이후의 현실 signal이 의도한 효과를 지지 | 같은 구조가 다른 맥락에도 일반화됨 |
+
+terminal delivery 자체도 인식론적 artifact입니다. `UNKNOWN`, `NOT_RUN`, `OUTCOME_NOT_ESTABLISHED`를 구분해서
+표시해야 합니다. [조직은 의사결정 구조다](09-organization-as-decision-architecture.md)가 제시한 배치·기여·검토·대안·
+비교·결론 질문에 artifact, evidence, validation, 제한된 receipt로 답해야 하며 hidden reasoning이나 raw prompt,
+transcript, tool log 전체를 쏟아내서는 안 됩니다. mechanism 성공은 delivery 성공이 아니고, delivery 성공은 현실
+outcome 성공이 아닙니다.
+
 ## 한계와 대응의 표
 
 | 한계 | 런타임이 할 수 있는 일 | 주장하면 안 되는 일 |

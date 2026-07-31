@@ -47,7 +47,9 @@ Intent & Decision은 목표, 우선순위, 제약, 결정, 보류, 책임자, �
 ## Firm Runtime — What should we execute now?
 
 Firm Runtime은 Manager, Employee와 Firm Kernel이 현재의 bounded task를 실행하는 plane입니다. Knowledge에서 필요한
-근거를 받고 Intent의 제약을 존중하지만, 전체 지식이나 목표를 자기 권한으로 바꾸지 않습니다.
+근거를 받고 Intent의 제약을 존중하지만, 전체 지식이나 목표를 자기 권한으로 바꾸지 않습니다. 결과는 raw prompt,
+transcript나 tool log의 재생이 아니라 완료 범위, 실제 기여 경계, 검증 공백, material alternative와 다음 안전한
+행동을 설명하는 짧은 reviewable delivery와 opaque receipt reference로 반환합니다.
 
 ## 사용자 권한
 

@@ -12,6 +12,11 @@ Noruct is not a collection of disposable agents. It is a concept for a persisten
 
 The thesis has three parts. A user should not need to draw an agent tree before receiving useful work. A runtime should not mistake a temporary task plan for durable organizational knowledge. And no amount of model capability gives a system the right to own the user's values, irreversible authority, or accountability.
 
+Its operating consequence is a **minimum sufficient organization**: direct or strong solo execution remains the
+baseline when added value is unknown, while every additional Employee, execution instance, Manager step, or reviewer
+must name its material contribution and integration boundary. The result should end in a short, reviewable delivery,
+not require a person to reconstruct the conclusion from raw logs.
+
 ```mermaid
 flowchart TB
   U["User or organization\nmission · authority · accountability"] --> I["One firm interface"]

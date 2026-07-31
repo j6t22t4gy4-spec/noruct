@@ -36,9 +36,9 @@ Persistent Employee
 - validator와 acceptance method
 - 검증된 성과·비용·실패 이력
 
-이름, task label, role prompt만 다른 instance는 다른 전문 Employee가 아닙니다. acceptance 품질·coverage·진단·지연까지
-고려해 한 명이 충분하면 team을 만들지 않습니다. 단순히 완료 가능하다는 이유만으로 가치 있는 bounded replica를
-억제하지는 않습니다.
+이름, task label, role prompt만 다른 instance는 다른 전문 Employee가 아닙니다. 추가 구조의 가치가 `UNKNOWN`이면
+strong Solo를 기본으로 합니다. 단순 완료 가능성만으로 구체적인 한계가치를 가진 bounded replica를 억제하지는
+않지만, 명시된 한계가치 없이 team이나 replica를 만들지도 않습니다.
 
 ## 받는 것 · 사용하는 것 · 반환하는 것
 
@@ -164,6 +164,10 @@ Employee identity와 Employee 실행 instance는 서로 다른 객체입니다.
 - **Candidate:** 선언된 acceptance method로 비교할 수 있는 bounded 대안이 있을 때
 - **Diagnostic:** 특정한 미해결 불확실성을 줄이는 독립 probe가 필요할 때
 
+각 추가 instance에는 exact scope, 기대효과, 선언된 aggregation owner, 바뀌지 않는 hard ceiling과 중단조건이
+필요합니다. 기술적으로 한 번에 끝낼 수 있다는 사실만으로 충분성을 증명할 수는 없지만, 기대효과가 불명확하다는
+사실도 복제의 근거가 될 수 없습니다.
+
 instance는 Employee identity, Skill, Memory policy, permission 또는 roster를 수정할 수 없습니다. 서로 대화해 인위적인
 다양성을 만들지 않으며, 산출물은 선언된 aggregation task로 모입니다. aggregation 비용도 Job 예산에 포함됩니다.
 
@@ -175,3 +179,7 @@ instance는 Employee identity, Skill, Memory policy, permission 또는 roster를
 직원 차이는 입출력 경계에서 실제로 보일 때만 신뢰할 수 있습니다. 허용된 도구, 절차, 기억 범위, 검증자, 실행 환경,
 측정된 결과 이력 중 적어도 하나가 달라야 합니다. 같은 고정 입력을 받은 이름만 다른 실행체는 두 번째 직원이 아니라
 실행 복제본입니다.
+
+최종 전달은 왜 이 Employee를 선택했는지, 어떤 material capability 차이가 실제로 사용됐는지, compatible alternative를
+왜 제외했는지도 설명해야 합니다. 차이가 사용되지 않았다면 실행 뒤에 전문성 이야기를 만들어내지 않고 그대로
+표시해야 합니다.

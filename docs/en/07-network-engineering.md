@@ -21,6 +21,8 @@ flowchart LR
 
 The useful unit of sharing is a governed, versioned artifact: a skill package, a tool adapter definition, an employee capability contract, a graph blueprint, a benchmark, a verification recipe, or a compatibility record. Each artifact should expose provenance, declared permissions, version, evaluation evidence, and rollback path.
 
+Publication, popularity, download count, or one favorable run does not carry organizational eligibility or automatic staffing authority. The local firm must re-evaluate capability fit, authority, compatibility, matched outcome evidence, and human review burden. A shared artifact is an evidence candidate, not a decision that travels intact.
+
 ## What must remain local
 
 Raw user files, private knowledge stores, credentials, active job state, private conversations, sensitive receipts, and unstated organizational context are not capability artifacts. A network must never treat them as the price of participation.

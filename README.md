@@ -8,7 +8,11 @@ The public documentation is a concept-paper series. It explains the product thes
 
 > **Workflows are temporary. Organizational capability compounds.**
 
-For managed work, Noruct plans performance-first rather than cost-minimum. One Employee remains the baseline, but technical feasibility alone does not suppress bounded replication: independent partitions, candidate paths, or diagnostic probes can justify two to four job-local instances of that same Employee under the existing hard budget. Those instances are not new employees, and reusable value must still be demonstrated against a single-run baseline under the same total budget.
+For managed work, Noruct plans for the **minimum sufficient organization**, not the cheapest run and not the largest
+parallel structure. One Employee remains the baseline when additional value is unknown. Independent partitions,
+materially different candidate paths, diagnostic probes, or independent verification may justify bounded additional
+execution under the same hard budget, but the proposal must state its expected value, integration path, and stopping
+condition. Reuse still requires matched evidence that includes coordination and human review burden.
 
 Start with the [English canonical concept map](docs/en/README.md). The Korean documentation is a maintained translation for Korean readers.
 

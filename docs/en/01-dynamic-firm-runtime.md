@@ -63,10 +63,12 @@ sequenceDiagram
   E-->>K: Artifact, evidence, receipts, uncertainty
   K->>V: Deterministic or declared verification
   V-->>M: Acceptance signal or unresolved result
-  M-->>U: One integrated report
+  M-->>U: One short, reviewable report
 ```
 
-The sequence is deliberately asymmetric. The Manager may propose; the Kernel admits; Employees execute; validators observe. An Employee result does not directly rewrite the graph, the roster, the budget, or the user's authority.
+The sequence is deliberately asymmetric. The Manager may propose; the Kernel admits; Employees execute; validators
+observe. An Employee result does not directly rewrite the graph, the roster, the budget, or the user's authority. The
+final report is derived from artifacts, evidence, validation, and receipts; it is not a replay of the full event stream.
 
 ## Direct, solo, or team execution
 
@@ -95,7 +97,12 @@ flowchart LR
 
 This is execution replication, not roster growth. It does not create independent expertise, permission, memory, or judgment merely by multiplying instances. If diversity or independent verification is required, the graph must select a materially different capability or validation method.
 
-For managed work, the planning preference is **performance-first**. The Manager actively considers a small replica group for broad partitions, valuable alternatives, and unclear failure causes. “One run can probably finish” is not by itself a rejection criterion; sufficiency is judged against expected accepted quality, coverage, diagnostic recovery, and useful latency under the existing hard ceiling. A user can explicitly request single/no-parallel execution, and neither preference increases permissions or budget.
+For managed work, the planning preference is **minimum-sufficient and performance-preserving**. This is not
+cost-minimum planning: a technically feasible run may still be insufficient when a concrete partition, material
+alternative, diagnostic probe, or independent verification route has stated marginal value. But unknown value does not
+admit more structure. Strong Solo remains the baseline unless the proposal can name the additional scope, expected
+benefit, aggregation owner, same-budget comparison, and stopping condition. A user can explicitly request
+single/no-parallel execution, and no preference increases permissions or budget.
 
 ## Manager and Kernel
 
@@ -113,4 +120,8 @@ Users do not need to design this structure before asking for work. They can neve
 
 ## Boundary conditions
 
-The runtime does not promise that every ambiguous request deserves a team, that every task can be verified automatically, or that a later graph is necessarily better than the first. It promises a narrower discipline: structural changes are bounded, attributable, and reviewable; costly or irreversible effects remain governed by the applicable authority policy.
+The runtime does not promise that every ambiguous request deserves a team, that every task can be verified
+automatically, or that a later graph is necessarily better than the first. It promises a narrower discipline:
+structural changes are bounded and attributable; the selected organization and excluded material alternatives can be
+explained; validation gaps remain visible; and costly or irreversible effects remain governed by the applicable
+authority policy.
