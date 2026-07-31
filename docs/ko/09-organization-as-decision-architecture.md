@@ -229,8 +229,8 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 이 개념문서의 배경이 된 두 편의 한국어 장문 문헌검토를 별도로 공개한다. 원문의 논증과 문헌 지도를 보존하되,
 원문 주장을 제품 권위로 바꾸지 않는다.
 
-- [조직은 직책이 아니라 의사결정 구조다](../literature/organization-as-decision-structure.ko.md)
-- [인간 조직론에서 AI 에이전트 조직론으로](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+- [AI 에이전트 조직 설계 원리](../literature/organization-as-decision-structure.ko.md)
+- [LLM 멀티에이전트 운영 구조와 설계](../literature/from-human-organization-to-ai-agent-organization.ko.md)
 
 ## 최종 입장
 

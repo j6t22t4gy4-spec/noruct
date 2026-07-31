@@ -235,8 +235,8 @@ owners continue to decide.
 This concept paper is derived from two Korean-language long-form reviews. They are published separately to preserve
 their original arguments and literature maps without turning source claims into product authority:
 
-- [Organization Is Decision Structure, Not Titles](../literature/organization-as-decision-structure.ko.md)
-- [From Human Organization Theory to AI Agent Organization Theory](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+- [AI Agent Organization Design Principles (Korean)](../literature/organization-as-decision-structure.ko.md)
+- [LLM Multi-Agent Operating Structures and Design (Korean)](../literature/from-human-organization-to-ai-agent-organization.ko.md)
 
 ## Final position
 

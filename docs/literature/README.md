@@ -1,4 +1,4 @@
-# 조직과 AI 에이전트 문헌검토
+# AI 에이전트 조직 설계 문헌
 
 이 디렉터리는 Noruct 개념문서의 배경이 된 한국어 문헌검토 원고를 공개한다. 제품 규범이나 현재 구현 설명이
 아니며, 인간 조직설계·조직경제학·전통적 다중에이전트 시스템·LLM 멀티에이전트 연구를 연결한 이론 통합형
@@ -8,9 +8,9 @@
 Markdown 서식을 유지하면서 두 문서의 책임을 **공통 이론**과 **AI 고유 확장**으로 나눴다. 같은 이론과
 설계 명제를 두 번 설명하지 않으며, 확장 문서는 공통 문서를 명시적으로 참조한다.
 
-1. [조직은 직책이 아니라 의사결정 구조다](organization-as-decision-structure.ko.md)
+1. [AI 에이전트 조직 설계 원리](organization-as-decision-structure.ko.md)
    — 공통 이론의 본문. 조직을 과업·정보·권한·오류·검증·학습의 구조로 분석하고 15개 설계 명제를 도출한다.
-2. [인간 조직론에서 AI 에이전트 조직론으로](from-human-organization-to-ai-agent-organization.ko.md)
+2. [LLM 멀티에이전트 운영 구조와 설계](from-human-organization-to-ai-agent-organization.ko.md)
    — AI 고유 확장. LLM 실험의 충돌, 시스템 성숙도, 확장 그래프, 통신 보안, 제한된 자기구성과 조직
    컴파일러를 다룬다.
 
