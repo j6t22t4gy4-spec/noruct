@@ -18,8 +18,9 @@ release, and the status paper deliberately records both implemented paths and un
 
 The [organization-as-decision-architecture paper](docs/en/09-organization-as-decision-architecture.md) explains why
 titles, agent counts, and communication graphs are insufficient descriptions of an AI firm. It separates task,
-assignment, information, communication, authority, verification, and learning, then identifies the organizational
-observability Noruct still needs.
+assignment, information, communication, authority, verification, and learning. It also explains why Noruct should use
+the minimum sufficient organization and deliver a short, evidence-bound explanation instead of treating more agents or
+more logs as progress.
 
 The two Korean-language [source literature reviews](docs/literature/README.md) behind that paper are published
 separately in their original long-form structure. Their citations and recent research claims remain source-paper

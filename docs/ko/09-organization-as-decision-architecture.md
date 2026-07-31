@@ -116,6 +116,76 @@ Company constitution
 Noruct는 위험, 권한과 검증 가능성에는 의도적으로 강합니다. 반면 오류 상관성, 정보 분산도, 문맥 결합도와
 조정 지연을 예측하는 능력은 상대적으로 약합니다. 안전한 graph admission은 완성된 조직 최적화와 다릅니다.
 
+## 최소 충분 조직을 사용합니다
+
+과업 진단은 정당화할 수 있는 가장 복잡한 구조를 고르는 일이 아닙니다. **허용 가능한 위험 안에서 Work Order를
+충족할 수 있는 가장 작은 구조**를 선택하는 일입니다.
+
+Evidence가 약하거나 중요한 과업 특성이 `UNKNOWN`이면 strong Solo가 기본입니다. Employee, replica, Manager 단계나
+reviewer를 추가하려면 독립적으로 분해 가능한 작업, 실제로 분산된 정보·capability, 다른 verification path,
+handoff·integration 비용보다 큰 지연감소처럼 material reason이 필요합니다.
+
+따라서 조직 선택은 다음 네 상태를 구분해야 합니다.
+
+| 상태 | 의미 |
+|---|---|
+| `SOLO_REQUIRED` | 근거가 약하거나 부정적이거나 결합도가 높아 추가 구조를 쓰지 않음 |
+| `EXPERIMENT_ELIGIBLE` | 제한된 비교는 정당화되지만 기본값은 아님 |
+| `OBSERVE_ONLY` | 기존 episode를 평가할 수 있지만 자동 staffing에는 사용하지 않음 |
+| `AUTO_REUSE_ELIGIBLE` | matched outcome gate가 같은 evidence-bound context에서만 재사용을 지지함 |
+
+반복 실행만으로 자동 재사용할 수 없습니다. 승격에는 lower-tail quality, complete·safety failure, total cost와 사람
+review burden을 포함한 matched baseline이 필요합니다. Outcome을 확립할 수 없으면 정직한 상태는
+`OUTCOME_NOT_ESTABLISHED`입니다.
+
+그 결과인 organization plan은 과업·배치·정보·산출물·권한·검증·학습 경로의 frozen read-only projection입니다.
+새 mutable authority가 되는 대신 원래 Work Order, Roster, ActionPolicy, Job Graph, budget과 validator revision을
+가리킵니다.
+
+## 추론을 늘리기 전에 실행단위를 닫습니다
+
+더 안전한 실행단위는 model에게 조심하라고 요구하는 큰 prompt가 아닙니다. 다음을 명시하는 닫힌 contract입니다.
+
+- 과업 하나와 완료목표 하나
+- 정확한 input revision 또는 evidence digest
+- 범위 안의 file·artifact·tool
+- 범위 밖의 authority·기능·target
+- primary output 하나와 관찰 가능한 acceptance 조건
+- focused verification 하나
+- 명시적인 실패·중단·승격 조건
+
+Work Order 또는 구현목표 하나에 여러 순차 실행단위가 필요할 수 있습니다. 각 단위는 authority boundary 하나,
+primary output 하나, focused check 하나만 소유합니다. 경계 밖 실패는 인접 system을 탐색·수정할 권한으로 사용하지
+않고 보고합니다.
+
+이 구조는 불명확한 task를 더 많은 context, retry 또는 model reasoning 뒤에 숨기지 못하게 합니다. 먼저 task
+contract·fixture·verification boundary를 개선해야 합니다. 같은 bounded 문제가 여전히 어렵거나, authority가
+충돌하거나, 작업을 안전하게 나눌 수 없거나, 사람이 external·legal·financial·release authority를 행사해야 할 때만
+승격합니다.
+
+## 실행 재생이 아니라 설명을 전달합니다
+
+Append-only receipt와 audit event는 재구성에 필요하지만 기본 review surface로는 부족합니다. 모든 terminal
+delivery는 bounded evidence에서 짧고 솔직한 설명을 만들고 다음 여섯 질문에 답해야 합니다.
+
+1. 왜 이 Employee 또는 실행구조를 선택했는가?
+2. AI가 실제로 작성·제안·선택·실행·통합한 부분은 어디인가?
+3. 사람이 반드시 확인할 최대 세 부분은 무엇인가?
+4. 어떤 material alternative가 왜 제외됐는가?
+5. Matched baseline보다 실제로 나아졌는가, 아니면 아직 모르는가?
+6. 사람이 취할 결론과 다음 안전한 행동은 무엇인가?
+
+설명은 좋은 PR description처럼 요청 범위, 선택한 접근, 실제 기여 경계, review focus, 수행한 검증, material
+alternative, 비교 evidence, 남은 risk와 다음 행동을 담아야 합니다. Raw prompt, transcript, unbounded tool output이나
+hidden reasoning을 재생해서는 안 됩니다.
+
+근거가 없으면 `UNKNOWN`, 검증을 실행하지 않았으면 `NOT_RUN`, 유효한 비교가 없으면
+`OUTCOME_NOT_ESTABLISHED`라고 표시합니다. 그럴듯한 사후 이야기는 receipt를 대신할 수 없습니다.
+
+Review burden도 조직 성능입니다. Review wait, 다시 연 evidence, rework, 사용되지 않은 sub-artifact, 중복 source
+read, false rejection, independent method만 발견한 결함은 execution·communication·integration과 같은 total cost에
+포함해야 합니다.
+
 ## Manager는 예외를 압축해야 합니다
 
 Manager는 조직 상태를 변환할 때만 가치가 있습니다.
@@ -200,14 +270,14 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 
 다음 조직적 진화는 자율성 확대보다 관찰성 개선이 먼저입니다.
 
-1. 기존 authority에서 일곱 구조의 읽기 전용 projection을 만듭니다.
-2. Handoff를 의미 보존 계약으로 보고 hidden reasoning을 저장하지 않으면서 누락 맥락을 관찰합니다.
-3. 정적인 capability 차이에서 실제 오류 다양성과 검증 기여로 이동합니다.
-4. Manager를 중앙 지능이 아니라 예외 경제로 평가합니다.
-5. Team, replica, independent review를 선택할 때 bounded 가치 가설을 남깁니다.
-6. 실행 usage와 함께 통신·통합·거버넌스·예외 비용을 귀속합니다.
-7. 오래 지속되는 capability evidence에 freshness와 confidence decay를 둡니다.
-8. active·superseded·incompatible 평가를 구분하는 evidence lineage를 유지합니다.
+1. 기존 authority에서 보수적인 fit profile과 frozen read-only organization plan을 만듭니다.
+2. 각 Employee를 선택한 이유, AI의 실제 기여, 제외한 material alternative를 기록합니다.
+3. 사람이 확인할 최대 세 우선순위를 포함한 여섯 질문 전달을 만듭니다.
+4. Handoff를 의미 보존 계약으로 보고 hidden reasoning을 저장하지 않으면서 누락 맥락을 관찰합니다.
+5. 정적인 capability 차이에서 실제 오류 다양성과 검증 기여로 이동합니다.
+6. Manager를 중앙 지능이 아니라 예외 경제로 평가합니다.
+7. 실행 usage와 함께 통신·통합·거버넌스·예외·사람 review 비용을 귀속합니다.
+8. 오래 지속되는 capability evidence에 freshness와 confidence decay를 두고 명시적 evaluation lineage를 유지합니다.
 9. 큰 실행형태 비교를 information·communication·verifier·selector ablation으로 확장합니다.
 
 이 방향은 하나의 mutable organization graph를 요구하지 않습니다. Projection은 관찰만 하고 기존 authority owner가
@@ -221,6 +291,8 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 - Manager가 자신의 권한이나 불가역 effect를 승인하는 것
 - task·data·permission·verification·learning을 하나의 mutable graph로 합치는 것
 - hidden reasoning을 조직 기억으로 노출하는 것
+- 정의되지 않은 task를 더 많은 context·retry·reasoning으로 보완하는 것
+- raw log를 사람이 읽을 결론으로 제시하는 것
 - 한 번의 좋은 campaign으로 workflow나 Employee를 승격하는 것
 - 모든 graph·replica·pipeline을 조직이라고 부르는 것
 
@@ -239,5 +311,5 @@ information, typed artifact, deterministic authority, 독립 검증 경로와 ev
 더 많은 agent나 계층이 없다는 것이 아닙니다. 정보가 어디에서 손실됐는지, 예외가 어디에 쌓였는지, 검증이 실제로
 독립적이었는지, 총조정비용 뒤에도 조직 잉여가 남았는지를 한 화면에서 설명하는 능력입니다.
 
-따라서 다음 단계는 더 큰 조직이 아닙니다. 자신의 의사결정 구조를 관찰하고, 근거가 정당화하는 Job-local 구조만
-바꿀 수 있는 회사입니다.
+따라서 다음 단계는 더 큰 조직이 아닙니다. 최소 충분 조직을 선택하고 자신의 의사결정 구조를 관찰하며, 근거가
+정당화하는 Job-local 구조만 바꾸고, 사람이 검토할 수 있는 형식으로 결과를 설명하는 회사입니다.

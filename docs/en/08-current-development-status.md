@@ -19,6 +19,7 @@ The local development runtime currently provides:
 - material Employee capability profiles rather than role-name-only specialization, plus bounded same-Employee execution
   replicas for partitions, candidates, or diagnostics;
 - typed task handoffs, a single final result owner, bounded retry/reroute/insert paths, and append-only Job audit;
+- a bounded terminal execution-summary foundation and content-free receipt projections for operator review;
 - user-governed Graph Blueprints with preview, constraints, revisions, forks, pins, and retained revision lineage;
 - separate local Knowledge, Intent/Decision, and Firm state with bounded evidence bridges; and
 - versioned Skill, Workflow, and Roster Patch proposals that require their own review and application lifecycle.
@@ -56,6 +57,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 | Area | Current position |
 | --- | --- |
 | Manager and team value | Functional architecture, still under outcome qualification. |
+| Organization fit and reviewable delivery | Capability-based assignment, bounded execution, terminal-summary, and receipt foundations exist. The immutable fit profile, frozen organization plan, complete six-question delivery, and human review-burden study are not complete product claims. |
 | General semantic replanning | Bounded typed paths exist; broad autonomous rewriting is not claimed. |
 | Graph mutation and recovery | Revision lineage and narrow receipt-bound continuation exist; in-flight or effectful replay is not silently resumed. |
 | Knowledge | Local-first raw-source intake and bounded evidence use exist; extraction is not automatic truth. |

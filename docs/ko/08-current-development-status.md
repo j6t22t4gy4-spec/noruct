@@ -18,6 +18,7 @@
 - role 이름만 다른 전문화 대신 material Employee capability profile, 그리고 partition·candidate·diagnostic을 위한
   제한된 same-Employee execution replica
 - typed task handoff, 하나의 final result owner, 제한된 retry/reroute/insert 경로, append-only Job audit
+- operator review를 위한 bounded terminal execution-summary 기반과 content-free receipt projection
 - preview·constraint·revision·fork·pin과 retained revision lineage를 갖는 사용자 통제 Graph Blueprint
 - bounded evidence bridge로 연결되지만 상태 권위는 분리된 local Knowledge, Intent/Decision, Firm
 - 별도 review와 apply lifecycle을 요구하는 versioned Skill·Workflow·Roster Patch proposal
@@ -53,6 +54,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | 영역 | 현재 위치 |
 | --- | --- |
 | Manager와 team 가치 | 기능 구조는 존재하지만 outcome qualification 진행 중 |
+| 조직 적합성과 검토 가능한 전달 | Capability 기반 배치, bounded 실행, terminal summary와 receipt 기반은 존재합니다. Immutable fit profile, frozen organization plan, 완전한 여섯 질문 전달과 사람 review-burden 연구는 아직 완성된 제품 주장이 아닙니다. |
 | 일반 semantic replanning | 제한된 typed path는 있으나 광범위한 자율 재작성은 주장하지 않음 |
 | Graph mutation과 recovery | revision lineage와 좁은 receipt-bound continuation은 있으나 in-flight/effectful replay는 자동 재개하지 않음 |
 | Knowledge | local-first raw-source intake와 bounded evidence 사용은 존재하지만 extraction은 자동 진실이 아님 |

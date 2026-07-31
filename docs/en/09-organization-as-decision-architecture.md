@@ -118,6 +118,78 @@ Noruct is intentionally stronger at risk, authority, and verifiability than at e
 dispersion, context coupling, and coordination latency. A safe graph admission mechanism is not yet a complete
 organization optimizer.
 
+## Use the minimum sufficient organization
+
+The task diagnosis should not select the most elaborate structure it can justify. It should select the **smallest
+structure that can satisfy the Work Order with acceptable risk**.
+
+Strong Solo is the default when evidence is weak or important task properties are unknown. Additional Employees,
+replicas, Manager steps, or reviewers require a material reason such as independently decomposable work, genuinely
+distributed information or capability, a different verification path, or a latency gain that exceeds handoff and
+integration cost.
+
+Organization selection should therefore distinguish four states:
+
+| State | Meaning |
+|---|---|
+| `SOLO_REQUIRED` | Evidence is weak, negative, or too coupled for additional structure |
+| `EXPERIMENT_ELIGIBLE` | A bounded comparison is justified, but the structure is not a default |
+| `OBSERVE_ONLY` | Existing episodes may be evaluated but must not drive automatic staffing |
+| `AUTO_REUSE_ELIGIBLE` | A matched outcome gate supports reuse only in the same evidence-bound context |
+
+Repeated execution is not sufficient for automatic reuse. Promotion requires a matched baseline that includes
+lower-tail quality, complete and safety failure, total cost, and human review burden. If the comparison cannot establish
+an outcome, the honest state is `OUTCOME_NOT_ESTABLISHED`.
+
+The resulting organization plan is a frozen, read-only projection of task, assignment, information, artifact,
+authority, verification, and learning routes. It references the original Work Order, Roster, ActionPolicy, Job Graph,
+budget, and validator revisions rather than becoming a new mutable authority.
+
+## Bound each execution unit before increasing reasoning
+
+A safer execution unit is not a large prompt that asks a model to be careful. It is a closed contract that identifies:
+
+- one task and one completion goal;
+- exact input revisions or evidence digests;
+- the files, artifacts, and tools that are in scope;
+- the authority, features, and targets that are out of scope;
+- one primary output and observable acceptance condition;
+- one focused verification; and
+- explicit failure, stop, and escalation conditions.
+
+One Work Order or implementation objective may require several sequential execution units. Each unit should own one
+authority boundary, one primary output, and one focused check. A failure outside that boundary is reported rather than
+used as permission to explore or modify adjacent systems.
+
+This prevents an unclear task from being hidden behind more context, more retries, or more model reasoning. The firm
+should first improve the task contract, fixture, and verification boundary. It should escalate only when the same
+bounded problem remains difficult, when authorities conflict, when the work cannot be split safely, or when a person
+must exercise external, legal, financial, or release authority.
+
+## Deliver an explanation, not a replay
+
+Append-only receipts and audit events are necessary for reconstruction, but they are not a useful default review
+surface. Every terminal delivery should derive a short, honest explanation from bounded evidence and answer six
+questions:
+
+1. Why was this Employee or execution structure selected?
+2. What did AI actually author, propose, select, execute, and integrate?
+3. What are the maximum three things a person must review?
+4. Which material alternatives were excluded, and why?
+5. Did the organization improve on a matched baseline, or is that still unknown?
+6. What conclusion and next safe action should a person take?
+
+The explanation should resemble a good pull-request description: requested scope, selected approach, actual
+contribution boundaries, review focus, validation performed, material alternatives, comparative evidence, remaining
+risk, and the next action. It should not reproduce raw prompts, transcripts, unbounded tool output, or hidden reasoning.
+
+If evidence is absent, the explanation says `UNKNOWN`. If a check was not executed, it says `NOT_RUN`. If no valid
+comparison exists, it says `OUTCOME_NOT_ESTABLISHED`. A plausible retrospective story is not a substitute for a receipt.
+
+Review burden is part of organizational performance. Review wait, reopened evidence, rework, unused sub-artifacts,
+duplicate source reads, false rejection, and defects uniquely found by an independent method belong in the same total
+cost view as execution, communication, and integration.
+
 ## Manager as exception compression
 
 A Manager is useful only when it transforms organizational state.
@@ -206,14 +278,14 @@ relationship.
 
 The next organizational advance is better observation before greater autonomy.
 
-1. Derive a read-only projection of the seven structures from existing authorities.
-2. Treat handoff as a meaning-preservation contract and observe missing context without retaining hidden reasoning.
-3. Move from static capability difference to measured error diversity and verification contribution.
-4. Evaluate the Manager as an exception economy rather than a central intelligence.
-5. Record a bounded value hypothesis whenever Team, replica, or independent review is selected.
-6. Attribute communication, integration, governance, and exception cost alongside execution usage.
-7. Add freshness and confidence decay to long-lived capability evidence.
-8. Keep an explicit evidence lineage that distinguishes active, superseded, and incompatible evaluation results.
+1. Derive a conservative fit profile and frozen read-only organization plan from existing authorities.
+2. Record why each Employee was selected, what AI actually contributed, and which material alternatives were excluded.
+3. Produce the six-question delivery with a maximum of three human review priorities.
+4. Treat handoff as a meaning-preservation contract and observe missing context without retaining hidden reasoning.
+5. Move from static capability difference to measured error diversity and verification contribution.
+6. Evaluate the Manager as an exception economy rather than a central intelligence.
+7. Attribute communication, integration, governance, exception, and human review cost alongside execution usage.
+8. Add freshness and confidence decay to long-lived capability evidence and preserve explicit evaluation lineage.
 9. Extend broad execution-shape comparisons with controlled ablations of information, communication, verifier, and selector.
 
 This direction does not require a single mutable organization graph. The projection observes; the existing authority
@@ -227,6 +299,8 @@ owners continue to decide.
 - allowing a Manager to approve its own authority or irreversible effects;
 - merging task, data, permission, verification, and learning into one mutable graph;
 - exposing hidden reasoning as organizational memory;
+- compensating for an undefined task with more context, retries, or reasoning;
+- presenting raw logs as the human-readable conclusion;
 - promoting a workflow or Employee from one favorable campaign;
 - calling every graph, replica, or pipeline an organization.
 
@@ -246,5 +320,6 @@ evolution. Its weaker area is not the absence of more agents or hierarchy. It is
 where information was lost, where exceptions accumulated, whether verification was genuinely independent, and whether
 the organization created surplus after total coordination cost.
 
-The next step is therefore not a larger organization. It is a firm that can observe its own decision architecture and
-change only the job-local structure that evidence justifies.
+The next step is therefore not a larger organization. It is a firm that selects the minimum sufficient organization,
+observes its decision architecture, changes only the job-local structure that evidence justifies, and explains the
+result in a form a person can review.

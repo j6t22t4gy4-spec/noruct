@@ -37,7 +37,7 @@ The documents move from purpose to operating model, then from execution to knowl
 | 06 | [Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) | What can the firm know, decide, and safely verify? | Makes uncertainty and delayed outcomes first-class. |
 | 07 | [Network Engineering](07-network-engineering.md) | How can reusable capability travel without taking user authority with it? | Defines optional, local-first capability exchange. |
 | 08 | [Current Development Status](08-current-development-status.md) | Which parts are implemented, experimental, or not yet claimed? | Separates the concept paper from present development evidence. |
-| 09 | [Organization as Decision Architecture](09-organization-as-decision-architecture.md) | What makes an agent workflow an organization, and what should improve next? | Separates task, assignment, information, communication, authority, verification, and learning. |
+| 09 | [Organization as Decision Architecture](09-organization-as-decision-architecture.md) | What makes an agent workflow an organization, how small should it be, and what should it explain? | Separates task, assignment, information, communication, authority, verification, and learning; then defines minimum sufficient organization and reviewable delivery. |
 
 Read in order for the full argument. Readers interested in one question can begin with the matching paper, but the claims about graph design depend on the Employee and authority model, and the claims about evolution depend on epistemic and outcome control.
 
