@@ -230,6 +230,14 @@ owners continue to decide.
 - promoting a workflow or Employee from one favorable campaign;
 - calling every graph, replica, or pipeline an organization.
 
+## Source literature reviews
+
+This concept paper is derived from two Korean-language long-form reviews. They are published separately to preserve
+their original arguments and literature maps without turning source claims into product authority:
+
+- [Organization Is Decision Structure, Not Titles](../literature/organization-as-decision-structure.ko.md)
+- [From Human Organization Theory to AI Agent Organization Theory](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+
 ## Final position
 
 Noruct already has the conceptual ingredients of a decision-structured firm: persistent identities, frozen assignments,

@@ -224,6 +224,14 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 - 한 번의 좋은 campaign으로 workflow나 Employee를 승격하는 것
 - 모든 graph·replica·pipeline을 조직이라고 부르는 것
 
+## 문헌검토 원문
+
+이 개념문서의 배경이 된 두 편의 한국어 장문 문헌검토를 별도로 공개한다. 원문의 논증과 문헌 지도를 보존하되,
+원문 주장을 제품 권위로 바꾸지 않는다.
+
+- [조직은 직책이 아니라 의사결정 구조다](../literature/organization-as-decision-structure.ko.md)
+- [인간 조직론에서 AI 에이전트 조직론으로](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+
 ## 최종 입장
 
 Noruct에는 의사결정 구조를 가진 회사의 개념적 재료가 이미 있습니다. 지속 identity, frozen assignment, bounded

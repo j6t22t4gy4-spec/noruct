@@ -21,6 +21,10 @@ titles, agent counts, and communication graphs are insufficient descriptions of 
 assignment, information, communication, authority, verification, and learning, then identifies the organizational
 observability Noruct still needs.
 
+The two Korean-language [source literature reviews](docs/literature/README.md) behind that paper are published
+separately in their original long-form structure. Their citations and recent research claims remain source-paper
+claims rather than independently verified Noruct product evidence.
+
 Capability intake and recursive improvement use separate trust lanes. External Tools, Skills, Plugins, and other
 Network artifacts remain pinned to an exact reviewed version and digest and are never replaced automatically. Only a
 locally derived artifact with no Network provenance may advance for a future Job when the user has selected
