@@ -16,6 +16,11 @@ For an explicit distinction between the concept and the current development impl
 [current development status](docs/en/08-current-development-status.md). Noruct is not yet a completed commercial
 release, and the status paper deliberately records both implemented paths and unqualified hypotheses.
 
+The [organization-as-decision-architecture paper](docs/en/09-organization-as-decision-architecture.md) explains why
+titles, agent counts, and communication graphs are insufficient descriptions of an AI firm. It separates task,
+assignment, information, communication, authority, verification, and learning, then identifies the organizational
+observability Noruct still needs.
+
 Capability intake and recursive improvement use separate trust lanes. External Tools, Skills, Plugins, and other
 Network artifacts remain pinned to an exact reviewed version and digest and are never replaced automatically. Only a
 locally derived artifact with no Network provenance may advance for a future Job when the user has selected

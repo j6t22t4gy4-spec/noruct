@@ -1,6 +1,6 @@
 # 08 — Current Development Status
 
-> [← Network Engineering](07-network-engineering.md) · [Index](README.md) · [한국어](../ko/08-current-development-status.md)
+> [← Network Engineering](07-network-engineering.md) · [Index](README.md) · [한국어](../ko/08-current-development-status.md) · [Next: Organization as Decision Architecture →](09-organization-as-decision-architecture.md)
 
 **Last reviewed: 2026-07-31.** English is canonical.
 

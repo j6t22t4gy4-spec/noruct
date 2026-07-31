@@ -1,6 +1,6 @@
 # 08 — 현재 개발 상태
 
-> 정본: [English](../en/08-current-development-status.md) · [← Network Engineering](07-network-engineering.md) · [문서 인덱스](README.md)
+> 정본: [English](../en/08-current-development-status.md) · [← Network Engineering](07-network-engineering.md) · [문서 인덱스](README.md) · [다음: 조직은 직책이 아니라 의사결정 구조다 →](09-organization-as-decision-architecture.md)
 
 **마지막 검토: 2026-07-31.** 영문판이 정본입니다.
 
