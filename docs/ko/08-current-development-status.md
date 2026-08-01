@@ -77,7 +77,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | 일반 semantic replanning | 제한된 typed path는 있으나 광범위한 자율 재작성은 주장하지 않음 |
 | Graph mutation과 recovery | revision lineage와 좁은 receipt-bound continuation은 있으나 in-flight/effectful replay는 자동 재개하지 않음 |
 | Knowledge | local-first raw-source intake와 bounded evidence 사용은 존재하지만 extraction은 자동 진실이 아님 |
-| Network | signed artifact lifecycle과 제한된 deployed registry path가 있으나 고객 운영과 broad executable adapter는 주장하지 않음 |
+| Network | 공개 Core에는 signed-artifact client lifecycle이 포함됨. Noruct 운영 Shared Evolution/Network server, publisher/auth, remote coordination, billing·tenant operation은 비공개 hosted-service 범위이며 일반 제공을 주장하지 않음 |
 | Capability integrity | 외부 version/digest는 명시적으로 활성화해야 함. 사용자 `always-approve`, 권한 검사와 static 계약 호환성을 통과한 non-Network local derivative만 다음 Job에 승격 가능하며 실행 중 Job pin과 이전 activation rollback은 유지됨 |
 | Platform과 release | 개발 검증은 있으나 Windows 폭, packaging, legal/provenance review, commercial release authorization은 별도 gate |
 | Runtime 선택 | 실행 가능한 Noruct runtime은 하나이며 historical state compatibility는 rollback engine이 아닌 read/backup 경로 |

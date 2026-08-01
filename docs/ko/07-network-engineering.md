@@ -10,6 +10,17 @@ Network Engineering은 하나의 로컬 회사 위에 선택적으로 놓이는 
 이 문서는 공유 개선을 위한 로컬 우선 모델을 정의합니다. 네트워크는 검사 가능한 능력 산출물을 배포할 수 있지만,
 기여의 대가로 개인 맥락을 넘기게 하거나, 공개된 산출물이 원격 실행 권한을 갖게 해서는 안 됩니다.
 
+## 공개 Core와 비공개 hosted service
+
+Noruct의 local Company runtime과 Network client 안전 계약은 MIT가 적용되는 공개 Core monorepo에 속합니다. 공개
+영역은 signed artifact를 fetch·검증·stage·pin하고 future Job에 활성화하거나 rollback할 수 있습니다. 사용자가
+설정하는 model provider, MCP endpoint와 일반 web transport도 공개 Core에 남습니다.
+
+Noruct가 운영하는 Shared Evolution과 Network server는 별도의 비공개 유료 hosted-service 경계입니다. Registry
+publisher 인증, server-side benchmark 승격, catalog signing, remote coordination, billing·tenant operation,
+database migration과 deployment evidence는 공개 Core source가 아닙니다. 이 서비스는 선택 사항이며 artifact를
+사용 가능하게 할 수는 있어도 local Company의 권위가 되지 않습니다.
+
 ```mermaid
 flowchart LR
   L["Local Noruct firm\nuser authority"] --> A["Reviewed capability artifact"]
@@ -65,10 +76,11 @@ flowchart LR
 
 ## 현재 개발 위치
 
-현재 개발 구현에는 signed·versioned Artifact lifecycle이 있습니다. discover, verify, stage, review, install,
+공개 Core 개발 구현에는 signed·versioned Artifact lifecycle이 있습니다. discover, verify, stage, review, install,
 future Job activation, pin, rollback을 지원하며, first-party·community·private-team source class를 구분합니다.
 credential은 local artifact catalog 밖에 남고, 배포된 read-only registry endpoint는 availability surface일 뿐
-local Company나 실행 중 Job을 바꾸지 못합니다.
+local Company나 실행 중 Job을 바꾸지 못합니다. 그 endpoint 뒤의 hosted 구현은 공개 source 경계에 포함되지
+않습니다.
 
 현재 공개된 first-party artifact는 의도적으로 synthetic·experimental입니다. 이는 distribution path를 보이는
 검증용 release이지 customer-ready marketplace나 automatic update channel이 아닙니다. customer self-service,

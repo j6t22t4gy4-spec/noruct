@@ -51,6 +51,10 @@ Read in order for the full argument. Readers interested in one question can begi
 
 This repository publishes product concepts, operating boundaries, and architectural principles. It does not publish customer data, private development records, internal operational configuration, security-sensitive implementation detail, or a promise of autonomous authority.
 
+Noruct first-party public Core source is licensed under the MIT License. Vendored and third-party material retains
+its original license and notice. Source publication does not announce a signed package, hosted service, or completed
+commercial qualification.
+
 The [status paper](08-current-development-status.md) is the only document in this series that summarizes present
 development evidence. The other papers define intended architecture and product boundaries; they do not by themselves
 claim that every described mechanism is generally available or commercially qualified.

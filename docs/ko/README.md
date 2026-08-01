@@ -51,6 +51,10 @@ flowchart TB
 
 ## 공개 문서의 경계
 
+Noruct 공개 Core의 first-party source에는 MIT License가 적용됩니다. Vendored·third-party material은 각 source와
+`THIRD_PARTY_NOTICES.md`에 기록된 원 license와 notice를 유지합니다. Source 공개는 signed package, hosted service
+또는 commercial qualification 완료를 의미하지 않습니다.
+
 이 문서는 제품 방향과 사용자에게 약속하는 동작 원칙을 설명합니다. source intake, runtime implementation,
 보안 운영 세부, 벤치마크, 고객 데이터와 개발 이력은 포함하지 않습니다.
 

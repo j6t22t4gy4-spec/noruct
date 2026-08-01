@@ -79,7 +79,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 | General semantic replanning | Bounded typed paths exist; broad autonomous rewriting is not claimed. |
 | Graph mutation and recovery | Revision lineage and narrow receipt-bound continuation exist; in-flight or effectful replay is not silently resumed. |
 | Knowledge | Local-first raw-source intake and bounded evidence use exist; extraction is not automatic truth. |
-| Network | Signed artifact lifecycle and a limited deployed registry path exist; customer operation and broad executable adapters are not claimed. |
+| Network | The public Core includes the signed-artifact client lifecycle. Noruct-operated Shared Evolution/Network server, publisher/auth, remote coordination, billing, and tenant operations are private hosted-service scope and are not claimed as generally available. |
 | Capability integrity | External versions and digests require explicit activation. Only non-Network local derivatives may advance for future Jobs under user-selected `always-approve`, authority checks, and static contract compatibility. Running Jobs remain pinned and prior activations remain rollback targets. |
 | Platform and release | Development validation exists; Windows breadth, packaging, legal/provenance review, and commercial release authorization remain separate gates. |
 | Runtime selection | One executable Noruct runtime; historical state compatibility is a read/backup path, not a rollback engine. |

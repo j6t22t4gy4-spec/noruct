@@ -8,6 +8,17 @@ Network Engineering is the optional layer above one local firm. It allows reusab
 
 This paper defines a local-first model for shared improvement. A network may distribute inspectable capability artifacts, but it must not turn contribution into a requirement to surrender private context or turn publication into remote execution authority.
 
+## Public Core and private hosted service
+
+Noruct's local Company runtime and Network client safety contract belong to the MIT-licensed public Core monorepo. The
+public side may fetch, verify, stage, pin, activate for a future Job, and roll back a signed artifact. User-configured
+model providers, MCP endpoints, and ordinary web transports also remain in the public Core.
+
+The Noruct-operated Shared Evolution and Network server is a separate private, paid hosted-service boundary. Registry
+publisher authentication, server-side benchmark promotion, catalog signing, remote coordination, billing, tenant
+operations, database migrations, and deployment evidence are not public Core source. This service is optional: it may
+make an artifact available, but it does not become local Company authority.
+
 ```mermaid
 flowchart LR
   L[Local Noruct firm\nuser authority] --> A[Reviewed capability artifact]
@@ -57,10 +68,11 @@ The critical distinction is between **availability** and **authority**. A networ
 
 ## Development position
 
-The current development implementation includes a signed, versioned Artifact lifecycle: discover, verify, stage,
+The public Core development implementation includes a signed, versioned Artifact lifecycle: discover, verify, stage,
 review, install, activate for future work, pin, and roll back. It supports first-party, community, and private-team
 source classes while keeping credentials outside the local artifact catalog. A deployed read-only registry endpoint is
-used only as an availability surface; it cannot change a local Company or a running Job.
+used only as an availability surface; it cannot change a local Company or a running Job. The hosted implementation
+behind that endpoint is not part of the public source boundary.
 
 The presently published first-party artifact is deliberately synthetic and experimental. It demonstrates the
 distribution path, not a customer-ready marketplace or an automatic update channel. Customer self-service, consent
