@@ -90,9 +90,17 @@ class LocalWorkspaceEnvironment:
 
     def execute(self, command, cwd=None, timeout=None, stdin_data=None):
         try:
+            # The exact vendored search backend deliberately uses
+            # ``set -o pipefail`` so rg/grep errors survive its bounded head
+            # pipeline.  POSIX ``subprocess`` otherwise selects /bin/sh,
+            # which is dash on Ubuntu and rejects that contract before the
+            # search starts.  Keep this compatibility choice in the private
+            # Noruct adapter instead of rewriting the pinned upstream source.
+            shell_executable = None if _source_is_windows else "/bin/bash"
             completed = subprocess.run(
                 command,
                 shell=True,
+                executable=shell_executable,
                 cwd=str(cwd or self.cwd),
                 input=stdin_data,
                 text=True,
