@@ -34,7 +34,7 @@ SBOM record are bound in
 `docs/60-governance/source-register.yaml` and
 `docs/60-governance/sbom.cdx.json`.
 
-- `PyYAML==6.0.3` — MIT — wheel `652cb6edd41e718550aad172851962662ff2681490a8a711af6a4d288dd96824`; source `d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f`
+- `PyYAML==6.0.3` — MIT — macOS arm64 CPython 3.11 wheel `652cb6edd41e718550aad172851962662ff2681490a8a711af6a4d288dd96824`; Linux x86_64 CPython 3.11 wheel `b8bb0864c5a28024fac8a632c443c87c5aa6f215c0b126c449ae1a150412f31d`; source `d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f`
 
 This base dependency does not authorize a commercial release and does not
 permit installing or executing unreviewed dependencies. Its promotion decision
