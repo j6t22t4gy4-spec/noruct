@@ -6,6 +6,10 @@ Noruct is a runtime for a persistent AI firm: a user gives a goal, while the sys
 
 The public documentation is a concept-paper series. It explains the product thesis, the operating model, the authority boundaries, and the evaluation questions without exposing private implementation or customer state.
 
+Noruct 0.0.80 is also available as an **unsigned developer preview**. Its public artifact, checksum,
+scope, and limitations are recorded in [the preview release note](releases/noruct-0.0.80-developer-preview.md).
+This does not change the concept papers into a stable, GA, or commercial-complete claim.
+
 > **Workflows are temporary. Organizational capability compounds.**
 
 For managed work, Noruct plans for the **minimum sufficient organization**, not the cheapest run and not the largest

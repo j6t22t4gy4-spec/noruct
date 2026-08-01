@@ -10,6 +10,24 @@ This paper distinguishes the Noruct concept from the current development impleme
 statement, not a commercial release announcement, benchmark claim, or guarantee that an optional capability is enabled
 in every installation.
 
+## Noruct 0.0.80 public developer preview
+
+Noruct 0.0.80 has one public **unsigned developer-preview** wheel. Its integrity boundary is the published
+SHA-256 plus independent public readback; it has no artifact signature or notarization claim. The qualified
+scope is provider-free local runtime contracts on macOS arm64 with CPython 3.11. Windows remains unsupported or
+experimental-disabled, and this statement does not qualify Linux, WSL, other architectures, hosted operation, or
+production/enterprise use.
+
+The preview qualifies frozen routing, receipt-bound continuation, bounded single-Job multi-route/provider contracts,
+and exact version/digest pinning for external Tools, Skills, and Plugins. It does **not** qualify any live
+provider/model without its own receipt. Multi-provider execution remains `EXPERIMENTAL / PROVIDER_DEPENDENT /
+NOT_LIVE_QUALIFIED`; no heterogeneous or cross-provider quality claim is made. No signed network Model Intelligence
+Snapshot is published or activated: bundled conservative defaults and explicit local routes remain the default.
+
+This first public release has no prior signed public artifact. Its human-owned response posture is pause new installs,
+remove the release asset when necessary, and disable future snapshot/route use; it is not evidence of a completed
+rollback rehearsal. See the [0.0.80 preview release note](../../releases/noruct-0.0.80-developer-preview.md).
+
 ## Present development baseline
 
 The local development runtime currently provides:

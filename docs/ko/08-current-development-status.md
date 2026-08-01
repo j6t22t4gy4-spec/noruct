@@ -9,6 +9,25 @@
 이 문서는 Noruct의 개념과 현재 개발 구현을 구분합니다. 상용 출시 발표, benchmark 성능 주장, 또는 모든 설치 환경에서
 선택 기능이 활성화된다는 약속이 아닙니다.
 
+## Noruct 0.0.80 공개 developer preview
+
+Noruct 0.0.80은 하나의 공개 **unsigned developer-preview** wheel로 제공됩니다. 무결성 경계는 공개된
+SHA-256과 독립 public readback이며 artifact signature 또는 notarization을 주장하지 않습니다. 검증된 범위는
+macOS arm64와 CPython 3.11의 provider-free local runtime contract입니다. Windows는 unsupported 또는
+experimental-disabled이고, 이 문구는 Linux·WSL·다른 architecture·hosted operation·production/enterprise 사용을
+qualified로 만들지 않습니다.
+
+이 preview는 frozen routing, receipt-bound continuation, bounded single-Job multi-route/provider contract와
+외부 Tool·Skill·Plugin의 exact version/digest pinning을 포함합니다. 자체 receipt가 없는 live provider/model은
+qualified가 아닙니다. multi-provider 실행은 `EXPERIMENTAL / PROVIDER_DEPENDENT / NOT_LIVE_QUALIFIED`이며,
+heterogeneous 또는 cross-provider 품질 주장을 하지 않습니다. signed network Model Intelligence Snapshot은
+게시·활성화하지 않으며 bundled conservative default와 explicit local route가 기본으로 남습니다.
+
+이 첫 공개 release에는 prior signed public artifact가 없습니다. human release owner의 대응 순서는 신규 설치
+중지, 필요 시 release asset 제거, future snapshot/route 사용 disable입니다. 이는 완료된 rollback rehearsal 주장이
+아닙니다. 자세한 내용은 [0.0.80 preview release note](../../releases/noruct-0.0.80-developer-preview.md)를
+참조하십시오.
+
 ## 현재 개발 기준선
 
 로컬 개발 runtime은 현재 다음을 제공합니다.
