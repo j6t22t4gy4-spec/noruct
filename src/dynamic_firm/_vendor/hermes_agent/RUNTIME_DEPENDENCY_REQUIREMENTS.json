@@ -1,0 +1,18 @@
+{
+  "audit_profile": "employee_runtime_h2_py311_macos_arm64",
+  "commercial_release_approved": false,
+  "direct": [
+    "PyYAML==6.0.3"
+  ],
+  "exact_closure": [
+    "PyYAML==6.0.3"
+  ],
+  "license_review_blockers": [],
+  "observed_scenarios": [
+    "direct_completion",
+    "parent_owned_tool_iteration"
+  ],
+  "source_commit": "89bd0fba903bbfd78b0d99ce6f194863dd01b7e1",
+  "source_uv_lock_sha256": "8d03d04a404c641e1c9642f0482e2d8752c57da02da94d612a5f30883b25fbca",
+  "upstream_version": "0.18.2"
+}

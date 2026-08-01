@@ -1,0 +1,88 @@
+schema_version = 1
+profile = "noruct-public-core"
+publication_state = "SOURCE_PUBLICATION_AUTHORIZED"
+
+# The public repository is an allow-listed projection of the private
+# development monorepo.  A path absent from this list is private by default.
+include_exact = [
+  ".gitignore",
+  "CONTRIBUTING.md",
+  "LICENSE",
+  "MANIFEST.in",
+  "PUBLIC_CORE_BOUNDARY.md",
+  "README.md",
+  "THIRD_PARTY_NOTICES.md",
+  "public-monorepo.toml",
+  "pyproject.toml",
+  "setup.py",
+  ".github/workflows/public-core-ci.yml",
+  "dev/export_public_monorepo.py",
+  "dev/requirements-build.txt",
+  "dev/requirements-employee-runtime-py311.lock",
+  "dev/requirements-modern-tui-py311.lock",
+  "dev/run_clean_install_operator_qualification.py",
+  "dev/run_operator_e2e_qualification.py",
+  "dev/run_public_core_tests.py",
+  "dev/run_provider_free_test_shard.py",
+  "dev/run_recovery_regression.py",
+  "dev/verify_component_budgets.py",
+  "dev/verify_public_monorepo.py",
+  "dev/verify_reproducible_wheel.py",
+  "tests/test_capability_status.py",
+  "tests/test_cli.py",
+  "tests/test_component_import_boundaries.py",
+  "tests/test_openai_media.py",
+  "tests/test_public_monorepo_export.py",
+  "tests/__init__.py",
+]
+include_prefixes = [
+  "bin/",
+  "installer/",
+  "requirements/",
+  "src/",
+  "tests/application/",
+  "tests/company/",
+  "tests/compiler/",
+  "tests/evaluation/",
+  "tests/evolution/",
+  "tests/foundation/",
+  "tests/fixtures/",
+  "tests/kernel/",
+  "tests/knowledge/",
+  "tests/network/",
+  "tests/product/",
+  "tests/providers/",
+  "tests/runtime/",
+]
+
+# These paths must never be present even if a future broad include is added.
+private_prefixes = [
+  ".agents/",
+  ".codex/",
+  ".git/",
+  "docs/30-runtime/",
+  "docs/50-mvp/",
+  "docs/60-governance/",
+  "docs/70-research/",
+  "docs/80-decisions/",
+  "docs/90-history/",
+  "services/evolution-network-worker/",
+]
+private_exact = [
+  "AGENTS.md",
+  "tests/evaluation/test_alpha_readiness.py",
+  "tests/foundation/test_dependency_release_evidence.py",
+  "tests/foundation/test_dependency_vulnerability_scan.py",
+  "tests/foundation/test_provenance_review_decisions.py",
+  "tests/foundation/test_release_authorization.py",
+  "tests/foundation/test_sdist_integrity.py",
+  "tests/foundation/test_source_portfolio.py",
+]
+
+# The public Core retains user-owned provider/MCP/web transports and the
+# client-side signed-artifact safety contract.  It excludes the Noruct-hosted
+# implementation, database migrations, publisher credentials, private-team
+# registry, remote coordination and operations evidence.
+hosted_private_roots = [
+  "services/evolution-network-worker",
+]

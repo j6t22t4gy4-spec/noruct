@@ -1,0 +1,171 @@
+# Noruct release installer. Rendered per release by dev/render_installer.py.
+[CmdletBinding()]
+param(
+  [string]$Version = "",
+  [switch]$DryRun,
+  [switch]$Uninstall,
+  [switch]$PurgeState,
+  [switch]$AddToPath
+)
+
+$ErrorActionPreference = "Stop"
+$ManifestUrl = "__NORUCT_MANIFEST_URL__"
+$ManifestSha256 = "__NORUCT_MANIFEST_SHA256__"
+$NoructHome = if ($env:NORUCT_HOME) { $env:NORUCT_HOME } else { Join-Path $HOME ".noruct" }
+$InstallRoot = if ($env:NORUCT_INSTALL_ROOT) { $env:NORUCT_INSTALL_ROOT } else { Join-Path $env:LOCALAPPDATA "Noruct" }
+$BinDir = if ($env:NORUCT_BIN_DIR) { $env:NORUCT_BIN_DIR } else { Join-Path $InstallRoot "bin" }
+
+function Fail([string]$Message) { throw "noruct installer: $Message" }
+function Info([string]$Message) { Write-Host "→ $Message" }
+function Ok([string]$Message) { Write-Host "✓ $Message" }
+function Assert-SafeDirectory([string]$Path, [string]$Label) {
+  if (-not $Path -or -not [System.IO.Path]::IsPathFullyQualified($Path)) { Fail "$Label must be an absolute non-root directory" }
+  $full = [System.IO.Path]::GetFullPath($Path)
+  if ($full -eq [System.IO.Path]::GetPathRoot($full)) { Fail "$Label must be an absolute non-root directory" }
+  if (Test-Path -LiteralPath $full) {
+    $item = Get-Item -Force -LiteralPath $full
+    if ($item.Attributes -band [System.IO.FileAttributes]::ReparsePoint) { Fail "$Label must not be a symbolic link or reparse point" }
+  }
+}
+function Assert-ManagedInstallRoot {
+  Assert-SafeDirectory $InstallRoot "NORUCT_INSTALL_ROOT"
+  $marker = Join-Path $InstallRoot ".noruct-install-root-v1"
+  if (-not (Test-Path -LiteralPath $marker)) { Fail "refusing to remove an install root without Noruct's managed-root marker" }
+  $markerItem = Get-Item -Force -LiteralPath $marker
+  if ($markerItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) { Fail "refusing to trust a symbolic-link managed-root marker" }
+  if ((Get-Content -Raw -LiteralPath $marker).Trim() -ne "noruct-install-root-v1") { Fail "refusing to remove an install root with an invalid managed-root marker" }
+}
+function Assert-Https([string]$Url) {
+  $uri = [System.Uri]$Url
+  if ($uri.Scheme -ne "https" -or $uri.Query -or $uri.Fragment -or $uri.UserInfo) { Fail "release URLs must be credential-free HTTPS" }
+}
+function Get-ReleaseTarget {
+  $architecture = if ($env:PROCESSOR_ARCHITEW6432) { $env:PROCESSOR_ARCHITEW6432 } else { $env:PROCESSOR_ARCHITECTURE }
+  switch ($architecture.ToUpperInvariant()) {
+    "AMD64" { return "windows-amd64" }
+    "ARM64" { return "windows-arm64" }
+    default { Fail "unsupported release target: Windows/$architecture" }
+  }
+}
+function Get-PythonCommand {
+  $candidates = @()
+  if ($env:NORUCT_PYTHON) { $candidates += ,@($env:NORUCT_PYTHON) }
+  $candidates += ,@("py", "-3.13")
+  $candidates += ,@("py", "-3.12")
+  $candidates += ,@("py", "-3.11")
+  $candidates += ,@("python")
+  foreach ($candidate in $candidates) {
+    try {
+      $candidateArguments = if ($candidate.Count -gt 1) { @($candidate[1..($candidate.Count - 1)]) } else { @() }
+      & $candidate[0] @candidateArguments -c "import sys; raise SystemExit(0 if sys.implementation.name == 'cpython' and sys.version_info >= (3, 11) else 1)" 2>$null
+      if ($LASTEXITCODE -eq 0) { return ,$candidate }
+    } catch { }
+  }
+  Fail "CPython 3.11 or newer is required. Install it, set NORUCT_PYTHON, then retry."
+}
+
+if ($ManifestUrl -match "__NORUCT_" -or $ManifestSha256 -notmatch "^[0-9a-f]{64}$") { Fail "installer was not rendered with a pinned release manifest" }
+Assert-Https $ManifestUrl
+Assert-SafeDirectory $InstallRoot "NORUCT_INSTALL_ROOT"
+Assert-SafeDirectory $BinDir "NORUCT_BIN_DIR"
+if ($PurgeState) { Assert-SafeDirectory $NoructHome "NORUCT_HOME" }
+
+if ($Uninstall) {
+  Assert-ManagedInstallRoot
+  $commandPath = Join-Path $BinDir "noruct.cmd"
+  if (Test-Path $commandPath) {
+    $wrapper = Get-Content -Raw $commandPath
+    if ($wrapper -notmatch "Noruct managed command wrapper") { Fail "refusing to remove a command wrapper not created by Noruct" }
+    Remove-Item -Force $commandPath
+  }
+  if (Test-Path $InstallRoot) { Remove-Item -Recurse -Force $InstallRoot }
+  if ($PurgeState -and (Test-Path $NoructHome)) { Remove-Item -Recurse -Force $NoructHome; Ok "removed explicitly selected local Noruct state" }
+  Ok "Noruct executable versions removed; local state was preserved unless -PurgeState was supplied"
+  exit 0
+}
+
+$python = Get-PythonCommand
+$pythonArguments = if ($python.Count -gt 1) { @($python[1..($python.Count - 1)]) } else { @() }
+$pythonAbi = (& $python[0] @pythonArguments -c "import sys; print('cp{}{}'.format(sys.version_info.major, sys.version_info.minor))").Trim()
+$temporary = Join-Path ([System.IO.Path]::GetTempPath()) ("noruct-install-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory -Force -Path $temporary | Out-Null
+try {
+  $manifestPath = Join-Path $temporary "release-manifest.json"
+  Info "fetching pinned release manifest"
+  Invoke-WebRequest -Uri $ManifestUrl -OutFile $manifestPath
+  if ((Get-FileHash -Algorithm SHA256 $manifestPath).Hash.ToLowerInvariant() -ne $ManifestSha256) { Fail "release manifest digest mismatch" }
+  $manifest = Get-Content -Raw $manifestPath | ConvertFrom-Json
+  $manifestFields = @($manifest.PSObject.Properties.Name | Sort-Object)
+  if ((($manifestFields -join ",") -ne "artifacts,schema,version") -or $manifest.schema -ne "noruct.release-manifest.v3" -or -not $manifest.artifacts.wheel -or -not $manifest.artifacts.employee_runtime) { Fail "invalid Noruct release manifest" }
+  $wheelFields = @($manifest.artifacts.wheel.PSObject.Properties.Name | Sort-Object)
+  if (($wheelFields -join ",") -ne "sha256,url") { Fail "invalid wheel artifact" }
+  $releaseVersion = [string]$manifest.version
+  if ($releaseVersion -notmatch "^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$") { Fail "invalid release version" }
+  if ($Version -and $Version -ne $releaseVersion) { Fail "rendered installer provides $releaseVersion, not requested $Version" }
+  $wheelUrl = [string]$manifest.artifacts.wheel.url
+  $wheelSha = [string]$manifest.artifacts.wheel.sha256
+  Assert-Https $wheelUrl
+  if ($wheelSha -notmatch "^[0-9a-f]{64}$") { Fail "invalid wheel digest" }
+  $runtime = $manifest.artifacts.employee_runtime
+  $runtimeFields = @($runtime.PSObject.Properties.Name | Sort-Object)
+  if (($runtimeFields -join ",") -ne "distribution,targets,version" -or $runtime.distribution -ne "PyYAML" -or $runtime.version -ne "6.0.3") { Fail "invalid employee runtime profile" }
+  $target = Get-ReleaseTarget
+  $targetArtifacts = $runtime.targets.$target
+  $runtimeArtifact = if ($targetArtifacts) { $targetArtifacts.$pythonAbi } else { $null }
+  if (-not $runtimeArtifact) { Fail "release does not provide an employee runtime for $target/$pythonAbi" }
+  $runtimeArtifactFields = @($runtimeArtifact.PSObject.Properties.Name | Sort-Object)
+  if (($runtimeArtifactFields -join ",") -ne "sha256,url") { Fail "invalid employee runtime artifact" }
+  $runtimeUrl = [string]$runtimeArtifact.url
+  $runtimeSha = [string]$runtimeArtifact.sha256
+  Assert-Https $runtimeUrl
+  if ($runtimeSha -notmatch "^[0-9a-f]{64}$") { Fail "invalid employee runtime digest" }
+  $wheelPath = Join-Path $temporary "noruct-$releaseVersion.whl"
+  Info "downloading Noruct $releaseVersion"
+  Invoke-WebRequest -Uri $wheelUrl -OutFile $wheelPath
+  if ((Get-FileHash -Algorithm SHA256 $wheelPath).Hash.ToLowerInvariant() -ne $wheelSha) { Fail "wheel digest mismatch" }
+  $runtimePath = Join-Path $temporary "PyYAML-$($runtime.version)-$target-$pythonAbi.whl"
+  Info "downloading verified employee runtime for $target/$pythonAbi"
+  Invoke-WebRequest -Uri $runtimeUrl -OutFile $runtimePath
+  if ((Get-FileHash -Algorithm SHA256 $runtimePath).Hash.ToLowerInvariant() -ne $runtimeSha) { Fail "employee runtime wheel digest mismatch" }
+  if ($DryRun) { Ok "verified Noruct $releaseVersion and employee runtime for $target/$pythonAbi; no files installed"; exit 0 }
+  $venv = Join-Path $InstallRoot "versions\$releaseVersion\venv"
+  New-Item -ItemType Directory -Force -Path $InstallRoot | Out-Null
+  $markerPath = Join-Path $InstallRoot ".noruct-install-root-v1"
+  $markerTemporary = "$markerPath.$([guid]::NewGuid().ToString('N')).tmp"
+  Set-Content -NoNewline -Encoding ASCII -Path $markerTemporary -Value "noruct-install-root-v1"
+  Move-Item -Force $markerTemporary $markerPath
+  if (-not (Test-Path (Join-Path $venv "Scripts\python.exe"))) { & $python[0] @pythonArguments -m venv $venv }
+  $venvPython = Join-Path $venv "Scripts\python.exe"
+  & $venvPython -m pip install --disable-pip-version-check --no-index --no-deps --upgrade $runtimePath $wheelPath
+  & $venvPython -m pip check
+  & $venvPython -c "import sys; from dynamic_firm import __version__; raise SystemExit(0 if __version__ == sys.argv[1] else 1)" $releaseVersion
+  if ($LASTEXITCODE -ne 0) { Fail "installed Noruct version mismatch" }
+  & $venvPython -c "import sys, yaml; raise SystemExit(0 if yaml.__version__ == sys.argv[1] else 1)" $runtime.version
+  if ($LASTEXITCODE -ne 0) { Fail "installed employee runtime mismatch" }
+  & (Join-Path $venv "Scripts\noruct.exe") --help | Out-Null
+  $receipt = [ordered]@{
+    schema = "noruct.release-installation-receipt.v1"
+    version = $releaseVersion
+    target = $target
+    employee_runtime_abi = $pythonAbi
+    manifest_url = $ManifestUrl
+    manifest_sha256 = $ManifestSha256
+    wheel_sha256 = $wheelSha
+    employee_runtime_sha256 = $runtimeSha
+  }
+  $receiptPath = Join-Path (Split-Path -Parent $venv) "release-receipt.json"
+  $receiptTemporary = "$receiptPath.$([guid]::NewGuid().ToString('N')).tmp"
+  $receipt | ConvertTo-Json -Compress | Set-Content -NoNewline -Encoding UTF8 -Path $receiptTemporary
+  Move-Item -Force $receiptTemporary $receiptPath
+  New-Item -ItemType Directory -Force -Path $BinDir, $NoructHome | Out-Null
+  $wrapper = ":: Noruct managed command wrapper`r`n@echo off`r`n`"$venv\Scripts\noruct.exe`" %*`r`n"
+  Set-Content -NoNewline -Encoding ASCII -Path (Join-Path $BinDir "noruct.cmd") -Value $wrapper
+  if ($AddToPath) {
+    $existing = [Environment]::GetEnvironmentVariable("Path", "User")
+    if (-not (($existing -split ';') -contains $BinDir)) { [Environment]::SetEnvironmentVariable("Path", (($existing.TrimEnd(';') + ';' + $BinDir).TrimStart(';')), "User") }
+  }
+  Ok "Noruct $releaseVersion installed"
+  Write-Host "Run in a new terminal: noruct"
+} finally {
+  if (Test-Path $temporary) { Remove-Item -Recurse -Force $temporary }
+}

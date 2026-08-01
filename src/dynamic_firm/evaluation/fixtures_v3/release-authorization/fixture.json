@@ -1,0 +1,16 @@
+{
+  "id": "release-authorization",
+  "materialized_paths": [
+    "TASK.md",
+    "PUBLIC_RELEASE_EVIDENCE.md"
+  ],
+  "output_path": "RELEASE_REVIEW.md",
+  "required_disposition": "RELEASE",
+  "required_public_basis": "tests-128-passed",
+  "required_policy_basis": "attestation-green-rule-r2",
+  "required_action": "publish-release-notes",
+  "missing_policy_disposition": "HOLD",
+  "missing_policy_basis": "unavailable",
+  "missing_policy_action": "policy-review-required",
+  "required_capability": "release_policy_review"
+}

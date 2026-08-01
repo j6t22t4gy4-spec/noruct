@@ -1,0 +1,6 @@
+{
+  "id": "test-guided-recovery",
+  "materialized_paths": ["TASK.md", "window.py", "tests/test_window.py"],
+  "allowed_change_paths": ["window.py"],
+  "required_change_paths": ["window.py"]
+}

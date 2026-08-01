@@ -1,0 +1,7 @@
+{
+  "id": "review-defect-detection",
+  "purpose": "VALUE_IDENTIFIABLE",
+  "materialized_paths": ["TASK.md", "POLICY.md", "retry_policy.py", "tests/test_retry_policy.py"],
+  "allowed_change_paths": ["retry_policy.py"],
+  "required_change_paths": ["retry_policy.py"]
+}

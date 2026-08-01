@@ -1,0 +1,11 @@
+{
+  "id": "information-boundary",
+  "materialized_paths": [
+    "TASK.md",
+    "PUBLIC_EVIDENCE.md"
+  ],
+  "output_path": "REPORT.md",
+  "required_public_evidence": "rollback-ready",
+  "required_decision": "manual-review",
+  "required_sealed_evidence": "risk-9-threshold-7"
+}

@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools==82.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noruct"
+version = "0.0.80"
+description = "Goal-compiled AI company runtime"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+modern-tui = [
+  "textual==8.2.8",
+  "markdown-it-py==4.2.0",
+  "mdit-py-plugins==0.6.1",
+  "mdurl==0.1.2",
+  "platformdirs==4.10.1",
+  "pygments==2.20.0",
+  "rich==15.0.0",
+  "typing-extensions==4.16.0",
+  "linkify-it-py==2.1.0",
+  "uc-micro-py==2.0.0",
+]
+
+[project.scripts]
+noruct = "dynamic_firm.application.entrypoint_cli:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["dynamic_firm._vendor.employee_runtime_capsule*"]
+
+[tool.setuptools.package-data]
+"dynamic_firm._vendor.runtime_safety" = ["LICENSE"]
+"dynamic_firm._vendor.model_catalog" = ["LICENSE"]
+"dynamic_firm._vendor.mini_swe_runtime" = ["LICENSE"]
+"dynamic_firm._vendor.paperclip_runtime" = ["LICENSE"]
+"dynamic_firm._vendor.hermes_agent" = [
+  "LICENSE",
+  "UPSTREAM_MANIFEST.json",
+  "VENDOR_POLICY.json",
+  "DEPENDENCY_REQUIREMENTS.json",
+  "upstream/**/*.py",
+  "upstream/**/*.yaml",
+]
+"dynamic_firm._vendor.hermes_agent.upstream.noruct_firm" = ["*.py"]
+"dynamic_firm.evaluation" = [
+  "fixtures/*/*.json",
+  "fixtures/*/*.md",
+  "fixtures/*/*.py",
+  "fixtures/*/tests/*.py",
+  "fixtures_v2/*/*.json",
+  "fixtures_v2/*/*.md",
+  "fixtures_v2/*/*.py",
+  "fixtures_v2/*/tests/*.py",
+  "fixtures_v3/*/*.json",
+  "fixtures_v3/*/*.md",
+]
+
+[tool.setuptools.exclude-package-data]
+"dynamic_firm._vendor" = []
+
+[tool.setuptools.data-files]
+"." = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+
+[tool.noruct]
+phase = "noruct-release-evidence-binding-h2-26"

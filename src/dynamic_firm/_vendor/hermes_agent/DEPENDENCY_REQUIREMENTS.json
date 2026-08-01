@@ -1,0 +1,47 @@
+{
+  "core_direct": [
+    "openai==2.24.0",
+    "certifi==2026.5.20",
+    "python-dotenv==1.2.2",
+    "fire==0.7.1",
+    "httpx[socks]==0.28.1",
+    "rich==14.3.3",
+    "tenacity==9.1.4",
+    "pyyaml==6.0.3",
+    "ruamel.yaml==0.18.17",
+    "requests==2.33.0",
+    "jinja2==3.1.6",
+    "pydantic==2.13.4",
+    "prompt_toolkit==3.0.52",
+    "croniter==6.0.0",
+    "packaging==26.0",
+    "Markdown==3.10.2",
+    "PyJWT[crypto]==2.13.0",
+    "urllib3>=2.7.0,<3",
+    "cryptography==46.0.7",
+    "tzdata==2025.3; sys_platform == 'win32'",
+    "psutil==7.2.2",
+    "websockets==15.0.1",
+    "pathspec==1.1.1",
+    "fastapi>=0.104.0,<1",
+    "uvicorn[standard]>=0.24.0,<1",
+    "python-multipart>=0.0.9,<1",
+    "ptyprocess>=0.7.0,<1; sys_platform != 'win32'",
+    "pywinpty>=2.0.0,<3; sys_platform == 'win32'",
+    "Pillow==12.2.0",
+    "concurrent-log-handler==0.9.29; sys_platform == 'win32'"
+  ],
+  "selected_extras": {
+    "cli": [
+      "simple-term-menu==1.6.6"
+    ],
+    "mcp": [
+      "mcp==1.26.0",
+      "starlette==1.0.1"
+    ]
+  },
+  "source_commit": "89bd0fba903bbfd78b0d99ce6f194863dd01b7e1",
+  "source_pyproject_sha256": "d1eee316b301dbaa35d8e59ab138cf86a4937f0fe4c65f97d839d798ae6a6755",
+  "source_uv_lock_sha256": "8d03d04a404c641e1c9642f0482e2d8752c57da02da94d612a5f30883b25fbca",
+  "upstream_version": "0.18.2"
+}

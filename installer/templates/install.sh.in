@@ -1,0 +1,294 @@
+#!/usr/bin/env bash
+# Noruct release installer. This file is rendered per release by
+# dev/render_installer.py; never publish the template placeholders directly.
+set -euo pipefail
+
+INSTALLER_REVISION="noruct-installer-v1"
+MANIFEST_URL="__NORUCT_MANIFEST_URL__"
+MANIFEST_SHA256="__NORUCT_MANIFEST_SHA256__"
+NORUCT_HOME="${NORUCT_HOME:-$HOME/.noruct}"
+INSTALL_ROOT="${NORUCT_INSTALL_ROOT:-$HOME/.local/share/noruct}"
+BIN_DIR="${NORUCT_BIN_DIR:-$HOME/.local/bin}"
+REQUESTED_VERSION=""
+DRY_RUN=false
+PURGE_STATE=false
+UNINSTALL=false
+
+info() { printf '%s\n' "→ $*"; }
+ok() { printf '%s\n' "✓ $*"; }
+fail() { printf '%s\n' "noruct installer: $*" >&2; exit 1; }
+
+assert_safe_directory() {
+  local label="$1" path="$2" root
+  case "$path" in
+    /*) ;;
+    *) fail "$label must be an absolute non-root directory" ;;
+  esac
+  root="${path%/}"
+  [ -n "$root" ] && [ "$root" != "/" ] || fail "$label must not be the filesystem root"
+  [ ! -L "$root" ] || fail "$label must not be a symbolic link"
+}
+
+assert_managed_install_root() {
+  local marker="$INSTALL_ROOT/.noruct-install-root-v1"
+  assert_safe_directory "NORUCT_INSTALL_ROOT" "$INSTALL_ROOT"
+  [ -f "$marker" ] || fail "refusing to remove an install root without Noruct's managed-root marker"
+  [ ! -L "$marker" ] || fail "refusing to trust a symbolic-link managed-root marker"
+  [ "$(cat "$marker")" = "noruct-install-root-v1" ] || fail "refusing to remove an install root with an invalid managed-root marker"
+}
+
+usage() {
+  cat <<'EOF'
+Noruct installer
+
+Usage: install.sh [--version VERSION] [--dry-run] [--uninstall] [--purge-state]
+
+Environment:
+  NORUCT_HOME          Local company state directory (default: ~/.noruct)
+  NORUCT_INSTALL_ROOT  Immutable executable versions (default: ~/.local/share/noruct)
+  NORUCT_BIN_DIR       Command-link directory (default: ~/.local/bin)
+  NORUCT_PYTHON        CPython 3.11+ executable with a manifest-pinned ABI wheel
+
+The installer never configures providers, reads credentials, or uploads local state.
+EOF
+}
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --version) [ "$#" -gt 1 ] || fail "--version requires a value"; REQUESTED_VERSION="$2"; shift 2 ;;
+    --dry-run) DRY_RUN=true; shift ;;
+    --uninstall) UNINSTALL=true; shift ;;
+    --purge-state) PURGE_STATE=true; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) fail "unknown option: $1" ;;
+  esac
+done
+
+case "$(uname -s 2>/dev/null || true)" in
+  Darwin|Linux) ;;
+  MINGW*|MSYS*|CYGWIN*)
+    fail "Windows uses install.ps1. Download the matching PowerShell installer from the same release."
+    ;;
+  *) fail "unsupported operating system" ;;
+esac
+
+case "$MANIFEST_URL" in
+  https://*) ;;
+  *) fail "installer was not rendered with an HTTPS release manifest URL" ;;
+esac
+case "$MANIFEST_SHA256" in
+  *[!0123456789abcdef]*) fail "installer has no valid pinned manifest digest" ;;
+esac
+[ "${#MANIFEST_SHA256}" -eq 64 ] || fail "installer has no valid pinned manifest digest"
+
+assert_safe_directory "NORUCT_INSTALL_ROOT" "$INSTALL_ROOT"
+assert_safe_directory "NORUCT_BIN_DIR" "$BIN_DIR"
+if [ "$PURGE_STATE" = true ]; then
+  assert_safe_directory "NORUCT_HOME" "$NORUCT_HOME"
+fi
+
+if [ "$UNINSTALL" = true ]; then
+  assert_managed_install_root
+  command_path="$BIN_DIR/noruct"
+  if [ -L "$command_path" ]; then
+    target="$(readlink "$command_path" || true)"
+    case "$target" in
+      "$INSTALL_ROOT"/*) rm -f "$command_path"; ok "removed Noruct command link" ;;
+      *) fail "refusing to remove command link outside NORUCT_INSTALL_ROOT" ;;
+    esac
+  elif [ -e "$command_path" ]; then
+    fail "refusing to remove non-Noruct file at $command_path"
+  fi
+  rm -rf -- "$INSTALL_ROOT"
+  if [ "$PURGE_STATE" = true ]; then
+    rm -rf -- "$NORUCT_HOME"
+    ok "removed explicitly selected local Noruct state"
+  fi
+  ok "Noruct executable versions removed; local state was preserved unless --purge-state was supplied"
+  exit 0
+fi
+
+find_python() {
+  local candidate
+  for candidate in "${NORUCT_PYTHON:-}" python3.13 python3.12 python3.11 python3; do
+    [ -n "$candidate" ] || continue
+    command -v "$candidate" >/dev/null 2>&1 || continue
+    if "$candidate" -c 'import sys; raise SystemExit(0 if sys.implementation.name == "cpython" and sys.version_info >= (3, 11) else 1)' >/dev/null 2>&1; then
+      printf '%s\n' "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
+
+PYTHON="$(find_python || true)"
+[ -n "$PYTHON" ] || fail "CPython 3.11 or newer is required. Install it, set NORUCT_PYTHON, then retry."
+
+sha256_file() {
+  if command -v sha256sum >/dev/null 2>&1; then
+    sha256sum "$1" | awk '{print $1}'
+  elif command -v shasum >/dev/null 2>&1; then
+    shasum -a 256 "$1" | awk '{print $1}'
+  else
+    "$PYTHON" - "$1" <<'PY'
+import hashlib, pathlib, sys
+print(hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest())
+PY
+  fi
+}
+
+fetch_https() {
+  local url="$1" destination="$2"
+  case "$url" in https://*) ;; *) fail "release downloads must use HTTPS" ;; esac
+  if command -v curl >/dev/null 2>&1; then
+    curl --fail --silent --show-error --location --proto '=https' "$url" -o "$destination"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -q "$url" -O "$destination"
+  else
+    fail "curl or wget is required to download the verified release"
+  fi
+}
+
+release_target() {
+  local os arch
+  os="$(uname -s 2>/dev/null || true)"
+  arch="$(uname -m 2>/dev/null || true)"
+  case "$os:$arch" in
+    Darwin:arm64|Darwin:aarch64) printf '%s\n' "darwin-arm64" ;;
+    Darwin:x86_64) printf '%s\n' "darwin-x86_64" ;;
+    Linux:x86_64|Linux:amd64) printf '%s\n' "linux-x86_64" ;;
+    Linux:aarch64|Linux:arm64) printf '%s\n' "linux-aarch64" ;;
+    *) fail "unsupported release target: $os/$arch" ;;
+  esac
+}
+
+temp_dir="$(mktemp -d "${TMPDIR:-/tmp}/noruct-install.XXXXXX")"
+cleanup() { rm -rf "$temp_dir"; }
+trap cleanup EXIT INT TERM
+
+manifest="$temp_dir/release-manifest.json"
+info "fetching pinned release manifest"
+fetch_https "$MANIFEST_URL" "$manifest"
+actual_manifest_sha="$(sha256_file "$manifest")"
+[ "$actual_manifest_sha" = "$MANIFEST_SHA256" ] || fail "release manifest digest mismatch"
+
+target="$(release_target)"
+python_abi="$($PYTHON -c 'import sys; print(f"cp{sys.version_info.major}{sys.version_info.minor}")')"
+read -r release_version wheel_url wheel_sha runtime_url runtime_sha runtime_version runtime_abi <<EOF
+$($PYTHON - "$manifest" "$target" "$python_abi" <<'PY'
+import json, re, sys
+manifest = json.load(open(sys.argv[1], encoding="utf-8"))
+target = sys.argv[2]
+python_abi = sys.argv[3]
+if set(manifest) != {"schema", "version", "artifacts"} or manifest["schema"] != "noruct.release-manifest.v3":
+    raise SystemExit("invalid Noruct release manifest")
+version = manifest["version"]
+artifacts = manifest["artifacts"]
+if not isinstance(artifacts, dict) or set(artifacts) != {"wheel", "employee_runtime"}:
+    raise SystemExit("invalid release artifacts")
+wheel = artifacts["wheel"]
+if not isinstance(version, str) or not re.fullmatch(r"\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?", version):
+    raise SystemExit("invalid release version")
+if not isinstance(wheel, dict) or set(wheel) != {"url", "sha256"}:
+    raise SystemExit("invalid wheel artifact")
+url, digest = wheel["url"], wheel["sha256"]
+if not isinstance(url, str) or not url.startswith("https://") or "?" in url or "#" in url:
+    raise SystemExit("wheel URL must be credential-free HTTPS without query or fragment")
+if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+    raise SystemExit("invalid wheel digest")
+runtime = artifacts["employee_runtime"]
+if not isinstance(runtime, dict) or set(runtime) != {"distribution", "version", "targets"}:
+    raise SystemExit("invalid employee runtime profile")
+if runtime["distribution"] != "PyYAML" or runtime["version"] != "6.0.3":
+    raise SystemExit("unapproved employee runtime profile")
+targets = runtime["targets"]
+target_artifacts = targets.get(target) if isinstance(targets, dict) else None
+artifact = target_artifacts.get(python_abi) if isinstance(target_artifacts, dict) else None
+if not isinstance(artifact, dict) or set(artifact) != {"url", "sha256"}:
+    raise SystemExit(f"release does not provide an employee runtime for {target}/{python_abi}")
+runtime_url, runtime_digest = artifact["url"], artifact["sha256"]
+if not isinstance(runtime_url, str) or not runtime_url.startswith("https://") or "?" in runtime_url or "#" in runtime_url:
+    raise SystemExit("employee runtime URL must be credential-free HTTPS without query or fragment")
+if not isinstance(runtime_digest, str) or not re.fullmatch(r"[0-9a-f]{64}", runtime_digest):
+    raise SystemExit("invalid employee runtime digest")
+print(version, url, digest, runtime_url, runtime_digest, runtime["version"], python_abi)
+PY
+)
+EOF
+
+if [ -n "$REQUESTED_VERSION" ] && [ "$REQUESTED_VERSION" != "$release_version" ]; then
+  fail "rendered installer provides $release_version, not requested $REQUESTED_VERSION"
+fi
+
+wheel="$temp_dir/noruct-$release_version.whl"
+info "downloading Noruct $release_version"
+fetch_https "$wheel_url" "$wheel"
+[ "$(sha256_file "$wheel")" = "$wheel_sha" ] || fail "wheel digest mismatch"
+runtime_wheel="$temp_dir/PyYAML-$runtime_version-$target-$runtime_abi.whl"
+info "downloading verified employee runtime for $target/$runtime_abi"
+fetch_https "$runtime_url" "$runtime_wheel"
+[ "$(sha256_file "$runtime_wheel")" = "$runtime_sha" ] || fail "employee runtime wheel digest mismatch"
+
+version_dir="$INSTALL_ROOT/versions/$release_version"
+venv_dir="$version_dir/venv"
+if [ "$DRY_RUN" = true ]; then
+  ok "verified Noruct $release_version and employee runtime for $target/$runtime_abi; no files installed"
+  exit 0
+fi
+
+mkdir -p "$INSTALL_ROOT/versions" "$BIN_DIR" "$NORUCT_HOME"
+marker_temporary="$INSTALL_ROOT/.noruct-install-root-v1.$$"
+(umask 077; printf '%s\n' "noruct-install-root-v1" > "$marker_temporary")
+mv -f "$marker_temporary" "$INSTALL_ROOT/.noruct-install-root-v1"
+if [ ! -x "$venv_dir/bin/python" ]; then
+  "$PYTHON" -m venv "$venv_dir"
+fi
+"$venv_dir/bin/python" -m pip install --disable-pip-version-check --no-index --no-deps --upgrade "$runtime_wheel" "$wheel"
+"$venv_dir/bin/python" -m pip check
+"$venv_dir/bin/python" - "$release_version" "$runtime_version" <<'PY'
+import sys
+from dynamic_firm import __version__
+from yaml import __version__ as yaml_version
+if __version__ != sys.argv[1]:
+    raise SystemExit(f"installed Noruct version mismatch: expected {sys.argv[1]}, got {__version__}")
+if yaml_version != sys.argv[2]:
+    raise SystemExit(f"installed employee runtime mismatch: expected PyYAML {sys.argv[2]}, got {yaml_version}")
+PY
+"$venv_dir/bin/noruct" --help >/dev/null
+"$venv_dir/bin/python" - "$version_dir/release-receipt.json" "$release_version" "$target" "$runtime_abi" "$MANIFEST_URL" "$MANIFEST_SHA256" "$wheel_sha" "$runtime_sha" <<'PY'
+import json, os, pathlib, sys, tempfile
+path = pathlib.Path(sys.argv[1])
+value = {
+    "schema": "noruct.release-installation-receipt.v1",
+    "version": sys.argv[2],
+    "target": sys.argv[3],
+    "employee_runtime_abi": sys.argv[4],
+    "manifest_url": sys.argv[5],
+    "manifest_sha256": sys.argv[6],
+    "wheel_sha256": sys.argv[7],
+    "employee_runtime_sha256": sys.argv[8],
+}
+descriptor, temporary = tempfile.mkstemp(prefix=".noruct-receipt-", dir=path.parent)
+try:
+    with os.fdopen(descriptor, "w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n")
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.chmod(temporary, 0o600)
+    os.replace(temporary, path)
+finally:
+    try:
+        os.unlink(temporary)
+    except FileNotFoundError:
+        pass
+PY
+ln -sfn "$venv_dir/bin/noruct" "$BIN_DIR/noruct"
+ok "Noruct $release_version installed"
+
+case ":$PATH:" in
+  *":$BIN_DIR:"*) ok "run: noruct" ;;
+  *)
+    printf '%s\n' "Add $BIN_DIR to PATH, then run: noruct"
+    printf '%s\n' "  export PATH=\"$BIN_DIR:\$PATH\""
+    ;;
+esac

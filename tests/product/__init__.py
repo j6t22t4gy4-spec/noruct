@@ -1,0 +1,1 @@
+"""Product-shell contract tests."""

@@ -1,0 +1,67 @@
+╭─ company online ─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ N   N  OOO   RRR   U   U  CCC  TTTTT   COMPANY ONLINE                                                                │
+│ NN  N O   O  R  R  U   U C       T     NORUCT 0.0.9                                                                  │
+│ N N N O   O  RRR   U   U C       T     session session-gold                                                          │
+│ N  NN O   O  R R   U   U C       T     /help commands                                                                │
+│ N   N  OOO   R  R   UUU   CCC    T     /details execution                                                            │
+├─ Dynamic Firm Runtime ───────────────────────────────────────────────────────────────────────────────────────────────┤
+│ model      gpt-contract · openai-codex (external)                                                                    │
+│ authority  ask · shadow-only worker                                                                                  │
+│ workspace  /workspace/noruct/product                                                                                 │
+╰─ session session-gold · /help · /details ────────────────────────────────────────────────────────────────────────────╯
+
+╭─ company input ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ❯ 검증 가능한 변경을 최소 조직으로 구현해줘                                                                          │
+╰─ routing automatically ──────────────────────────────────────────────────────────────────────────────────────────────╯
+
+◇ COMPANY ACTIVITY
+├─ ◇ Compiler · finding the smallest sufficient company
+├─ ◆ Plan · dynamic · 2 tasks
+├─ ◇ researcher · inspect spec
+├─ ◇ engineer · implement change
+
+╭─ VALIDATION · FAIL ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ × fixture-validation                                                                                                 │
+│ attempt  1                                                                                                           │
+│ detail   edge case failed                                                                                            │
+╰─ implement change ───────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─ VALIDATION · PASS ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ✓ fixture-validation                                                                                                 │
+│ attempt  2                                                                                                           │
+│ detail   all bounded checks passed                                                                                   │
+╰─ implement change ───────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─ APPROVAL · REQUIRED ────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ action  apply_workspace_change_set                                                                                   │
+│ impact  write · medium risk                                                                                          │
+│ scope   workspace:test:file.py                                                                                       │
+├─ PROPOSED CHANGE ────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Apply one validated shadow change                                                                                    │
+│ --- a/src/app.py                                                                                                     │
+│ +++ b/src/app.py                                                                                                     │
+│ @@ -1 +1 @@                                                                                                          │
+│ -result = unsafe(value)                                                                                              │
+│ +result = validated(value)                                                                                           │
+├─ DECISION ───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+╰─ Enter defaults to deny ─────────────────────────────────────────────────────────────────────────────────────────────╯
+  [1] Allow once  [2] Deny
+  Select [2]: 
+│  ✓ Approval allow once
+
+╭─ TOOL · DONE ────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ ✓ apply_workspace_change_set                                                                                         │
+│ output   96 bytes                                                                                                    │
+╰─ implement change ───────────────────────────────────────────────────────────────────────────────────────────────────╯
+└─ ✓ researcher · inspect spec
+└─ ✓ engineer · implement change
+✓ Company execution complete
+
+╭─ ● NORUCT RESULT ────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ 변경을 검증하고 승인된 결과를 적용했습니다.                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─ CHANGES · 1 FILE ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ changed  src/app.py                                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+  ✓ succeeded · session golden-… · ask · shadow-only worker · 2 staff · 2 parallel · 3 model · 1 tool · 12.6k tok · 0s

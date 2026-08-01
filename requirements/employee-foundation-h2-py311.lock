@@ -1,0 +1,4 @@
+# H2 Employee Runtime qualification closure; not an approved product dependency set.
+# Source 0.18.2 @ 89bd0fba903bbfd78b0d99ce6f194863dd01b7e1
+# Direct and exact runtime import: PyYAML
+PyYAML==6.0.3

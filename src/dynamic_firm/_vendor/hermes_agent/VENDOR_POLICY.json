@@ -1,0 +1,48 @@
+{
+  "activation": "isolated_worker_only_until_h2_cutover",
+  "allowed_data": [
+    "locales/"
+  ],
+  "excluded_prefixes": [
+    "plugins/hermes-achievements/",
+    "plugins/security-guidance/"
+  ],
+  "excluded_surfaces": [
+    "builtin_and_optional_skills",
+    "dashboard_and_tui_web_bundles",
+    "gateway_brand_and_media_assets",
+    "image_and_audio_samples",
+    "optional_mcp_catalog",
+    "upstream_commands_and_product_identity"
+  ],
+  "python_packages": [
+    "agent",
+    "tools",
+    "hermes_cli",
+    "gateway",
+    "tui_gateway",
+    "cron",
+    "acp_adapter",
+    "plugins",
+    "providers"
+  ],
+  "repository": "https://github.com/NousResearch/hermes-agent",
+  "source_commit": "89bd0fba903bbfd78b0d99ce6f194863dd01b7e1",
+  "top_level_modules": [
+    "run_agent.py",
+    "model_tools.py",
+    "toolsets.py",
+    "batch_runner.py",
+    "trajectory_compressor.py",
+    "toolset_distributions.py",
+    "cli.py",
+    "hermes_bootstrap.py",
+    "hermes_constants.py",
+    "hermes_state.py",
+    "hermes_time.py",
+    "hermes_logging.py",
+    "utils.py",
+    "mcp_serve.py"
+  ],
+  "treatment": "repository_scale_python_runtime_closure_exact_copy"
+}

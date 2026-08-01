@@ -1,0 +1,11 @@
+# Product source distributions carry the active Hermes fork only. Historical
+# capsule evidence stays in the repository/source-audit checkout, never in a
+# release archive. Bytecode is always a local build artifact.
+prune src/dynamic_firm/_vendor/employee_runtime_capsule
+# Top-level tests are checkout-only regression evidence. Product evaluation
+# fixtures are explicit package data and are separate from this test suite.
+prune tests
+include LICENSE
+include THIRD_PARTY_NOTICES.md
+global-exclude *.py[cod]
+recursive-exclude * __pycache__/*

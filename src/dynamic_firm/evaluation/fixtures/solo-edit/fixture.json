@@ -1,0 +1,6 @@
+{
+  "id": "solo-edit",
+  "materialized_paths": ["TASK.md", "calculator.py", "tests/test_calculator.py"],
+  "allowed_change_paths": ["calculator.py"],
+  "required_change_paths": ["calculator.py"]
+}

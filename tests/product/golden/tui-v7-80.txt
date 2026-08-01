@@ -1,0 +1,84 @@
+╭──────────────────╮
+│ ◆ COMPANY ONLINE │
+╰──────────────────╯
+
+  ███╗   ██╗ ██████╗ ██████╗ ██╗   ██╗ ██████╗████████╗
+  ████╗  ██║██╔═══██╗██╔══██╗██║   ██║██╔════╝╚══██╔══╝
+  ██╔██╗ ██║██║   ██║██████╔╝██║   ██║██║        ██║
+  ██║╚██╗██║██║   ██║██╔══██╗██║   ██║██║        ██║
+  ██║ ╚████║╚██████╔╝██║  ██║╚██████╔╝╚██████╗   ██║
+  ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝   ╚═╝
+
+╭─ company snapshot ───────────────────────────────────────────────────────────╮
+│ NORUCT 0.0.9 · Dynamic Firm Runtime                                          │
+├─ company ────────────────────────────────────────────────────────────────────┤
+│ roster        r2 · 2 active                                                  │
+│ employees     Noruct Generalist · Repository Analyst                         │
+│ capabilities  conversation · evidence synthesis · general reasoning ·        │
+│ repository analysis                                                          │
+├─ execution ──────────────────────────────────────────────────────────────────┤
+│ model         gpt-contract                                                   │
+│ via           openai-codex (external)                                        │
+│ authority     ask · shadow-only worker                                       │
+│ tools         list · read · apply change set*                                │
+│ workflow      compiled work · dependencies · ready-set parallelism           │
+│ limits        6 tasks · 3 parallel · 1 replan · 2 temporary roles            │
+├─ session ────────────────────────────────────────────────────────────────────┤
+│ workspace     /workspace/noruct/product                                      │
+│ session       session-gold                                                   │
+╰─ * approval required · company ready · /model · /help · /details ────────────╯
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ❯ 검증 가능한 변경을 최소 조직으로 구현해줘                                  │
+╰─ gpt-contract · /model · routing automatically ──────────────────────────────╯
+
+◆ Company plan
+├─ ◇ Compiler · finding the smallest sufficient company
+├─ ◆ Plan · dynamic · 2 tasks
+├─ ◇ researcher · inspect spec
+├─ ◇ engineer · implement change
+
+╭─ VALIDATION · FAIL ──────────────────────────────────────────────────────────╮
+│ × fixture-validation                                                         │
+│ attempt  1                                                                   │
+│ detail   edge case failed                                                    │
+╰─ implement change ───────────────────────────────────────────────────────────╯
+
+╭─ VALIDATION · PASS ──────────────────────────────────────────────────────────╮
+│ ✓ fixture-validation                                                         │
+│ attempt  2                                                                   │
+│ detail   all bounded checks passed                                           │
+╰─ implement change ───────────────────────────────────────────────────────────╯
+
+╭─ APPROVAL · REQUIRED ────────────────────────────────────────────────────────╮
+│ action  apply_workspace_change_set                                           │
+│ impact  write · medium risk                                                  │
+│ scope   workspace:test:file.py                                               │
+├─ PROPOSED CHANGE ────────────────────────────────────────────────────────────┤
+│ Apply one validated shadow change                                            │
+│ --- a/src/app.py                                                             │
+│ +++ b/src/app.py                                                             │
+│ @@ -1 +1 @@                                                                  │
+│ -result = unsafe(value)                                                      │
+│ +result = validated(value)                                                   │
+├─ DECISION ───────────────────────────────────────────────────────────────────┤
+╰─ Enter defaults to deny ─────────────────────────────────────────────────────╯
+  [1] Allow once  [2] Deny
+  Select [2]: 
+│  ✓ Approval allow once
+
+╭─ TOOL · DONE ────────────────────────────────────────────────────────────────╮
+│ ✓ apply_workspace_change_set                                                 │
+│ output   96 bytes                                                            │
+╰─ implement change ───────────────────────────────────────────────────────────╯
+└─ ✓ researcher · inspect spec
+└─ ✓ engineer · implement change
+✓ Company execution complete
+
+● Noruct
+  변경을 검증하고 승인된 결과를 적용했습니다.
+
+╭─ CHANGES · 1 FILE ───────────────────────────────────────────────────────────╮
+│ changed  src/app.py                                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+  ✓ succeeded · session golden-… · ask · shadow-only worker · 2 staff · 0s

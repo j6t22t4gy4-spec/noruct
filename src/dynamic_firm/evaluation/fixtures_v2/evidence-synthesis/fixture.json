@@ -1,0 +1,7 @@
+{
+  "id": "evidence-synthesis",
+  "purpose": "VALUE_IDENTIFIABLE",
+  "materialized_paths": ["TASK.md", "CHANNELS.md", "PRIORITY.md", "delivery.py", "tests/test_delivery.py"],
+  "allowed_change_paths": ["delivery.py"],
+  "required_change_paths": ["delivery.py"]
+}

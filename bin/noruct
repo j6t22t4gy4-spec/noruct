@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+set -eu
+
+PROJECT_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ -n "${NORUCT_PYTHON:-}" ]; then
+  PYTHON_BIN=$NORUCT_PYTHON
+elif [ -x "$PROJECT_ROOT/.venv/bin/python" ]; then
+  PYTHON_BIN=$PROJECT_ROOT/.venv/bin/python
+elif command -v python3.11 >/dev/null 2>&1; then
+  PYTHON_BIN=python3.11
+else
+  PYTHON_BIN=python3
+fi
+if [ -n "${PYTHONPATH:-}" ]; then
+  export PYTHONPATH="$PROJECT_ROOT/src:$PYTHONPATH"
+else
+  export PYTHONPATH="$PROJECT_ROOT/src"
+fi
+
+exec "$PYTHON_BIN" -m dynamic_firm "$@"

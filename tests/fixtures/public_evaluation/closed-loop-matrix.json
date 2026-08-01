@@ -1,0 +1,17 @@
+{
+  "command": "noruct eval coding --json",
+  "network_used": false,
+  "schema": "noruct.closed-loop-coding-summary.v1",
+  "trajectory_source": "append-only-runtime-ledger",
+  "records": [
+    {"fixture":"solo-edit","strategy":"solo","status":"SUCCEEDED","planning_mode":"SOLO","runs":1,"events":14,"employees":1,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":true,"quality_score":1.0},
+    {"fixture":"solo-edit","strategy":"fixed","status":"SUCCEEDED","planning_mode":"DYNAMIC","runs":3,"events":26,"employees":3,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":false,"quality_score":0.8333},
+    {"fixture":"solo-edit","strategy":"dynamic","status":"SUCCEEDED","planning_mode":"SOLO","runs":1,"events":14,"employees":1,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":true,"quality_score":1.0},
+    {"fixture":"parallel-evidence","strategy":"solo","status":"SUCCEEDED","planning_mode":"SOLO","runs":1,"events":14,"employees":1,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":false,"quality_score":0.6667},
+    {"fixture":"parallel-evidence","strategy":"fixed","status":"SUCCEEDED","planning_mode":"DYNAMIC","runs":3,"events":26,"employees":3,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":false,"quality_score":0.6667},
+    {"fixture":"parallel-evidence","strategy":"dynamic","status":"SUCCEEDED","planning_mode":"DYNAMIC","runs":3,"events":26,"employees":2,"parallelism":2,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[true],"task_success":true,"overall_passed":true,"quality_score":1.0},
+    {"fixture":"test-guided-recovery","strategy":"solo","status":"SUCCEEDED","planning_mode":"SOLO","runs":1,"events":17,"employees":1,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[false,true],"task_success":true,"overall_passed":true,"quality_score":1.0},
+    {"fixture":"test-guided-recovery","strategy":"fixed","status":"SUCCEEDED","planning_mode":"DYNAMIC","runs":3,"events":29,"employees":3,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[false,true],"task_success":true,"overall_passed":false,"quality_score":0.8333},
+    {"fixture":"test-guided-recovery","strategy":"dynamic","status":"SUCCEEDED","planning_mode":"SOLO","runs":1,"events":17,"employees":1,"parallelism":1,"writers":1,"approvals":"1/1","preapproval_mutations":0,"validation_attempts":[false,true],"task_success":true,"overall_passed":true,"quality_score":1.0}
+  ]
+}

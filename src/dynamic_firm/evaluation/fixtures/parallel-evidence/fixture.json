@@ -1,0 +1,6 @@
+{
+  "id": "parallel-evidence",
+  "materialized_paths": ["TASK.md", "SPEC.md", "identifier.py", "tests/test_identifier.py"],
+  "allowed_change_paths": ["identifier.py"],
+  "required_change_paths": ["identifier.py"]
+}
