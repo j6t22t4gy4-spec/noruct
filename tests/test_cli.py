@@ -651,7 +651,10 @@ class CliTests(unittest.TestCase):
     def test_modern_terminal_without_optional_profile_is_actionable(self) -> None:
         output = TtyStringIO()
         error = io.StringIO()
-        with patch("dynamic_firm.cli.modern_terminal_available", return_value=False):
+        with patch(
+            "dynamic_firm.application.interactive_runtime_cli.cli.modern_terminal_available",
+            return_value=False,
+        ):
             with tempfile.TemporaryDirectory() as temporary:
                 exit_code = main(
                     [
@@ -679,7 +682,10 @@ class CliTests(unittest.TestCase):
         plain = parser.parse_args(["chat", "--plain"])
         scrollback_safe = parser.parse_args(["chat", "--no-live-screen"])
 
-        with patch("dynamic_firm.cli.modern_terminal_available", return_value=True):
+        with patch(
+            "dynamic_firm.application.interactive_runtime_cli.cli.modern_terminal_available",
+            return_value=True,
+        ):
             self.assertEqual(auto.terminal_ui, "auto")
             self.assertEqual(_resolve_interactive_terminal_ui(auto), "modern")
             self.assertEqual(
@@ -694,7 +700,10 @@ class CliTests(unittest.TestCase):
             self.assertEqual(_resolve_interactive_terminal_ui(plain), "native")
             self.assertEqual(_resolve_interactive_terminal_ui(scrollback_safe), "native")
 
-        with patch("dynamic_firm.cli.modern_terminal_available", return_value=False):
+        with patch(
+            "dynamic_firm.application.interactive_runtime_cli.cli.modern_terminal_available",
+            return_value=False,
+        ):
             self.assertEqual(_resolve_interactive_terminal_ui(auto), "native")
 
     def test_modern_controller_knowledge_commands_do_not_build_a_provider_or_add_turns(self) -> None:
