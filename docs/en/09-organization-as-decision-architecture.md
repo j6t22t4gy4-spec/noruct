@@ -1,6 +1,6 @@
 # 09 — Organization as Decision Architecture
 
-> **Canonical:** English · [한국어](../ko/09-organization-as-decision-architecture.md) · [← Current Development Status](08-current-development-status.md) · [Documentation index](README.md)
+> **Canonical:** English · [한국어](../ko/09-organization-as-decision-architecture.md) · [← Current Development Status](08-current-development-status.md) · [Documentation index](README.md) · [Next: Model Intelligence and Multi-Provider Orchestration →](10-model-intelligence-and-multi-provider-orchestration.md)
 
 ## Central claim
 
@@ -306,11 +306,10 @@ owners continue to decide.
 
 ## Source literature reviews
 
-This concept paper is derived from two Korean-language long-form reviews. They are published separately to preserve
-their original arguments and literature maps without turning source claims into product authority:
+This concept paper is informed by a Korean-language working paper. It is published separately to preserve its original
+argument and literature map without turning source claims into product authority:
 
-- [AI Agent Organization Design Principles (Korean)](../literature/organization-as-decision-structure.ko.md)
-- [LLM Multi-Agent Operating Structures and Design (Korean)](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+- [Computational Governance of AI Agent Organizations (Korean)](../literature/organization_governance_theory.md)
 
 ## Final position
 

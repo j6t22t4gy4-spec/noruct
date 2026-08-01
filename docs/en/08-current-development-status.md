@@ -2,7 +2,7 @@
 
 > [← Network Engineering](07-network-engineering.md) · [Index](README.md) · [한국어](../ko/08-current-development-status.md) · [Next: Organization as Decision Architecture →](09-organization-as-decision-architecture.md)
 
-**Last reviewed: 2026-07-31.** English is canonical.
+**Last reviewed: 2026-08-01.** English is canonical.
 
 ## Purpose
 
@@ -65,6 +65,7 @@ evaluation is not sufficient to promote a default, a reusable Blueprint, a Skill
 | Capability integrity | External versions and digests require explicit activation. Only non-Network local derivatives may advance for future Jobs under user-selected `always-approve`, authority checks, and static contract compatibility. Running Jobs remain pinned and prior activations remain rollback targets. |
 | Platform and release | Development validation exists; Windows breadth, packaging, legal/provenance review, and commercial release authorization remain separate gates. |
 | Runtime selection | One executable Noruct runtime; historical state compatibility is a read/backup path, not a rollback engine. |
+| Model intelligence and execution routing | Multiple adapters, explicit bounded fallback, and bounded advisory fan-out exist as job-wide provider composition. Signed shared intelligence, local compatibility/outcome correction, Employee/task-specific frozen routes, provider-specific egress, and production multi-provider qualification remain development work. |
 | Operator surfaces | CLI and TUI are the active local surfaces. A loopback Graph Workbench proves a narrow GUI-ready projection and future-Job constraint path; it is not a general desktop or hosted GUI. |
 
 ## The falsifiable product question

@@ -15,4 +15,6 @@
   않는다.
 
 Noruct에 대한 적용과 개선 해석은 별도
-[조직은 직책이 아니라 의사결정 구조다](../ko/09-organization-as-decision-architecture.md) 개념문서가 담당한다.
+[조직은 직책이 아니라 의사결정 구조다](../ko/09-organization-as-decision-architecture.md)와
+[Model Intelligence와 다중 Provider 오케스트레이션](../ko/10-model-intelligence-and-multi-provider-orchestration.md)
+개념문서가 담당한다.

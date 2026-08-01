@@ -47,6 +47,7 @@ flowchart TB
 | 07 | [네트워크 공학](07-network-engineering.md) | 재사용 가능한 능력을 어떻게 공유하되 사용자 권한을 지키는가? | 선택적·로컬 우선 능력 교환을 정의한다. |
 | 08 | [현재 개발 상태](08-current-development-status.md) | 무엇이 구현되었고, 무엇이 실험적 또는 미검증인가? | 개념 논문과 현재 개발 근거를 분리한다. |
 | 09 | [조직은 직책이 아니라 의사결정 구조다](09-organization-as-decision-architecture.md) | 에이전트 워크플로는 언제 조직이 되며, 얼마나 작아야 하고 무엇을 설명해야 하는가? | 과업·배치·정보·통신·권한·검증·학습을 분리한 뒤 최소 충분 조직과 검토 가능한 전달을 정의한다. |
+| 10 | [Model Intelligence와 다중 Provider 오케스트레이션](10-model-intelligence-and-multi-provider-orchestration.md) | 공유 모델 evidence를 재사용하면서도 local authority를 지키고 task마다 다른 route를 어떻게 고르는가? | Benchmark prior, 로컬 호환성·outcome을 분리하고 EmployeeRun route, 정보 반출과 다중 provider 실행을 동결한다. |
 
 ## 공개 문서의 경계
 

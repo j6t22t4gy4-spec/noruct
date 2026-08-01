@@ -1,6 +1,6 @@
 # 09 — 조직은 직책이 아니라 의사결정 구조다
 
-> 정본: [English](../en/09-organization-as-decision-architecture.md) · [← 현재 개발 상태](08-current-development-status.md) · [문서 인덱스](README.md)
+> 정본: [English](../en/09-organization-as-decision-architecture.md) · [← 현재 개발 상태](08-current-development-status.md) · [문서 인덱스](README.md) · [다음: Model Intelligence와 다중 Provider 오케스트레이션 →](10-model-intelligence-and-multi-provider-orchestration.md)
 
 ## 중심 명제
 
@@ -298,11 +298,10 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 
 ## 문헌검토 원문
 
-이 개념문서의 배경이 된 두 편의 한국어 장문 문헌검토를 별도로 공개한다. 원문의 논증과 문헌 지도를 보존하되,
-원문 주장을 제품 권위로 바꾸지 않는다.
+이 개념문서의 배경이 된 한국어 working paper를 별도로 공개한다. 원문의 논증과 문헌 지도를 보존하되, 원문 주장을
+제품 권위로 바꾸지 않는다.
 
-- [AI 에이전트 조직 설계 원리](../literature/organization-as-decision-structure.ko.md)
-- [LLM 멀티에이전트 운영 구조와 설계](../literature/from-human-organization-to-ai-agent-organization.ko.md)
+- [AI 에이전트 조직의 계산적 거버넌스](../literature/organization_governance_theory.md)
 
 ## 최종 입장
 

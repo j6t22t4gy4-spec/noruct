@@ -26,9 +26,14 @@ assignment, information, communication, authority, verification, and learning. I
 the minimum sufficient organization and deliver a short, evidence-bound explanation instead of treating more agents or
 more logs as progress.
 
-The two Korean-language [source literature reviews](docs/literature/README.md) behind that paper are published
-separately in their original long-form structure. Their citations and recent research claims remain source-paper
-claims rather than independently verified Noruct product evidence.
+The [model-intelligence and multi-provider paper](docs/en/10-model-intelligence-and-multi-provider-orchestration.md)
+explains how shared, signed benchmark evidence can inform local routing without becoming Company authority. It separates
+central priors, local compatibility and outcomes, freezes an exact route per EmployeeRun, limits provider-specific data
+egress, and preserves one artifact owner and commit path even when one Job uses multiple providers.
+
+The Korean-language [source working paper](docs/literature/README.md) behind that paper is published separately in its
+original long-form structure. Its citations and recent research claims remain source-paper claims rather than
+independently verified Noruct product evidence.
 
 Capability intake and recursive improvement use separate trust lanes. External Tools, Skills, Plugins, and other
 Network artifacts remain pinned to an exact reviewed version and digest and are never replaced automatically. Only a

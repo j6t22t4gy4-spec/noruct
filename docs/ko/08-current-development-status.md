@@ -2,7 +2,7 @@
 
 > 정본: [English](../en/08-current-development-status.md) · [← Network Engineering](07-network-engineering.md) · [문서 인덱스](README.md) · [다음: 조직은 직책이 아니라 의사결정 구조다 →](09-organization-as-decision-architecture.md)
 
-**마지막 검토: 2026-07-31.** 영문판이 정본입니다.
+**마지막 검토: 2026-08-01.** 영문판이 정본입니다.
 
 ## 목적
 
@@ -62,6 +62,7 @@ Manager와 조직 실험은 negative-transfer 결과도 evidence로 보존합니
 | Capability integrity | 외부 version/digest는 명시적으로 활성화해야 함. 사용자 `always-approve`, 권한 검사와 static 계약 호환성을 통과한 non-Network local derivative만 다음 Job에 승격 가능하며 실행 중 Job pin과 이전 activation rollback은 유지됨 |
 | Platform과 release | 개발 검증은 있으나 Windows 폭, packaging, legal/provenance review, commercial release authorization은 별도 gate |
 | Runtime 선택 | 실행 가능한 Noruct runtime은 하나이며 historical state compatibility는 rollback engine이 아닌 read/backup 경로 |
+| Model Intelligence와 실행 라우팅 | 여러 adapter, explicit bounded fallback과 bounded advisory fan-out은 Job 전역 provider composition으로 존재합니다. Signed shared intelligence, local compatibility/outcome 보정, Employee/task별 frozen route, provider별 egress와 production multi-provider qualification은 개발 작업으로 남아 있습니다. |
 | Operator surface | CLI와 TUI가 현재 로컬 surface다. loopback Graph Workbench는 좁은 GUI-ready projection과 future-Job constraint 경로를 검증하지만, 범용 desktop 또는 hosted GUI는 아니다. |
 
 ## 검증 가능한 제품 질문
