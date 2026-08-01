@@ -939,7 +939,12 @@ class FrozenRouteGoalE2ETests(unittest.TestCase):
             root = Path(directory)
             config = replace(
                 self._config(root),
-                run_limits=RunLimits(max_model_calls=8, max_wall_time_ms=500),
+                # The deadline must exercise cancellation after both READY
+                # routes enter provider dispatch.  A sub-second whole-Job
+                # budget races legitimate pre-dispatch validation on slower
+                # CI hosts and instead tests the separate fail-before-dispatch
+                # contract.
+                run_limits=RunLimits(max_model_calls=8, max_wall_time_ms=5_000),
             )
             self._seed_blueprint(config.state_path)
             composition, created = self._composition(
