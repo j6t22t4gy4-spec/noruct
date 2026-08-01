@@ -654,6 +654,9 @@ class CliTests(unittest.TestCase):
         with patch(
             "dynamic_firm.application.interactive_runtime_cli.cli.modern_terminal_available",
             return_value=False,
+        ), patch(
+            "dynamic_firm.application.entrypoint_cli.cli._needs_first_run_onboarding",
+            return_value=False,
         ):
             with tempfile.TemporaryDirectory() as temporary:
                 exit_code = main(
