@@ -1,0 +1,127 @@
+# 01 — Dynamic Firm Runtime
+
+> [← North Star](00-north-star.md) · [Index](README.md) · [Next: Persistent Employee →](02-persistent-employee.md) · [한국어](../ko/01-dynamic-firm-runtime.md)
+
+A Dynamic Firm Runtime is an execution system that maintains a firm over time while creating, reshaping, and retiring the smallest job structure required for each request.
+
+## Abstract
+
+This paper defines the runtime-level separation that makes the firm metaphor operational rather than theatrical. The company persists as an authority and capability boundary. The job graph exists only to execute a particular work order. The Manager interprets meaning and the Kernel enforces rules. No one of these objects is a substitute for the others.
+
+## Development position
+
+The current development implementation has one local Company entry point, persistent Company and Employee state,
+graphless direct work, managed solo work, and bounded team work. It records Work Orders, capability snapshots, task
+receipts, graph revisions, and Patch proposals under separate lifecycles.
+
+This is not a claim that a Manager-led team is generally better than a strong single Employee. Current evaluation keeps
+both positive and negative transfer evidence, and does not promote a Manager, a Blueprint, or a Patch automatically
+from a successful campaign. The current limits and evidence are summarized in
+[Current Development Status](08-current-development-status.md).
+
+## Operating hypothesis
+
+Given the same user goal, the best execution structure may be direct, solo, or a temporary team. Therefore planning is a reversible hypothesis under hard limits, not a workflow script that becomes correct merely because it was generated first.
+
+```mermaid
+flowchart TD
+  U[User goal and authority] --> M[Manager]
+  M --> K[Firm Kernel]
+  K --> E[Persistent employees]
+  K --> G[Temporary job graph]
+  E --> G
+  G --> R[Evidence, result, and receipts]
+  R --> M
+  M --> U
+  R -. qualified learning only .-> P[Skills, playbooks, roster changes]
+```
+
+## Four different things
+
+| Concern | Purpose | Lifetime |
+| --- | --- | --- |
+| Company | Mission, policy, authority, budget, identity | Persistent |
+| Employee | Capability, tools, approved memory, operating contract | Persistent or deliberately retired |
+| Job graph | Dependencies, task ownership, execution order | Per request |
+| Run record | Inputs, evidence, mutations, outputs, outcome | Durable audit record |
+
+The job graph is not the company. It is a temporary work order placed inside the company.
+
+## Request lifecycle
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant M as Manager
+  participant K as Firm Kernel
+  participant E as Selected Employee(s)
+  participant V as Validator or outcome source
+  U->>M: Goal, constraints, authority
+  M->>K: Proposed execution shape
+  K->>K: Validate budget, permissions, graph rules
+  K->>E: Frozen assignment and bounded context
+  E-->>K: Artifact, evidence, receipts, uncertainty
+  K->>V: Deterministic or declared verification
+  V-->>M: Acceptance signal or unresolved result
+  M-->>U: One short, reviewable report
+```
+
+The sequence is deliberately asymmetric. The Manager may propose; the Kernel admits; Employees execute; validators
+observe. An Employee result does not directly rewrite the graph, the roster, the budget, or the user's authority. The
+final report is derived from artifacts, evidence, validation, and receipts; it is not a replay of the full event stream.
+
+## Direct, solo, or team execution
+
+The runtime begins from the smallest shape that can protect the accepted outcome:
+
+1. **Direct response** when no tool use, durable state, or independent verification is necessary.
+2. **Solo execution** when one capable employee can own the work end to end.
+3. **Temporary team execution** when real dependency separation, capability separation, independent verification, or a bounded replica-value opportunity creates enough value.
+
+Parallelism is an outcome of dependency and marginal-value analysis. It is not a decorative feature, but minimizing spend is not allowed to silently lower expected result quality either.
+
+A broad assignment does not always require several different Employees. The runtime may create two to four job-local execution instances of one selected Employee when the work has independent partitions, materially different candidate paths, or bounded diagnostic probes. The Employee remains one persistent capability identity; the instances receive frozen assignments and lose authority when the job ends.
+
+```mermaid
+flowchart LR
+  W["Wide assignment"] --> D{"Does another instance add bounded value?"}
+  D -->|No| S["One Employee run"]
+  D -->|Partition| P["Same Employee\nseparate scopes"]
+  D -->|Candidate| C["Same Employee\ncompeting artifacts"]
+  D -->|Diagnostic| X["Same Employee\nindependent probes"]
+  P --> A["Mandatory aggregation"]
+  C --> A
+  X --> A
+  A --> V["Validation and one firm result"]
+```
+
+This is execution replication, not roster growth. It does not create independent expertise, permission, memory, or judgment merely by multiplying instances. If diversity or independent verification is required, the graph must select a materially different capability or validation method.
+
+For managed work, the planning preference is **minimum-sufficient and performance-preserving**. This is not
+cost-minimum planning: a technically feasible run may still be insufficient when a concrete partition, material
+alternative, diagnostic probe, or independent verification route has stated marginal value. But unknown value does not
+admit more structure. Strong Solo remains the baseline unless the proposal can name the additional scope, expected
+benefit, aggregation owner, same-budget comparison, and stopping condition. A user can explicitly request
+single/no-parallel execution, and no preference increases permissions or budget.
+
+## Manager and Kernel
+
+The Manager reasons about meaning: whether a goal is clear, whether a specialist is needed, whether evidence is sufficient, and whether an escalation is justified. The Firm Kernel enforces mechanical rules: budgets, approvals, mutation limits, receipts, and state transitions.
+
+This split prevents an LLM from becoming its own unbounded policy engine. A Manager can recommend a change; the Kernel decides whether the change is permissible.
+
+## Runtime reshaping
+
+Plans are hypotheses, not promises. As evidence arrives, a job can be retried, rerouted, extended with a diagnostic probe, joined into a final synthesis, or canceled. Every material revision should retain the prior structure, the reason for change, and the observed result.
+
+The runtime should not create a meeting loop around ordinary work. A semantic decision boundary—not a calendar-shaped ritual—is what justifies Manager attention.
+
+Users do not need to design this structure before asking for work. They can nevertheless inspect the generated graph, revise a versioned Blueprint, pin an accepted structure, or require approval before structural changes. Automatic composition and user control are complementary, not mutually exclusive.
+
+## Boundary conditions
+
+The runtime does not promise that every ambiguous request deserves a team, that every task can be verified
+automatically, or that a later graph is necessarily better than the first. It promises a narrower discipline:
+structural changes are bounded and attributable; the selected organization and excluded material alternatives can be
+explained; validation gaps remain visible; and costly or irreversible effects remain governed by the applicable
+authority policy.
