@@ -67,6 +67,10 @@ Before information becomes durable Employee memory, the firm should be able to a
 
 The Manager is a persistent employee with a different contract, closer to a chief-of-staff than a theatrical supervisor. It can invest more reasoning in problem framing, capability selection, escalation, and cross-job learning. It should not narrate fake meetings or duplicate task work already owned by a specialist.
 
+For an explicit work request, the Manager proposes the task and capability shape; it does not assign a named employee directly. The Kernel matches each validated capability requirement against the frozen roster, availability, user constraints, and action policy. When no persistent employee supplies a bounded required capability, the Kernel may create a job-local temporary role instead of pretending that an analyst or a generalist has that capability.
+
+The absence of outcome evidence does not erase this semantic responsibility. It narrows the proposal to strong solo execution and blocks automatic team, replica, or reuse claims until value is demonstrated.
+
 ## Growth without uncontrolled accumulation
 
 Most outputs should end as job artifacts. A durable employee change requires stronger evidence: repeated usefulness, a clear correction signal, compatible authority, and a reversible versioned update. That update may improve a skill, memory policy, or capability contract, but it should not silently turn a temporary behavior into permanent identity.

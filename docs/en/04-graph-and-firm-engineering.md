@@ -101,7 +101,7 @@ The evaluator produces evidence and a recommendation. It does not silently edit 
 
 ## Manager attention is scarce
 
-The Manager does not review every token or simulate conversations between employees. It intervenes at semantic boundaries: ambiguous goals, conflicting evidence, missing capability, authority escalation, a major graph revision, or a meaningful learning proposal.
+The Manager does not review every token or simulate conversations between employees. It owns the initial semantic boundary for an explicit work request—turning it into bounded tasks and capability requirements—and then intervenes again at ambiguous goals, conflicting evidence, missing capability, authority escalation, a major graph revision, or a meaningful learning proposal. A structural validator and the Kernel, not the Manager, enforce the graph and staffing rules.
 
 This turns the Manager into a decision and routing capability rather than a permanent bottleneck.
 

@@ -26,7 +26,9 @@ Given the same user goal, the best execution structure may be direct, solo, or a
 ```mermaid
 flowchart TD
   U[User goal and authority] --> M[Manager]
-  M --> K[Firm Kernel]
+  M --> P[Semantic task and capability proposal]
+  P --> C[Structural validation]
+  C --> K[Firm Kernel]
   K --> E[Persistent employees]
   K --> G[Temporary job graph]
   E --> G
@@ -57,8 +59,8 @@ sequenceDiagram
   participant E as Selected Employee(s)
   participant V as Validator or outcome source
   U->>M: Goal, constraints, authority
-  M->>K: Proposed execution shape
-  K->>K: Validate budget, permissions, graph rules
+  M->>K: Proposed tasks, dependencies, and capabilities
+  K->>K: Validate task shape, capability, budget, permissions, graph rules
   K->>E: Frozen assignment and bounded context
   E-->>K: Artifact, evidence, receipts, uncertainty
   K->>V: Deterministic or declared verification
@@ -104,9 +106,13 @@ admit more structure. Strong Solo remains the baseline unless the proposal can n
 benefit, aggregation owner, same-budget comparison, and stopping condition. A user can explicitly request
 single/no-parallel execution, and no preference increases permissions or budget.
 
-## Manager and Kernel
+## Manager, validation, and Kernel
 
-The Manager reasons about meaning: whether a goal is clear, whether a specialist is needed, whether evidence is sufficient, and whether an escalation is justified. The Firm Kernel enforces mechanical rules: budgets, approvals, mutation limits, receipts, and state transitions.
+The Manager owns the semantic proposal for an explicit work request: it turns the stated goal and constraints into bounded tasks, dependencies, required capabilities, and acceptance conditions. It does not select by role name or grant itself authority.
+
+The structural validator checks that proposal against the requested effect and graph contract. For example, a requested workspace change cannot silently become a read-only analysis task; its final execution task must require an implementation capability. The Firm Kernel then enforces mechanical rules: frozen roster capability matching, temporary-role limits, budgets, approvals, mutation limits, receipts, and state transitions.
+
+Outcome evidence has a narrow role. It can limit an uncertain proposal to strong solo execution and prevent automatic team, replica, or workflow reuse. It does not remove the Manager from interpreting an explicit request.
 
 This split prevents an LLM from becoming its own unbounded policy engine. A Manager can recommend a change; the Kernel decides whether the change is permissible.
 

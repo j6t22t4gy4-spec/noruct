@@ -74,7 +74,9 @@ evaluation history 중 하나 이상이 실제로 달라야 합니다. 또한 �
 
 ## Manager의 위치
 
-Manager는 상시 감독 loop나 권한을 가진 CEO가 아닙니다. 다음 semantic boundary에서만 조직 판단을 합니다.
+Manager는 상시 감독 loop나 권한을 가진 CEO가 아닙니다. 명시적 작업 요청의 최초 semantic boundary에서는
+task와 capability를 제안하고, 이후 다음 boundary에서만 조직 판단을 합니다. graph와 staffing 규칙의 강제는
+Manager가 아니라 structural validator와 Kernel의 책임입니다.
 
 1. 목표를 Work Order로 해석할 때
 2. direct, solo, team 중 최소 형태를 선택할 때

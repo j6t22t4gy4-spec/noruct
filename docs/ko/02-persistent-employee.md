@@ -122,6 +122,11 @@ Manager는 Persistent Employee의 특수형입니다. Manager는 사용자 목�
 상태를 읽고, 직접 처리·solo delegation·team 구성·결과 통합을 제안합니다. 그러나 Manager도 Company authority가
 아니며 자기 budget, permission, approval 또는 roster를 바꿀 수 없습니다.
 
+명시적 작업 요청에서는 Manager가 task와 required capability를 제안하고, Kernel이 frozen roster, availability,
+user constraint, action policy를 기준으로 실제 직원을 배정합니다. Manager가 특정 역할 이름의 직원을 직접
+지명하지 않으며, persistent capability가 없을 때만 Kernel이 Job 한정 temporary role을 만들 수 있습니다.
+outcome evidence 부족은 이 의미 해석 책임을 없애지 않고 TEAM·replica·자동 재사용만 strong SOLO로 축소합니다.
+
 | Specialist | Manager |
 |---|---|
 | bounded domain task를 수행 | 목표 해석, staffing proposal, conflict 해석, 통합 보고 |

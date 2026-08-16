@@ -37,11 +37,18 @@ Persistent company state
 + deterministic authority and audit
 ```
 
-## Manager와 Kernel의 분리
+## Manager·검증·Kernel의 분리
 
-Manager는 목표의 모호함, 필요한 capability, 근거의 충족 여부, 사람에게 올려야 할 판단을 의미 단위로 다룹니다.
-반면 Firm Kernel은 예산, 승인, 허용된 변이, 실행 상태, 영수증 같은 기계적 경계를 강제합니다. 따라서 Manager가
-구조 변경을 제안할 수는 있어도, 스스로 권한 규칙을 풀 수는 없습니다.
+명시적 작업 요청에서는 Manager가 목표와 제약을 bounded task, dependency, required capability, acceptance로
+해석해 제안합니다. 역할 이름으로 직원을 고르거나 권한을 부여하지는 않습니다.
+
+구조 검증기는 이 제안이 요청된 effect와 graph 계약에 맞는지 확인합니다. 예를 들어 workspace 변경 요청은
+조용히 read-only 분석 task가 될 수 없으며, 최종 실행 task는 implementation capability를 요구해야 합니다.
+Firm Kernel은 그 뒤 frozen roster, availability, user constraint, action policy를 기준으로 실제 직원을 배정하고,
+필요하면 Job 한정 temporary role을 만듭니다. 예산, 승인, 허용된 변이, 실행 상태, 영수증도 Kernel이 강제합니다.
+
+outcome evidence가 부족하면 Manager를 제거하지 않습니다. TEAM·replica·자동 재사용만 strong SOLO로 축소합니다.
+따라서 Manager가 구조 변경을 제안할 수는 있어도, 스스로 권한 규칙을 풀 수는 없습니다.
 
 이 구분은 LLM이 계획과 정책 집행을 동시에 독점하는 구조를 피하기 위한 것입니다.
 
@@ -67,8 +74,9 @@ flowchart TB
   K["Knowledge\nevidence · conflict · uncertainty"] --> M
   I["Intent & Decision\npriority · constraint · review"] --> M
 
-  M --> P["Organization proposal"]
-  P --> C["Firm Kernel\nauthority · budget · approval · audit"]
+  M --> P["의미적 task · capability 제안"]
+  P --> V["구조·effect 계약 검증"]
+  V --> C["Firm Kernel\nauthority · budget · approval · audit"]
   C --> E["One Employee or a minimal team\ndifferent capability only"]
   E --> A["Typed artifacts · evidence · receipts"]
   A --> M
@@ -85,8 +93,8 @@ sequenceDiagram
   participant E as 선택된 직원
   participant V as 검증자 또는 결과 관측원
   U->>M: 목표, 제약, 권한
-  M->>K: 제안한 실행 형태
-  K->>K: 예산·권한·그래프 규칙 검증
+  M->>K: task·dependency·capability 제안
+  K->>K: 구조·capability·예산·권한·그래프 규칙 검증
   K->>E: 고정된 업무 지시와 제한된 맥락
   E-->>K: 산출물, 근거, 영수증, 불확실성
   K->>V: 선언된 검증 또는 관측 요청
