@@ -306,7 +306,7 @@ owners continue to decide.
 
 ## Source literature reviews
 
-This concept paper is informed by a Korean-language working paper. It is published separately to preserve its original
+This guide draws on a Korean-language literature overview. It is published separately to preserve its
 argument and literature map without turning source claims into product authority:
 
 - [Computational Governance of AI Agent Organizations (Korean)](../literature/organization_governance_theory.md)

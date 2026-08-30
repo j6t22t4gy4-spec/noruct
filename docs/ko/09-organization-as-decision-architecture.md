@@ -298,7 +298,7 @@ reviewer 탐지율과 오탐률, exception escalation, Manager queue, 오류 전
 
 ## 문헌검토 원문
 
-이 개념문서의 배경이 된 한국어 working paper를 별도로 공개한다. 원문의 논증과 문헌 지도를 보존하되, 원문 주장을
+이 개념문서의 배경이 된 한국어 문헌 정리를 별도로 공개한다. 논증과 문헌 지도를 보존하되, 인용된 연구의 주장을
 제품 권위로 바꾸지 않는다.
 
 - [AI 에이전트 조직의 계산적 거버넌스](../literature/organization_governance_theory.md)
