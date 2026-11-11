@@ -35,6 +35,10 @@ The Korean-language [background literature](docs/literature/README.md) is availa
 the underlying ideas. Its citations and recent research claims remain source-specific observations rather than
 independently verified Noruct product evidence.
 
+A [draft research protocol](docs/literature/organization_value_experiment.md) makes the next evaluation concrete:
+marginal value of division, minimum sufficient handoff, and contextual selection among admissible organizations.
+It specifies controls and falsification criteria, not new benchmark results or implemented product capabilities.
+
 Capability intake and recursive improvement use separate trust lanes. External Tools, Skills, Plugins, and other
 Network artifacts remain pinned to an exact reviewed version and digest and are never replaced automatically. Only a
 locally derived artifact with no Network provenance may advance for a future Job when the user has selected

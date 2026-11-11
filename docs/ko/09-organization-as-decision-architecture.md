@@ -17,20 +17,21 @@
 이 문서는 개념 모델입니다. 모든 메커니즘이 일반 제공된다는 주장이나, 관리형 팀이 강한 단일 Employee보다
 언제나 낫다는 성능 주장이 아닙니다.
 
-## 구분해야 할 네 수준
+## 혼동하지 말아야 할 네 구분
 
-“멀티에이전트”라는 말에는 조직적 깊이가 전혀 다른 시스템이 섞여 있습니다.
+앙상블·워크플로·조직·제도는 지능이나 성능이 높아지는 단계가 아니라 시스템의 서로 다른 측면입니다.
+실행 방식, 조직적 관계, 실행 중 적응성, Job 사이의 지속성을 따로 확인해야 합니다.
 
-| 수준 | 구조 | Noruct에서의 의미 |
+| 구분 | 구조 | Noruct에서의 의미 |
 |---|---|---|
-| 0 — 앙상블 | 같은 문제를 독립 생성한 뒤 투표·선택 | 제한된 candidate replica는 Team이 아닌 앙상블일 수 있습니다 |
-| 1 — 워크플로 | model·tool node의 순서가 미리 정해짐 | frozen Job Graph는 조직이 아니라 워크플로일 수 있습니다 |
-| 2 — 조직 | 국소 상태·정보·권한·업무가 다르고 제한된 실행 중 재편이 존재 | heterogeneous Team과 typed semantic replan이 해당합니다 |
-| 3 — 제도 | 여러 Job에 걸쳐 identity·가입·감사·규칙변경·학습이 지속 | Company, Roster, 지속 Employee와 통제된 Patch lifecycle이 해당합니다 |
+| 앙상블 | 여러 후보를 생성한 뒤 투표·선택 | 제한된 candidate replica는 Team이 아닌 앙상블일 수 있습니다 |
+| 워크플로 | model·tool node의 의존성과 순서가 명시됨 | frozen Job Graph는 실행 순서를 설명하며 권한·소유권은 별도로 확인합니다 |
+| 조직 | 국소 상태·업무·산출물 소유권·권한·조정 책임이 명시됨 | Team은 고정 배치를 사용하거나 제한된 실행 중 재편을 할 수 있습니다 |
+| 제도 | 여러 Job에 걸쳐 identity·가입·감사·규칙변경·학습이 지속 | Company, Roster, 지속 Employee와 통제된 Patch lifecycle이 해당합니다 |
 
-Noruct 전체는 제도 수준을 지향하지만, 모든 Noruct 실행이 조직인 것은 아닙니다. Direct 작업은 direct로,
-replica는 replica로, 고정 graph는 workflow로 봐야 합니다. model node가 여러 개라는 이유만으로 회사 지능이
-생기지는 않습니다.
+고정 workflow도 조직적 관계를 구현할 수 있습니다. 반대로 호출 수나 route를 바꾸는 것만으로 조직이 되지는
+않습니다. Noruct는 제도적 능력을 유지하면서 개별 Job은 direct 작업, 앙상블, 고정 workflow 또는 관리형 Team을
+사용할 수 있도록 지향합니다. 더 복잡한 구조는 여전히 추가 비용을 정당화해야 합니다.
 
 ## AI 조직의 일곱 구조
 
@@ -72,8 +73,8 @@ flowchart LR
 
 ## 헌법과 실행조직
 
-가장 견고한 일반형은 고정된 회사 피라미드도, 제한 없는 동료 network도 아닙니다. 안정적인 헌법적 통제층과
-동적인 실행조직의 결합입니다.
+Noruct는 안정적인 헌법적 통제층과 제한된 과업별 실행조직의 결합을 제안합니다. 집행 가능한 권한 경계 안에서
+검증할 설계 선택이며, 고정 구조보다 보편적으로 우수하다는 근거는 아닙니다.
 
 | 작업 사이에 안정적으로 유지 | 하나의 Job을 위해 편성 |
 |---|---|
@@ -83,6 +84,10 @@ flowchart LR
 | 예산과 승인 규칙 | 통신 topology |
 | 감사 요구사항 | 실행 순서와 concurrency |
 | 규칙 변경과 rollback 절차 | 검증 깊이와 replan 조건 |
+
+하나의 final owner나 effect authority는 충돌 가능한 artifact revision 또는 effect 범위에 대해 책임과 확정
+경로를 하나로 정한다는 뜻입니다. 모든 작업을 한 agent나 전역 lock에 모은다는 뜻은 아닙니다. 독립 effect는
+각각 다른 소유자를 둘 수 있고, 공유 상태 변경에는 여전히 명시적 충돌 처리와 승인 규칙이 필요합니다.
 
 Manager 또는 조직 Compiler는 Job-local 구조를 선택하고 축소할 수 있습니다. 새로운 권한을 만들 수는 없습니다.
 Deterministic Firm Kernel이 제안을 frozen constitution과 대조하고 실행 snapshot을 봉인합니다.

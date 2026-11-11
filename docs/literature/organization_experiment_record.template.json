@@ -1,0 +1,132 @@
+{
+  "schema_version": "noruct.organization-research-record.draft.v1",
+  "record_kind": "TEMPLATE_NOT_OBSERVATION",
+  "status": "NOT_RUN",
+  "protocol": {
+    "id": "NORUCT-RESEARCH-ORG-VALUE",
+    "version": "0.1",
+    "frozen_at": null,
+    "digest": null,
+    "primary_endpoint": null,
+    "noninferiority_margin": null,
+    "sample_size": null,
+    "stopping_rule": null,
+    "reward_definition": {
+      "transform_ref": null,
+      "revision": null,
+      "digest": null,
+      "weights_ref": null,
+      "weights_digest": null,
+      "frozen_at": null,
+      "missing_or_delayed_outcome_rule_ref": null
+    }
+  },
+  "task": {
+    "task_id": null,
+    "group_id": null,
+    "split": null,
+    "stratum": null,
+    "input_snapshot_digest": null,
+    "authority_revision": null,
+    "source_scope_digest": null
+  },
+  "execution": {
+    "runtime_revision": null,
+    "model_route": null,
+    "model_identity_assurance": null,
+    "tool_versions": null,
+    "skill_revisions": null,
+    "initial_memory_digest": null,
+    "resource_envelope": null,
+    "order_index": null,
+    "seed": null,
+    "run_id": null,
+    "pair_id": null,
+    "repetition_index": null,
+    "started_at": null,
+    "ended_at": null
+  },
+  "assignment": {
+    "method": null,
+    "policy_revision": null,
+    "admissible_actions": null,
+    "selected_action": null,
+    "selection_probability": null,
+    "actual_exposure": null,
+    "exposure_deviation_reason": null,
+    "logging_policy_support": {
+      "representation": null,
+      "action_probabilities": null,
+      "logger_artifact_ref": null,
+      "logger_artifact_digest": null,
+      "logger_configuration_ref": null,
+      "logger_configuration_digest": null,
+      "logger_state_ref": null,
+      "logger_state_digest": null,
+      "reconstruction_verified": false,
+      "missing_reason": "Experiment not run"
+    }
+  },
+  "handoff": {
+    "condition": null,
+    "input_tokens": null,
+    "source_retrievals": null,
+    "requirement_loss_count": null,
+    "prohibited_scope_loss_count": null
+  },
+  "outcome": {
+    "quality": null,
+    "requirements_passed": null,
+    "requirements_total": null,
+    "independent_validator_revision": null,
+    "safety_violations": null,
+    "terminal_state": null,
+    "missing_reason": "Experiment not run",
+    "observation_status": "NOT_OBSERVED",
+    "observed_at": null,
+    "observation_deadline": null,
+    "outcome_revision": null
+  },
+  "resources": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_input_tokens": null,
+    "reasoning_tokens": null,
+    "total_tokens": null,
+    "phase_breakdown": null,
+    "token_accounting_definition": null,
+    "model_calls": null,
+    "tool_calls": null,
+    "wall_seconds": null,
+    "worker_seconds": null,
+    "rework_seconds": null,
+    "human_review_seconds": null,
+    "human_wait_seconds": null,
+    "training_and_review_tokens": null,
+    "billed_cost": null,
+    "billed_currency": null,
+    "billing_completeness_proven": false
+  },
+  "evidence": {
+    "receipt_digest": null,
+    "artifact_refs": null,
+    "access_scope": null,
+    "public_release_authorized": false
+  },
+  "interpretation": {
+    "claim_status": "NOT_RUN",
+    "intervention_scope": null,
+    "causal_claim": null,
+    "limitations": [
+      "Template only. Null fields are unobserved, not zero."
+    ]
+  },
+  "record_id": null,
+  "decision_context": {
+    "observed_at": null,
+    "feature_schema_revision": null,
+    "feature_values": null,
+    "feature_values_ref": null,
+    "feature_values_digest": null
+  }
+}

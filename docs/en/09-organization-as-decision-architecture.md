@@ -19,19 +19,22 @@ Noruct therefore treats organization design as **decision architecture**:
 This paper is a conceptual model. It does not claim that every mechanism is generally available or that a managed team
 is universally better than a strong single Employee.
 
-## Four levels that should not be confused
+## Four distinctions that should not be confused
 
-“Multi-agent” often combines systems with very different organizational depth.
+Ensembles, workflows, organizations, and institutions describe different aspects of a system, not a ladder of
+increasing intelligence or performance. Execution pattern, organizational relationships, runtime adaptability, and
+persistence across Jobs should be inspected separately.
 
-| Level | Structure | Meaning in Noruct |
+| Distinction | Structure | Meaning in Noruct |
 |---|---|---|
-| 0 — Ensemble | Independent samples followed by voting or selection | A bounded candidate replica can be an ensemble without becoming a team |
-| 1 — Workflow | A predetermined sequence of model or tool nodes | A frozen Job Graph may be a workflow rather than an organization |
-| 2 — Organization | Different local state, information, authority, and assignments with bounded runtime reconfiguration | A heterogeneous Team and typed semantic replan belong here |
-| 3 — Institution | Identity, admission, audit, rule change, and learning persist across Jobs | Company, Roster, persistent Employee, and governed Patch lifecycle belong here |
+| Ensemble | Multiple candidates followed by voting or selection | A bounded candidate replica can be an ensemble without becoming a Team |
+| Workflow | Explicit dependencies and ordering of model or tool nodes | A frozen Job Graph describes execution order; authority and ownership need separate inspection |
+| Organization | Explicit local state, assignments, artifact ownership, authority, and coordination responsibilities | A Team may have fixed assignments or bounded runtime reconfiguration |
+| Institution | Identity, admission, audit, rule change, and learning persist across Jobs | Company, Roster, persistent Employee, and governed Patch lifecycle belong here |
 
-Noruct aims at the institutional level, but not every Noruct execution is an organization. Direct work remains direct,
-a replica remains a replica, and a fixed graph does not become firm intelligence merely because its nodes use models.
+A fixed workflow can implement organizational relationships. Conversely, changing call counts or routes does not by
+itself create an organization. Noruct aims to preserve institutional capability while allowing individual Jobs to use
+direct work, an ensemble, a fixed workflow, or a managed Team. A more elaborate structure still has to justify its cost.
 
 ## The seven structures of an AI organization
 
@@ -73,8 +76,8 @@ not silently grant data access, change a permission, approve an effect, or rewri
 
 ## Constitution and execution organization
 
-The most robust general form is not a fixed corporate pyramid and not an unrestricted peer network. It is a stable
-constitutional control layer combined with a dynamic execution organization.
+Noruct proposes a stable constitutional control layer with bounded, task-specific execution organization. This is a
+design choice to evaluate under enforceable authority boundaries, not evidence of universal superiority over fixed structures.
 
 | Stable across work | Composed for one Job |
 |---|---|
@@ -84,6 +87,10 @@ constitutional control layer combined with a dynamic execution organization.
 | Budget and approval rules | Communication topology |
 | Audit requirements | Execution order and concurrency |
 | Rule-change and rollback procedure | Verification depth and replan conditions |
+
+A single final owner or effect authority means one logical responsibility and commitment path for a conflicting
+artifact revision or effect scope. It does not require one physical agent or a global lock across unrelated work.
+Independent effects can have separate owners, while shared-state changes still need explicit conflict and approval rules.
 
 The Manager or organization compiler may choose and narrow the Job-local structure. It may not invent new authority.
 The deterministic Firm Kernel validates the proposal against the frozen constitution and seals the executable snapshot.
