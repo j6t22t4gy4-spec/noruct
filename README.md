@@ -31,9 +31,11 @@ explains how shared, signed benchmark evidence can inform local routing without 
 central priors, local compatibility and outcomes, freezes an exact route per EmployeeRun, limits provider-specific data
 egress, and preserves one artifact owner and commit path even when one Job uses multiple providers.
 
-The Korean-language [background literature](docs/literature/README.md) is available separately for a deeper look at
-the underlying ideas. Its citations and recent research claims remain source-specific observations rather than
-independently verified Noruct product evidence.
+The Korean-language [working paper](docs/literature/organization_governance_manuscript.md) develops the theory of
+computational governance, division of labor, and human residual control. It includes an abstract, theoretical
+framework, research propositions, experimental design, discussion, and references. The [research index](docs/literature/README.md)
+also preserves access to the original v0.6 paper, the v0.9 literature material, and the draft evaluation protocol.
+These research documents do not report independently verified Noruct product performance.
 
 A [draft research protocol](docs/literature/organization_value_experiment.md) makes the next evaluation concrete:
 marginal value of division, minimum sufficient handoff, and contextual selection among admissible organizations.
