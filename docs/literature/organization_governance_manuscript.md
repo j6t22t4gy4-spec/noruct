@@ -11,6 +11,10 @@ empirical_status: "개념모형과 연구명제를 제시하며 자체 실험 �
 
 # AI 에이전트 조직의 계산적 거버넌스
 
+> **문서 역할:** 연구논문 · **상태:** v1.0 working paper · 이론 구축형 · 자체 실험 결과 없음
+> [전체 문서 지도](../README.md#research) · [연구·문헌 안내](README.md)
+> 대표 논증을 읽는 본문입니다. 같은 제목의 [v0.9 문헌자료](organization_governance_theory.md)는 세부 대조용입니다.
+
 분업과 조정의 설계 및 인간의 잔여 통제권
 
 ## 초록

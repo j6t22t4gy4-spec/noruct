@@ -1,12 +1,15 @@
 # 08 — Development Scope & Non-Claims
 
+> **Document role:** Development scope and non-claims · **Status:** Public scope statement; not a current implementation inventory.
+> [Document map](../README.md) · [Role reading path](../README.md#scope) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Network Engineering](07-network-engineering.md) · [Index](README.md) · [한국어](../ko/08-current-development-status.md) · [Next: Organization as Decision Architecture →](09-organization-as-decision-architecture.md)
 
 **Last reviewed: 2026-08-15.** English is canonical.
 
 ## Purpose
 
-This paper keeps an important distinction clear: Noruct's public concepts describe a target operating model and
+This guide keeps an important distinction clear: Noruct's public concepts describe a target operating model and
 its safety boundaries. They are not a software artifact, release announcement, benchmark result, availability
 promise, or commercial-readiness claim.
 
@@ -32,7 +35,7 @@ Implementation and qualification may proceed at different rates. A local feature
 show that a narrow contract was exercised; it cannot by itself establish broad reliability, customer availability,
 commercial suitability, or superior organizational performance.
 
-In particular, these public papers do **not** claim that:
+In particular, these public documents do **not** claim that:
 
 - a Manager-led firm or a team consistently outperforms a strong single Employee;
 - every graph mutation, continuation, tool, provider, or platform is safe or generally available;

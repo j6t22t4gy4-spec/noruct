@@ -1,5 +1,8 @@
 # 05 — Governed Evolution & User Graph Control
 
+> **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
+
 > 정본: [English](../en/05-governed-evolution-and-user-graphs.md) · [← Graph & Firm Engineering](04-graph-and-firm-engineering.md) · [문서 인덱스](README.md) · [다음: Epistemic Control, Oracle & Outcome →](06-epistemic-control-and-outcome.md)
 
 ## 실행 구조와 조직 능력의 분리

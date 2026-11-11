@@ -1,12 +1,15 @@
 # 02 — Persistent Employee
 
+> **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Dynamic Firm Runtime](01-dynamic-firm-runtime.md) · [Index](README.md) · [Next: Knowledge, Intent & Firm →](03-knowledge-intent-firm.md) · [한국어](../ko/02-persistent-employee.md)
 
 An Employee is a persistent capability unit, not a persona prompt and not merely a differently named copy of the same agent.
 
 ## Abstract
 
-This paper treats an Employee as a durable, inspectable capability boundary. Persistence does not mean unlimited autobiography. It means that identity, approved procedures, private bounded memory, session continuity, permissions, and outcome references can be revised deliberately rather than reconstructed from a role name on every request.
+This guide treats an Employee as a durable, inspectable capability boundary. Persistence does not mean unlimited autobiography. It means that identity, approved procedures, private bounded memory, session continuity, permissions, and outcome references can be revised deliberately rather than reconstructed from a role name on every request.
 
 ```mermaid
 flowchart LR

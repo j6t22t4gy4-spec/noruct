@@ -1,6 +1,10 @@
-# Noruct 공개 개념 문서
+# Noruct 제품 개념·설계 안내
 
-> 정본: [English canonical documentation](../en/README.md) · 이 문서는 한국어 번역본입니다.
+<a id="noruct-공개-개념-문서"></a>
+
+> **문서 역할:** 제품 문서 안내이며 연구논문 목차가 아닙니다.
+> [전체 문서 지도](../README.md) · [연구·문헌 안내](../literature/README.md) · [English](../en/README.md)
+> 제품 개념·설계 문서는 영문이 정본이며 이 문서는 한국어 번역본입니다. 연구자료는 별도의 한국어 원문입니다.
 
 ## 초록
 
@@ -35,19 +39,37 @@ flowchart TB
 각 문서는 세 가지를 구분합니다. **명제**는 Noruct가 제안하는 바이고, **작동 원리**는 그 명제를 지키는 방식이며,
 **경계**는 그 원리를 무엇으로 오해하면 안 되는지를 뜻합니다.
 
-| 순서 | 문서 | 질문 | 논지에서의 역할 |
-|---:|---|---|
-| 00 | [지향점](00-north-star.md) | 왜 단일 에이전트가 아니라 회사 런타임을 만드는가? | 인간의 권한과 지속성의 기준을 세운다. |
-| 01 | [동적 회사 런타임](01-dynamic-firm-runtime.md) | 회사의 지속 상태와 요청별 실행 구조는 어떻게 분리되는가? | 회사·관리자·커널·직원·그래프·감사의 관계를 정의한다. |
-| 02 | [지속 직원](02-persistent-employee.md) | 직원은 무엇을 받고·사용하고·반환하는가? | 실제 전문성과 개인 상태의 조건을 정의한다. |
-| 03 | [지식·의도·회사](03-knowledge-intent-firm.md) | 지식, 사용자 방향, 실행 권한은 어떻게 연결되는가? | 자료·결정·실행이 하나의 권한이 되는 일을 막는다. |
-| 04 | [그래프와 회사 공학](04-graph-and-firm-engineering.md) | 그래프 공학은 단순 다중 에이전트와 무엇이 다른가? | 그래프가 비용을 정당화하는 조건을 설명한다. |
-| 05 | [통제된 진화와 사용자 그래프](05-governed-evolution-and-user-graphs.md) | 실행 구조는 어떻게 재사용·수정·공유하되 권한을 잃지 않는가? | 가설, 작업 권한, 학습을 분리한다. |
-| 06 | [인식 통제·판정 기준·결과](06-epistemic-control-and-outcome.md) | 무엇을 알고 모르며, 결과의 성공을 어떻게 판정하는가? | 불확실성과 지연된 결과를 다룬다. |
-| 07 | [네트워크 공학](07-network-engineering.md) | 재사용 가능한 능력을 어떻게 공유하되 사용자 권한을 지키는가? | 선택적·로컬 우선 능력 교환을 정의한다. |
-| 08 | [현재 개발 상태](08-current-development-status.md) | 무엇이 구현되었고, 무엇이 실험적 또는 미검증인가? | 개념 논문과 현재 개발 근거를 분리한다. |
-| 09 | [조직은 직책이 아니라 의사결정 구조다](09-organization-as-decision-architecture.md) | 에이전트 워크플로는 언제 조직이 되며, 얼마나 작아야 하고 무엇을 설명해야 하는가? | 과업·배치·정보·통신·권한·검증·학습을 분리한 뒤 최소 충분 조직과 검토 가능한 전달을 정의한다. |
-| 10 | [Model Intelligence와 다중 Provider 오케스트레이션](10-model-intelligence-and-multi-provider-orchestration.md) | 공유 모델 evidence를 재사용하면서도 local authority를 지키고 task마다 다른 route를 어떻게 고르는가? | Benchmark prior, 로컬 호환성·outcome을 분리하고 EmployeeRun route, 정보 반출과 다중 provider 실행을 동결한다. |
+아래 세 묶음에서 목적에 맞는 문서를 고릅니다. 번호는 기존 문서 식별자이며 연구논문의 장 번호가 아닙니다.
+
+### 개념: 목적과 원칙
+
+| ID | 문서 | 읽는 목적 |
+| --- | --- | --- |
+| 00 | [지향점](00-north-star.md) | 목표·지속성·인간 권한의 기준. |
+| 02 | [지속 직원](02-persistent-employee.md) | 지속 능력, 할당과 제한된 개인 상태. |
+| 04 | [그래프와 회사 공학](04-graph-and-firm-engineering.md) | 의존성, 산출물 흐름과 구조의 비용. |
+| 09 | [조직은 직책이 아니라 의사결정 구조다](09-organization-as-decision-architecture.md) | 최소 충분 조직과 검토 가능한 전달. |
+
+### 설계: 구성요소와 운영 경계
+
+| ID | 문서 | 읽는 목적 |
+| --- | --- | --- |
+| 01 | [동적 회사 런타임](01-dynamic-firm-runtime.md) | Company·Manager·Kernel·Job과 실행 수명주기. |
+| 03 | [지식·의도·회사](03-knowledge-intent-firm.md) | 지식·방향·실행 권한의 구분. |
+| 05 | [통제된 진화와 사용자 그래프](05-governed-evolution-and-user-graphs.md) | Blueprint, 통제된 변경과 학습. |
+| 06 | [인식 통제·판정 기준·결과](06-epistemic-control-and-outcome.md) | 근거·불확실성·성공 판정. |
+| 07 | [네트워크 공학](07-network-engineering.md) | 원격 권한을 만들지 않는 선택적 능력 교환. |
+| 10 | [Model Intelligence와 다중 Provider 오케스트레이션](10-model-intelligence-and-multi-provider-orchestration.md) | 공유 prior, 로컬 evidence, route 동결과 정보 반출. |
+
+### 공개 범위: 주장을 읽는 기준
+
+| ID | 문서 | 읽는 목적 |
+| --- | --- | --- |
+| 08 | [개발 범위와 비주장](08-current-development-status.md) | 공개 주장의 경계. 최신 구현 현황표나 릴리스 보고서가 아님. |
+
+**짧은 경로:** 00 → 02 → 04 → 09. **설계 경로:** 01 → 03 → 05 → 06, 이후 관심 주제에 따라 07·10. 구현·제공 여부를 해석할 때 08의 경계를 확인합니다. 기존 번호순 경로는 각 본문의 이전·다음 링크로 유지합니다.
+
+학술 논증은 별도의 [연구논문](../literature/organization_governance_manuscript.md)을, 검증 준비는 [실험 경로](../README.md#experiments)를 읽습니다.
 
 ## 공개 문서의 경계
 
@@ -56,6 +78,6 @@ flowchart TB
 
 영문판과 번역판의 표현이 다를 경우 영문판이 정본입니다.
 
-[현재 개발 상태](08-current-development-status.md)만이 이 문서 묶음에서 현재 구현 근거를 요약합니다. 나머지
-문서는 목표 아키텍처와 제품 경계를 설명하며, 문서에 등장한다고 해서 모든 기능이 일반 제공되거나 상용 검증을
-마쳤다는 뜻은 아닙니다.
+[개발 범위와 비주장](08-current-development-status.md)은 비주장을 설명하며 최신 구현 현황표가 아닙니다.
+01·10에는 개발 진술이 포함되어 있지만 이 공개 묶음은 그 바탕인 비공개 평가 기록을 제공하지 않습니다.
+개념·설계에 등장한다고 해서 해당 기능의 일반 제공이나 상용 검증이 입증되는 것은 아닙니다.

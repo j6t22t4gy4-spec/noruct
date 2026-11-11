@@ -1,6 +1,9 @@
 # 09 — Organization as Decision Architecture
 
-> **Canonical:** English · [한국어](../ko/09-organization-as-decision-architecture.md) · [← Current Development Status](08-current-development-status.md) · [Documentation index](README.md) · [Next: Model Intelligence and Multi-Provider Orchestration →](10-model-intelligence-and-multi-provider-orchestration.md)
+> **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
+> **Canonical:** English · [한국어](../ko/09-organization-as-decision-architecture.md) · [← Development Scope & Non-Claims](08-current-development-status.md) · [Documentation index](README.md) · [Next: Model Intelligence and Multi-Provider Orchestration →](10-model-intelligence-and-multi-provider-orchestration.md)
 
 ## Central claim
 
@@ -16,7 +19,7 @@ Noruct therefore treats organization design as **decision architecture**:
 > **Distribute reversible cognition, make shared state explicit, centralize irreversible commitment, keep verification
 > independent, and change only the job-local execution organization dynamically.**
 
-This paper is a conceptual model. It does not claim that every mechanism is generally available or that a managed team
+This guide is a conceptual model. It does not claim that every mechanism is generally available or that a managed team
 is universally better than a strong single Employee.
 
 ## Four distinctions that should not be confused

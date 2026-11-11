@@ -1,5 +1,8 @@
 # 01 — Dynamic Firm Runtime
 
+> **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
+
 > 정본: [English](../en/01-dynamic-firm-runtime.md) · [← North Star](00-north-star.md) · [문서 인덱스](README.md) · [다음: Persistent Employee →](02-persistent-employee.md)
 
 ## 한 문장 정의
@@ -21,7 +24,8 @@
 
 이는 Manager가 이끄는 팀이 강한 단일 Employee보다 일반적으로 낫다는 주장이 아닙니다. 현재 평가는 positive와
 negative transfer evidence를 모두 보존하며, 성공한 campaign 하나만으로 Manager·Blueprint·Patch를 자동 승격하지
-않습니다. 구현 범위와 검증 한계는 [현재 개발 상태](08-current-development-status.md)에 정리합니다.
+않습니다. [개발 범위와 비주장](08-current-development-status.md)은 공개 문서의 경계를 설명합니다.
+최신 구현 현황표나 해당 평가 기록의 공개 자료는 아닙니다.
 
 ## 작동 가설
 

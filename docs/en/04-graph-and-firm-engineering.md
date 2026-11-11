@@ -1,12 +1,15 @@
 # 04 — Graph & Firm Engineering
 
+> **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Knowledge, Intent & Firm](03-knowledge-intent-firm.md) · [Index](README.md) · [Next: Governed Evolution & User Graphs →](05-governed-evolution-and-user-graphs.md) · [한국어](../ko/04-graph-and-firm-engineering.md)
 
 Graph Engineering is not a visual graph product and not simply spawning several copies of one agent. It is the design of a dependency-aware execution structure. Firm Engineering extends it by making nodes persistent, heterogeneous capability units governed by one firm's authority and learning boundaries.
 
 ## Abstract
 
-This paper distinguishes five layers of agent-system design. Graph Engineering concerns dependencies and artifact flow. Firm Engineering adds durable capability supply, authority, outcome history, and controlled evolution. The purpose is not maximal parallelism; it is to create only the structure whose marginal value can be stated and evaluated.
+This guide distinguishes five layers of agent-system design. Graph Engineering concerns dependencies and artifact flow. Firm Engineering adds durable capability supply, authority, outcome history, and controlled evolution. The purpose is not maximal parallelism; it is to create only the structure whose marginal value can be stated and evaluated.
 
 ```mermaid
 flowchart LR

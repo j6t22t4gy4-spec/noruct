@@ -1,12 +1,15 @@
 # 06 — Epistemic Control, Oracle & Outcome
 
+> **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Governed Evolution & User Graphs](05-governed-evolution-and-user-graphs.md) · [Index](README.md) · [Next: Network Engineering →](07-network-engineering.md) · [한국어](../ko/06-epistemic-control-and-outcome.md)
 
 The central limitation of an AI firm is not that it cannot generate ideas. It is that it often cannot independently establish what is true, what should be valued, or whether a long chain of action genuinely succeeded.
 
 ## Abstract
 
-This paper defines the control model for an AI system operating under incomplete information. Noruct does not solve the oracle problem by asserting confidence. It records the difference between evidence, inference, assumption, authorized decision, executable check, and later observed outcome.
+This guide defines the control model for an AI system operating under incomplete information. Noruct does not solve the oracle problem by asserting confidence. It records the difference between evidence, inference, assumption, authorized decision, executable check, and later observed outcome.
 
 ## Epistemic status is first-class
 

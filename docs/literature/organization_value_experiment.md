@@ -12,9 +12,14 @@ tags: [organization, marginal-value, handoff, contextual-bandit, evaluation]
 
 # 분업의 한계가치와 최소 충분 인계: 검증 프로토콜
 
+> **문서 역할:** 실험 프로토콜 · **상태:** v0.1 초안 · 미실행·미동결 · 결과 보고서 아님
+> [전체 문서 지도](../README.md#experiments) · [연구·문헌 안내](README.md)
+> [연구논문](organization_governance_manuscript.md)의 일부 명제를 비교실험으로 옮기는 설계입니다. [기록 양식](organization_experiment_record.template.json)은 관찰자료가 아닙니다.
+
 ## 1. 연구 질문과 현재 상태
 
-[계산적 거버넌스 원고](organization_governance_theory.md)의 최소 충분 조직 원칙을 측정 가능한 비교로 옮긴다.
+[계산적 거버넌스 연구논문](organization_governance_manuscript.md)의 일부 연구명제를 측정 가능한 비교로 옮긴다.
+세부 배경은 [v0.9 장문 문헌자료](organization_governance_theory.md)를 함께 본다.
 
 **어떤 과업에서 추가 분업이 강한 단일 실행보다 나으며, 그 이득이 정보·검증·계산량 중 무엇에서 오는가?**
 
@@ -28,7 +33,8 @@ tags: [organization, marginal-value, handoff, contextual-bandit, evaluation]
 | D2 | 최소 충분 인계가 전체 대화 인계보다 낮은 비용으로 과업 요구를 보존한다 | 인계 방식만 변경 | 누락·재조회·재작업 비용을 포함하면 품질/비용이 악화됨 |
 | D3 | 관측 문맥에 따른 제한된 조직 선택이 항상 같은 구조보다 유용하다 | 고정 정책 vs 사전 학습된 선택 정책 | held-out에서 가장 좋은 고정 정책을 넘지 못하거나 선택 overhead가 이득을 상쇄 |
 
-D1–D3은 이 노트의 가설 ID다. 기존 원고의 P/H 명제와 별도 번호를 사용한다.
+D1–D3은 이 프로토콜의 가설 ID다. 대표 연구논문의 P1→D1, P2→D2, P4→D3에 대응한다.
+P3·P5·P6는 후속 연구 범위이며 이 프로토콜에서 검증하지 않는다. v0.9 문헌자료의 P/H 번호와는 구분한다.
 에이전트 수 자체는 전문성, 독립성 또는 기여의 대리값으로 사용하지 않는다.
 
 ## 2. 측정 단위와 분업의 한계가치

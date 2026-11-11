@@ -1,5 +1,8 @@
 # 03 — Knowledge, Intent & Firm
 
+> **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
+
 > 정본: [English](../en/03-knowledge-intent-firm.md) · [← Persistent Employee](02-persistent-employee.md) · [문서 인덱스](README.md) · [다음: Graph & Firm Engineering →](04-graph-and-firm-engineering.md)
 
 Noruct는 지식 저장소와 실행 회사를 섞지 않습니다. 무엇을 아는지, 무엇을 원하는지, 지금 무엇을 실행할 수

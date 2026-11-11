@@ -1,5 +1,8 @@
 # 00 — North Star
 
+> **문서 역할:** 제품 개념 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#concepts) · [연구논문](../literature/organization_governance_manuscript.md)
+
 > 정본: [English](../en/00-north-star.md) · [문서 인덱스](README.md) · [다음: Dynamic Firm Runtime →](01-dynamic-firm-runtime.md)
 
 ## 우리가 만드는 것

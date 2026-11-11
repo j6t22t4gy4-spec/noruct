@@ -1,12 +1,15 @@
 # 05 — Governed Evolution & User Graphs
 
+> **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Graph & Firm Engineering](04-graph-and-firm-engineering.md) · [Index](README.md) · [Next: Epistemic Control, Oracle & Outcome →](06-epistemic-control-and-outcome.md) · [한국어](../ko/05-governed-evolution-and-user-graphs.md)
 
 Noruct does not assume the runtime can always discover the best graph from scratch. Users may inspect, constrain, choose, fork, pin, or share reusable graph blueprints. The system may still compile a job-specific graph, but it must make changes legible and bounded.
 
 ## Abstract
 
-This paper treats a graph as a user-visible, versioned hypothesis rather than a hidden compiler artifact. The key design problem is to preserve adaptive execution without making cost, causality, or user control disappear when a graph changes during a job.
+This guide treats a graph as a user-visible, versioned hypothesis rather than a hidden compiler artifact. The key design problem is to preserve adaptive execution without making cost, causality, or user control disappear when a graph changes during a job.
 
 ```mermaid
 flowchart TD

@@ -1,12 +1,15 @@
 # 07 — Network Engineering
 
-> [← Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) · [Index](README.md) · [한국어](../ko/07-network-engineering.md)
+> **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
+> [← Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) · [Index](README.md) · [한국어](../ko/07-network-engineering.md) · [Next: Development Scope & Non-Claims →](08-current-development-status.md)
 
 Network Engineering is the optional layer above one local firm. It allows reusable capability to travel between firms without making a remote network the authority over a user's knowledge, mission, credentials, or active work.
 
 ## Abstract
 
-This paper defines a local-first model for shared improvement. A network may distribute inspectable capability artifacts, but it must not turn contribution into a requirement to surrender private context or turn publication into remote execution authority.
+This guide defines a local-first model for shared improvement. A network may distribute inspectable capability artifacts, but it must not turn contribution into a requirement to surrender private context or turn publication into remote execution authority.
 
 ```mermaid
 flowchart LR

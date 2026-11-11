@@ -1,5 +1,8 @@
 # 08 — 개발 범위와 비주장
 
+> **문서 역할:** 개발 범위와 비주장 · **상태:** 공개 범위 설명이며 최신 구현 현황표가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#scope) · [연구논문](../literature/organization_governance_manuscript.md)
+
 > 정본: [English](../en/08-current-development-status.md) · [← Network Engineering](07-network-engineering.md) · [문서 인덱스](README.md) · [다음: 조직은 직책이 아니라 의사결정 구조다 →](09-organization-as-decision-architecture.md)
 
 **마지막 검토: 2026-08-15.** 영문판이 정본입니다.

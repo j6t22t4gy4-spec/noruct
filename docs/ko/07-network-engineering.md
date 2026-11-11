@@ -1,6 +1,9 @@
 # 07 — Network Engineering
 
-> 정본: [English](../en/07-network-engineering.md) · [← Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) · [문서 인덱스](README.md)
+> **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
+> [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
+
+> 정본: [English](../en/07-network-engineering.md) · [← Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) · [문서 인덱스](README.md) · [다음: 개발 범위와 비주장 →](08-current-development-status.md)
 
 Network Engineering은 하나의 로컬 회사 위에 선택적으로 놓이는 계층입니다. 목표는 여러 사용자의 지식이나 권한을
 한데 모으는 것이 아니라, 검토 가능한 재사용 capability를 회사 사이에 안전하게 이동시키는 것입니다.

@@ -1,5 +1,8 @@
 # 00 — North Star
 
+> **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [Index](README.md) · [Next: Dynamic Firm Runtime →](01-dynamic-firm-runtime.md) · [한국어](../ko/00-north-star.md)
 
 Noruct is building an AI system that behaves less like a chat window and more like a continuing company. A user should be able to state an outcome without manually drawing agent trees, assigning roles, or scripting a workflow.

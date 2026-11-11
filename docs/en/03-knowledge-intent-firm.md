@@ -1,12 +1,15 @@
 # 03 — Knowledge, Intent & Firm
 
+> **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← Persistent Employee](02-persistent-employee.md) · [Index](README.md) · [Next: Graph & Firm Engineering →](04-graph-and-firm-engineering.md) · [한국어](../ko/03-knowledge-intent-firm.md)
 
 Noruct separates a user's external knowledge base from the user's direction and from the firm's execution machinery. Combining them into one ever-growing prompt creates confusion, stale assumptions, and accidental authority.
 
 ## Abstract
 
-This paper proposes a three-plane model for a continuing AI firm. Knowledge answers what is supported by material and provenance. Intent and Decision answer what the user wants to pursue and has chosen. Firm execution answers what may be done now. The planes exchange bounded references, not unlimited context or authority.
+This guide proposes a three-plane model for a continuing AI firm. Knowledge answers what is supported by material and provenance. Intent and Decision answer what the user wants to pursue and has chosen. Firm execution answers what may be done now. The planes exchange bounded references, not unlimited context or authority.
 
 ```mermaid
 flowchart LR

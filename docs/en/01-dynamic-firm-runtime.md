@@ -1,12 +1,15 @@
 # 01 — Dynamic Firm Runtime
 
+> **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
+> [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
+
 > [← North Star](00-north-star.md) · [Index](README.md) · [Next: Persistent Employee →](02-persistent-employee.md) · [한국어](../ko/01-dynamic-firm-runtime.md)
 
 A Dynamic Firm Runtime is an execution system that maintains a firm over time while creating, reshaping, and retiring the smallest job structure required for each request.
 
 ## Abstract
 
-This paper defines the runtime-level separation that makes the firm metaphor operational rather than theatrical. The company persists as an authority and capability boundary. The job graph exists only to execute a particular work order. The Manager interprets meaning and the Kernel enforces rules. No one of these objects is a substitute for the others.
+This guide defines the runtime-level separation that makes the firm metaphor operational rather than theatrical. The company persists as an authority and capability boundary. The job graph exists only to execute a particular work order. The Manager interprets meaning and the Kernel enforces rules. No one of these objects is a substitute for the others.
 
 ## Development position
 
@@ -16,8 +19,8 @@ receipts, graph revisions, and Patch proposals under separate lifecycles.
 
 This is not a claim that a Manager-led team is generally better than a strong single Employee. Current evaluation keeps
 both positive and negative transfer evidence, and does not promote a Manager, a Blueprint, or a Patch automatically
-from a successful campaign. The current limits and evidence are summarized in
-[Current Development Status](08-current-development-status.md).
+from a successful campaign. The [Development Scope & Non-Claims](08-current-development-status.md) guide explains the public boundary;
+it is not a current implementation inventory or a publication of the underlying evaluation records.
 
 ## Operating hypothesis
 
