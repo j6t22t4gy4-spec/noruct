@@ -12,22 +12,23 @@
 
 | 파일 | 역할 | 현재 상태 | 언제 읽는가? |
 | --- | --- | --- | --- |
-| [organization_governance_manuscript.md](organization_governance_manuscript.md) | **대표 연구논문** | v1.0 working paper, 자체 실험 결과 없음 | 연결된 이론적 논증과 P1–P6를 읽을 때 |
+| [organization_governance_manuscript.md](organization_governance_manuscript.md) | **대표 연구논문** | v1.1 working paper, 자체 실험 결과 없음 | 연결된 이론적 논증과 P1–P6를 읽을 때 |
 | [organization_governance_theory.md](organization_governance_theory.md) | **장문 문헌·이론 자료** | v0.9 draft, 전체 인용의 독립 검증 전 | 세부 논점·선행연구·이전 논의를 대조할 때 |
 | [organization_value_experiment.md](organization_value_experiment.md) | **실험 프로토콜** | v0.1, 미실행·미동결 초안 | D1–D3의 대조조건과 측정을 준비할 때 |
 | [organization_experiment_record.template.json](organization_experiment_record.template.json) | **실험 기록 양식** | NOT_RUN, 관찰자료 아님 | 실제 실행을 위한 기록 구조를 준비할 때 |
 
-**논문부터 읽으려면 manuscript로 시작한다.** theory는 제목이 같아도 현재 대표 원고가 아니라 상세 대조 자료다.
+**논문부터 읽으려면 manuscript로 시작한다.** theory는 이전 논의를 대조하기 위한 상세 자료다.
 읽기 경로는 연구논문 → 필요한 문헌자료 → 실험 프로토콜 → 기록 양식이다. 실험 결과 보고서는 아직 없다.
 
 ## 연구논문
 
-[AI 에이전트 조직의 계산적 거버넌스](organization_governance_manuscript.md)
+[AI 에이전트의 분업과 실행 권한 설계](organization_governance_manuscript.md)
 
-분업과 조정의 설계 및 인간의 잔여 통제권을 다루는 이론 구축형 working paper다.
+분업의 비용, 실행 권한과 사람이 맡아야 할 판단을 다루는 이론 구축형 working paper다.
 초록, 서론, 연구 접근, 이론적 기반, 개념모형, 연구명제, 실험설계, 논의, 결론과 참고문헌으로 구성한다.
 v0.6의 이론적 논증을 이어가며, v0.9에서 보강한 권한 구분과 분업·인계·선택 정책의 검증 설계를 통합했다.
 자체 실험 결과는 포함하지 않는다.
+3.2절은 인간 계층의 역할·권한·예외 처리와 다른 조직 형태를 설명하고, 초기 원고의 관련 구간을 본문에서 연결한다. Noruct의 대응과 인간 조직에서 직접 옮길 수 없는 조건도 함께 읽을 수 있다.
 
 ## 원문과 장문 문헌자료
 

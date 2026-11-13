@@ -30,7 +30,7 @@ The manuscript proposes P1–P6; the first protocol tests only P1→D1, P2→D2 
 <a id="research"></a>
 ## 1. 연구논문 / Research manuscript
 
-- **[AI 에이전트 조직의 계산적 거버넌스](literature/organization_governance_manuscript.md)**: 현재의 연결된 논증을 읽을 대표 원고. 분업과 조정, 인간의 잔여 통제권을 다루는 한국어 이론 구축형 working paper입니다.
+- **[AI 에이전트의 분업과 실행 권한 설계](literature/organization_governance_manuscript.md)**: 현재의 연결된 논증을 읽을 대표 원고. 분업의 비용, 실행 권한과 사람이 맡아야 할 판단을 다루는 한국어 이론 구축형 working paper입니다.
 - 초록·이론적 기반·개념모형·P1–P6·경험적 연구설계·논의·참고문헌을 포함합니다. 자체 실험 결과를 보고하는 논문은 아닙니다.
 - 판본 관계와 세부 근거를 대조하려면 [연구·문헌 안내](literature/README.md)를 봅니다.
 
