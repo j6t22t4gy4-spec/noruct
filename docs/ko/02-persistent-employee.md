@@ -1,15 +1,23 @@
-# 02 — Persistent Employee
+# 02 — 재사용 가능한 수행 능력과 실행 기록
+
+<a id="02--persistent-employee"></a>
 
 > **문서 역할:** 제품 개념 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#concepts) · [연구논문](../literature/organization_governance_manuscript.md)
 
 > 정본: [English](../en/02-persistent-employee.md) · [← Dynamic Firm Runtime](01-dynamic-firm-runtime.md) · [문서 인덱스](README.md) · [다음: Knowledge, Intent & Firm →](03-knowledge-intent-firm.md)
 
+## 이 문서에서 다루는 질문
+
+**작업을 다시 맡길 때 무엇을 유지하고 무엇을 새로 시작하는가?**
+
+Employee는 사람 직원이 아니라 도구·절차·권한이 정해진 재사용 가능한 수행 단위입니다. 이 단위와 한 차례 실행은 다릅니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
+
 ## 정의
 
-Noruct의 **Employee**는 역할 이름, prompt persona, 일회성 sub-agent 또는 한 번의 model call이 아닙니다.
-여러 Job에서 다시 선택될 수 있는 persistent execution identity이며, 자신에게 허용된 capability만 사용해 bounded
-assignment를 수행하고, 검증 가능한 결과와 관찰을 회사에 반환하는 runtime unit입니다.
+Noruct의 **수행 단위(Employee)**는 여러 업무에서 다시 사용할 수 있는 도구·절차·권한의 묶음입니다. 맡은 범위 안에서 일하고, 결과와 확인 근거를 반환합니다. 같은 단위라도 실행은 여러 번 시작할 수 있으므로, 수행 능력의 유지와 한 차례 실행의 기록을 구분합니다. 역할 이름만 다르게 붙이는 것과는 다릅니다.
 
 ## 초록
 

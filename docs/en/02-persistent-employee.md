@@ -1,4 +1,6 @@
-# 02 — Persistent Employee
+# 02 — Reusable workers and execution history
+
+<a id="02--persistent-employee"></a>
 
 > **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Dynamic Firm Runtime](01-dynamic-firm-runtime.md) · [Index](README.md) · [Next: Knowledge, Intent & Firm →](03-knowledge-intent-firm.md) · [한국어](../ko/02-persistent-employee.md)
 
 An Employee is a persistent capability unit, not a persona prompt and not merely a differently named copy of the same agent.
+
+## Question addressed
+
+**What is retained when work is assigned again, and what starts afresh?**
+
+An Employee is a reusable worker with defined tools, procedures, and permissions. It is distinct from one execution attempt.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

@@ -1,4 +1,6 @@
-# 08 — Development Scope & Non-Claims
+# 08 — Public scope and unverified claims
+
+<a id="08--development-scope--non-claims"></a>
 
 > **Document role:** Development scope and non-claims · **Status:** Public scope statement; not a current implementation inventory.
 > [Document map](../README.md) · [Role reading path](../README.md#scope) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Network Engineering](07-network-engineering.md) · [Index](README.md) · [한국어](../ko/08-current-development-status.md) · [Next: Organization as Decision Architecture →](09-organization-as-decision-architecture.md)
 
 **Last reviewed: 2026-08-15.** English is canonical.
+
+## Question addressed
+
+**What can and cannot be established from this documentation?**
+
+Distinguishes concepts, implementation evidence, and measured results. The original review date is retained; this is not a live feature inventory.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Purpose
 

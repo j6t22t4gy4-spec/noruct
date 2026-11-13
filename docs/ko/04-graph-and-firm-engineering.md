@@ -1,9 +1,19 @@
-# 04 — Graph & Firm Engineering
+# 04 — 작업 순서와 의존관계 설계
+
+<a id="04--graph--firm-engineering"></a>
 
 > **문서 역할:** 제품 개념 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#concepts) · [연구논문](../literature/organization_governance_manuscript.md)
 
 > 정본: [English](../en/04-graph-and-firm-engineering.md) · [← Knowledge, Intent & Firm](03-knowledge-intent-firm.md) · [문서 인덱스](README.md) · [다음: Governed Evolution & User Graphs →](05-governed-evolution-and-user-graphs.md)
+
+## 이 문서에서 다루는 질문
+
+**어떤 작업을 동시에 하고, 어떤 결과를 기다려야 하는가?**
+
+그래프는 작업의 선후관계와 결과 전달 경로를 나타냅니다. 분업의 이득과 비용에 대한 판단은 09에서 더 자세히 설명합니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
 
 ## 다섯 계층
 

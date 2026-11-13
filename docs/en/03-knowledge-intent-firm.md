@@ -1,4 +1,6 @@
-# 03 — Knowledge, Intent & Firm
+# 03 — Evidence, user decisions, and execution authority
+
+<a id="03--knowledge-intent--firm"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Persistent Employee](02-persistent-employee.md) · [Index](README.md) · [Next: Graph & Firm Engineering →](04-graph-and-firm-engineering.md) · [한국어](../ko/03-knowledge-intent-firm.md)
 
 Noruct separates a user's external knowledge base from the user's direction and from the firm's execution machinery. Combining them into one ever-growing prompt creates confusion, stale assumptions, and accidental authority.
+
+## Question addressed
+
+**How do source material, user decisions, and permission to act differ?**
+
+Reading an instruction in a document does not grant permission to execute it. This guide separates evidence, decisions, and authority.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

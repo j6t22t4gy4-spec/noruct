@@ -1,4 +1,6 @@
-# 04 — Graph & Firm Engineering
+# 04 — Task dependencies and execution structure
+
+<a id="04--graph--firm-engineering"></a>
 
 > **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Knowledge, Intent & Firm](03-knowledge-intent-firm.md) · [Index](README.md) · [Next: Governed Evolution & User Graphs →](05-governed-evolution-and-user-graphs.md) · [한국어](../ko/04-graph-and-firm-engineering.md)
 
 Graph Engineering is not a visual graph product and not simply spawning several copies of one agent. It is the design of a dependency-aware execution structure. Firm Engineering extends it by making nodes persistent, heterogeneous capability units governed by one firm's authority and learning boundaries.
+
+## Question addressed
+
+**Which tasks can run together, and which must wait for other results?**
+
+A graph represents task dependencies and result handoffs. Guide 09 examines the benefits and costs of dividing work.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

@@ -1,4 +1,6 @@
-# 07 — Network Engineering
+# 07 — Reviewing external tools and procedures
+
+<a id="07--network-engineering"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) · [Index](README.md) · [한국어](../ko/07-network-engineering.md) · [Next: Development Scope & Non-Claims →](08-current-development-status.md)
 
 Network Engineering is the optional layer above one local firm. It allows reusable capability to travel between firms without making a remote network the authority over a user's knowledge, mission, credentials, or active work.
+
+## Question addressed
+
+**Under what conditions may external tools or procedures be adopted?**
+
+Shared material is reviewed by provenance and version within local permissions. Participation does not transfer company data or execution authority.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

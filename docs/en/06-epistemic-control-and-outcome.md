@@ -1,4 +1,6 @@
-# 06 — Epistemic Control, Oracle & Outcome
+# 06 — Evidence, uncertainty, and completion checks
+
+<a id="06--epistemic-control-oracle--outcome"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Governed Evolution & User Graphs](05-governed-evolution-and-user-graphs.md) · [Index](README.md) · [Next: Network Engineering →](07-network-engineering.md) · [한국어](../ko/06-epistemic-control-and-outcome.md)
 
 The central limitation of an AI firm is not that it cannot generate ideas. It is that it often cannot independently establish what is true, what should be valued, or whether a long chain of action genuinely succeeded.
+
+## Question addressed
+
+**What can be treated as known, and what counts as success?**
+
+Separates confident output from verified outcomes, and distinguishes evidence, assumptions, test criteria, and observations.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

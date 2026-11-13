@@ -6,66 +6,60 @@
 > [Full document map](../README.md) · [Research and literature](../literature/README.md) · [한국어 번역](../ko/README.md)
 > **Canonical language for product documents:** English. Research documents are Korean originals.
 
-## Abstract
+<a id="abstract"></a>
+<a id="central-thesis"></a>
+<a id="how-to-read-this-series"></a>
+<a id="concepts-purpose-and-principles"></a>
+<a id="design-components-and-operating-boundaries"></a>
+<a id="scope-how-to-interpret-the-claims"></a>
 
-Noruct is not a collection of disposable agents. It is a concept for a persistent firm runtime: a system that turns a user's goals, knowledge, decisions, and execution authority into governed work while retaining only the organizational capability justified by evidence. The series explains a product thesis, not an implementation manual or a claim that every optional capability is active in every environment.
+## What Noruct is intended to do
 
-## Central thesis
+Noruct is designed to find relevant evidence, divide work where useful, perform permitted actions, and verify the outcome of a user's request. Validated procedures and necessary records may survive a task; its temporary plan must not become authority for future work.
 
-> **Workflows are temporary. Organizational capability compounds.**
+For example, checking which orders a delayed delivery affects may require only one lookup. Conflicting inventory and production records may justify separate checks followed by reconciliation. Changing a delivery date requires different permission from reading it. This illustrates intended behavior, not measured field performance.
 
-The thesis has three parts. A user should not need to draw an agent tree before receiving useful work. A runtime should not mistake a temporary task plan for durable organizational knowledge. And no amount of model capability gives a system the right to own the user's values, irreversible authority, or accountability.
+<a id="reading-paths"></a>
+## Reading paths
 
-Its operating consequence is a **minimum sufficient organization**: direct or strong solo execution remains the
-baseline when added value is unknown, while every additional Employee, execution instance, Manager step, or reviewer
-must name its material contribution and integration boundary. The result should end in a short, reviewable delivery,
-not require a person to reconstruct the conclusion from raw logs.
+Start with **00 → 09 → 01**: purpose, the case for delegation, then execution design. Reading the entire series numerically is unnecessary.
 
-```mermaid
-flowchart TB
-  U["User or organization\nmission · authority · accountability"] --> I["One firm interface"]
-  I --> K["Knowledge and decision context"]
-  K --> F["Dynamic Firm Runtime\ncompose · execute · verify"]
-  F --> R["Result and observed outcome"]
-  R -->|"reviewed evidence only"| C["Versioned organizational capability"]
-  C --> F
-```
-
-## How to read this series
-
-The documents move from purpose to operating model, then from execution to knowledge, control, and optional networked reuse. They intentionally distinguish a **claim** (what the concept proposes), a **mechanism** (how the concept would preserve that claim), and a **boundary** (what the mechanism must not be mistaken for).
-
-Choose one of three groups. Numbering remains a stable identifier; it does not turn these guides into research papers.
-
-### Concepts: purpose and principles
-
-| ID | Guide | Read it for |
+| Question | Guides | Scope |
 | --- | --- | --- |
-| 00 | [North Star](00-north-star.md) | Purpose, persistence and human authority. |
-| 02 | [Persistent Employee](02-persistent-employee.md) | Persistent capability, assignments and bounded state. |
-| 04 | [Graph & Firm Engineering](04-graph-and-firm-engineering.md) | Dependencies, artifact flow and the cost of structure. |
-| 09 | [Organization as Decision Architecture](09-organization-as-decision-architecture.md) | Minimum sufficient organization and reviewable delivery. |
+| What is being built, and why delegate? | [00 Purpose](00-north-star.md) → [09 Delegation benefits and costs](09-organization-as-decision-architecture.md) | Product concepts |
+| How do work and capabilities persist? | [01 Execution control](01-dynamic-firm-runtime.md) → [02 Reusable workers](02-persistent-employee.md) → [04 Dependencies](04-graph-and-firm-engineering.md) | Execution design |
+| How does evidence differ from permission? | [03 Evidence, decisions, authority](03-knowledge-intent-firm.md) → [06 Outcome checks](06-epistemic-control-and-outcome.md) | Evidence and verification |
+| When can experience or external procedures be reused? | [05 Changes and reuse](05-governed-evolution-and-user-graphs.md) → [07 External tools](07-network-engineering.md) | Review and activation |
+| Which models may receive which data? | [10 Model selection](10-model-intelligence-and-multi-provider-orchestration.md) | Model and transfer boundaries |
+| What has actually been established? | [08 Public scope](08-current-development-status.md) | Concepts, implementation, results |
 
-### Design: components and operating boundaries
+Numbers remain stable document identifiers. The [research manuscript](../literature/organization_governance_manuscript.md) contains the theoretical argument; the [experiment path](../README.md#experiments) contains planned measurements. This guide does not duplicate either.
 
-| ID | Guide | Read it for |
+<a id="terms"></a>
+## Shared terminology
+
+Function-oriented terms come first. Implementation names below support cross-reference to detailed design and code; their presence is not evidence of implementation.
+
+| Reader-facing term | Design name | Meaning |
 | --- | --- | --- |
-| 01 | [Dynamic Firm Runtime](01-dynamic-firm-runtime.md) | Company, Manager, Kernel, Job and execution lifecycles. |
-| 03 | [Knowledge, Intent & Firm](03-knowledge-intent-firm.md) | Separation of knowledge, direction and execution authority. |
-| 05 | [Governed Evolution & User Graphs](05-governed-evolution-and-user-graphs.md) | Blueprints, controlled change and learning. |
-| 06 | [Epistemic Control, Oracle & Outcome](06-epistemic-control-and-outcome.md) | Evidence, uncertainty and outcome criteria. |
-| 07 | [Network Engineering](07-network-engineering.md) | Optional capability exchange without remote authority. |
-| 10 | [Model Intelligence and Multi-Provider Orchestration](10-model-intelligence-and-multi-provider-orchestration.md) | Shared priors, local evidence, frozen routes and data egress. |
-
-### Scope: how to interpret the claims
-
-| ID | Guide | Read it for |
-| --- | --- | --- |
-| 08 | [Development Scope & Non-Claims](08-current-development-status.md) | Public boundaries, not a current implementation inventory or release report. |
-
-**Short path:** 00 → 02 → 04 → 09. **Design path:** 01 → 03 → 05 → 06, then 07 or 10 for those topics. Check 08 when interpreting implementation or availability claims. The old numerical reading sequence remains available through each guide's navigation.
-
-For the academic argument, use the separate [research manuscript](../literature/organization_governance_manuscript.md). For planned evaluation, use the [experiment path](../README.md#experiments).
+| Company operating rules | `Company` | Persistent goals, permissions, and budget boundaries; not a legal company. |
+| Job | `Job` | A task with completion criteria, which may outlive one execution. |
+| Reusable worker | `Employee` | A reusable unit with approved tools, procedures, and bounded memory; not a human employment relationship. |
+| Execution attempt | `EmployeeRun` | One attempt by a worker to perform an assignment. |
+| Planning and coordination | `Manager` | Divides work and proposes actions; a proposal does not grant permission. |
+| Permission and state checks | `Kernel` | Checks whether an action is permitted under current rules and state. |
+| Work order | `Work Order` | Records the goal, scope, constraints, and completion criteria. |
+| Task dependencies | `Graph` | Represents prerequisites, handoffs, and potential parallel work. |
+| Reusable plan | `Blueprint` | A plan available for review; storing it grants no execution authority. |
+| Reusable procedure | `Skill` | A versioned procedure for tool use or verification. |
+| Proposed change | `Patch` | A proposed change, distinct from review and activation. |
+| Execution record | `Receipt` | Records actions and observations; the existence of a record does not prove success. |
+| Outcome criterion | `Oracle` | A test criterion or external outcome source, not an infallible AI. |
+| Evidence summary | `Evidence Brief` | A task-relevant summary with sources, freshness, and uncertainty. |
+| Model provider and route | `Provider / route` | The service, model, and execution configuration; data-transfer permission is checked separately. |
+| Version pin | `Pin` | Fixes use to an exact reviewed version; updates and approval are separate. |
+| Finalizing a change | `Commit` | Applies a proposal to an authoritative artifact or external state; not only a Git operation. |
+| Operating contract | `Contract` | Defines inputs, permitted actions, outputs, and responsibilities; distinct from legal contracts. |
 
 ## Public-document boundary
 

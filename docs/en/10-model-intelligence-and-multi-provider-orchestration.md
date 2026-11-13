@@ -1,9 +1,19 @@
-# 10 — Model Intelligence and Multi-Provider Orchestration
+# 10 — Model selection and data-transfer boundaries
+
+<a id="10--model-intelligence-and-multi-provider-orchestration"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
 
 > **Canonical:** English · [한국어](../ko/10-model-intelligence-and-multi-provider-orchestration.md) · [← Organization as Decision Architecture](09-organization-as-decision-architecture.md) · [Documentation index](README.md)
+
+## Question addressed
+
+**Which model should be used, and what data may be sent to it?**
+
+Shared evaluations and local observations inform selection, but permissions, compatibility, and transfer limits come first. Scores do not grant authority.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Central claim
 

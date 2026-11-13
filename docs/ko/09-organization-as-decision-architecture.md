@@ -1,9 +1,19 @@
-# 09 — 조직은 직책이 아니라 의사결정 구조다
+# 09 — 분업의 이득과 조정 비용
+
+<a id="09--조직은-직책이-아니라-의사결정-구조다"></a>
 
 > **문서 역할:** 제품 개념 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#concepts) · [연구논문](../literature/organization_governance_manuscript.md)
 
 > 정본: [English](../en/09-organization-as-decision-architecture.md) · [← 개발 범위와 비주장](08-current-development-status.md) · [문서 인덱스](README.md) · [다음: Model Intelligence와 다중 Provider 오케스트레이션 →](10-model-intelligence-and-multi-provider-orchestration.md)
+
+## 이 문서에서 다루는 질문
+
+**추가 에이전트를 쓰는 것이 언제 도움이 되는가?**
+
+같은 도구와 예산을 쓴 단독 처리와 비교해 분업·인계·검토의 비용을 따집니다. 연구의 이론적 논증은 별도의 연구 원고에 있습니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
 
 ## 중심 명제
 

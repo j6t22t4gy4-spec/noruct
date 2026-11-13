@@ -1,9 +1,19 @@
-# 05 — Governed Evolution & User Graph Control
+# 05 — 실행 방식의 변경과 경험 재사용
+
+<a id="05--governed-evolution--user-graph-control"></a>
 
 > **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
 
 > 정본: [English](../en/05-governed-evolution-and-user-graphs.md) · [← Graph & Firm Engineering](04-graph-and-firm-engineering.md) · [문서 인덱스](README.md) · [다음: Epistemic Control, Oracle & Outcome →](06-epistemic-control-and-outcome.md)
+
+## 이 문서에서 다루는 질문
+
+**한 번 성공한 방법을 언제 다음 업무에 적용할 수 있는가?**
+
+현재 실행을 바꾸는 일, 재사용할 설계를 저장하는 일, 개선안을 검증해 적용하는 일을 구분합니다. 외부에서 받은 자료의 도입은 07을 함께 읽습니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
 
 ## 실행 구조와 조직 능력의 분리
 

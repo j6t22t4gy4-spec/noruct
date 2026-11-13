@@ -11,7 +11,7 @@ This is the repository-wide entry point. Choose by document role first. The exis
 
 | 구분 / Role | 답하는 질문 / Question | 읽을 곳 / Entry | 근거의 상태 / Status |
 | --- | --- | --- | --- |
-| **연구논문 / Research** | 어떤 이론적 주장과 연구명제를 제안하는가? | [계산적 거버넌스 working paper](literature/organization_governance_manuscript.md) | 이론 구축형 원고, 자체 실험 결과 없음 |
+| **연구논문 / Research** | 어떤 이론적 주장과 연구명제를 제안하는가? | [AI 에이전트의 분업과 실행 권한 설계](literature/organization_governance_manuscript.md) | 이론 구축형 원고, 자체 실험 결과 없음 |
 | **개념 / Concepts** | Noruct는 무엇이며 어떤 원칙을 지키는가? | [개념 읽기 경로](#concepts) | 제품 개념과 목표 동작 |
 | **설계 / Design** | 개념을 어떤 구성요소와 경계로 구체화하는가? | [설계 읽기 경로](#design) | 목표 아키텍처, 구현 명세·출시 증거 아님 |
 | **실험 / Experiments** | 주장을 어떻게 비교하고 측정할 것인가? | [프로토콜과 기록 양식](#experiments) | 미실행·미동결 초안, 결과 없음 |
@@ -30,21 +30,23 @@ The manuscript proposes P1–P6; the first protocol tests only P1→D1, P2→D2 
 <a id="research"></a>
 ## 1. 연구논문 / Research manuscript
 
-- **[AI 에이전트의 분업과 실행 권한 설계](literature/organization_governance_manuscript.md)**: 현재의 연결된 논증을 읽을 대표 원고. 분업의 비용, 실행 권한과 사람이 맡아야 할 판단을 다루는 한국어 이론 구축형 working paper입니다.
+- **[AI 에이전트의 분업과 실행 권한 설계](literature/organization_governance_manuscript.md)**: 현재의 연결된 논증을 읽을 대표 원고. 분업의 비용, 실행 권한과 사람이 맡아야 할 판단을 다루는 한국어 연구 원고입니다.
 - 초록·이론적 기반·개념모형·P1–P6·경험적 연구설계·논의·참고문헌을 포함합니다. 자체 실험 결과를 보고하는 논문은 아닙니다.
 - 판본 관계와 세부 근거를 대조하려면 [연구·문헌 안내](literature/README.md)를 봅니다.
 
 <a id="concepts"></a>
 ## 2. 제품 개념 / Product concepts
 
-제품을 이해하려면 **00 → 02 → 04 → 09** 순서가 짧은 첫 경로입니다. 연구논문 대신 읽는 요약본이 아니라, Noruct의 제품 관점을 설명하는 문서입니다.
+[한국어 목적별 안내·용어표](ko/README.md#reading-paths) · [English reading paths and terms](en/README.md#reading-paths)
+
+제품을 이해하려면 **00 → 09 → 01** 순서로 목표, 분업의 이유, 실행 관리를 읽습니다. 연구논문 대신 읽는 요약본이 아니라, Noruct의 제품 관점을 설명하는 문서입니다.
 
 | ID | 한국어 | English | 주 역할 / Primary role |
 | --- | --- | --- | --- |
-| 00 | [지향점](ko/00-north-star.md) | [North Star](en/00-north-star.md) | 목표·지속성·인간 권한 / Purpose and human authority |
-| 02 | [지속 직원](ko/02-persistent-employee.md) | [Persistent Employee](en/02-persistent-employee.md) | Employee 능력·상태·할당·반환 경계 |
-| 04 | [그래프와 회사 공학](ko/04-graph-and-firm-engineering.md) | [Graph & Firm Engineering](en/04-graph-and-firm-engineering.md) | 의존성과 산출물 흐름, 조직 구조의 비용 |
-| 09 | [조직은 의사결정 구조다](ko/09-organization-as-decision-architecture.md) | [Organization as Decision Architecture](en/09-organization-as-decision-architecture.md) | 최소 충분 조직과 제품상 해석 / Minimum sufficient organization |
+| 00 | [목표와 기본 원칙](ko/00-north-star.md) | [Purpose and operating principles](en/00-north-star.md) | 목표·지속성·인간 권한 / Purpose and human authority |
+| 02 | [재사용 가능한 수행 능력과 실행 기록](ko/02-persistent-employee.md) | [Reusable workers and execution history](en/02-persistent-employee.md) | 수행 능력·기록·업무 배정·결과 전달 |
+| 04 | [작업 순서와 의존관계 설계](ko/04-graph-and-firm-engineering.md) | [Task dependencies and execution structure](en/04-graph-and-firm-engineering.md) | 의존성과 산출물 흐름, 조직 구조의 비용 |
+| 09 | [분업의 이득과 조정 비용](ko/09-organization-as-decision-architecture.md) | [Benefits and coordination costs of delegation](en/09-organization-as-decision-architecture.md) | 최소 충분 조직과 제품상 해석 / Minimum sufficient organization |
 
 <a id="design"></a>
 ## 3. 설계와 아키텍처 / Design and architecture
@@ -53,12 +55,12 @@ The manuscript proposes P1–P6; the first protocol tests only P1→D1, P2→D2 
 
 | ID | 한국어 | English | 주 역할 / Primary role |
 | --- | --- | --- | --- |
-| 01 | [동적 회사 런타임](ko/01-dynamic-firm-runtime.md) | [Dynamic Firm Runtime](en/01-dynamic-firm-runtime.md) | Company·Manager·Kernel·Job 관계와 실행 수명주기 |
-| 03 | [지식·의도·회사](ko/03-knowledge-intent-firm.md) | [Knowledge, Intent & Firm](en/03-knowledge-intent-firm.md) | 지식·방향·실행 권한의 구분 / Knowledge, direction and authority |
-| 05 | [통제된 진화와 사용자 그래프](ko/05-governed-evolution-and-user-graphs.md) | [Governed Evolution & User Graphs](en/05-governed-evolution-and-user-graphs.md) | Blueprint·변경·재사용·학습의 경계 |
-| 06 | [인식 통제·판정 기준·결과](ko/06-epistemic-control-and-outcome.md) | [Epistemic Control, Oracle & Outcome](en/06-epistemic-control-and-outcome.md) | 근거·불확실성·성공 판정 / Evidence, uncertainty and outcomes |
-| 07 | [네트워크 공학](ko/07-network-engineering.md) | [Network Engineering](en/07-network-engineering.md) | 선택적 능력 교환과 로컬 권한 |
-| 10 | [Model Intelligence와 다중 Provider](ko/10-model-intelligence-and-multi-provider-orchestration.md) | [Model Intelligence and Multi-Provider Orchestration](en/10-model-intelligence-and-multi-provider-orchestration.md) | 공유 evidence·로컬 호환성·route·정보 반출 |
+| 01 | [업무 배분과 실행 관리](ko/01-dynamic-firm-runtime.md) | [Work allocation and execution control](en/01-dynamic-firm-runtime.md) | 회사 규칙·행동 제안·권한 검사·개별 업무의 관계 |
+| 03 | [자료·사용자 결정·실행 권한](ko/03-knowledge-intent-firm.md) | [Evidence, user decisions, and execution authority](en/03-knowledge-intent-firm.md) | 지식·방향·실행 권한의 구분 / Knowledge, direction and authority |
+| 05 | [실행 방식의 변경과 경험 재사용](ko/05-governed-evolution-and-user-graphs.md) | [Changing workflows and reusing experience](en/05-governed-evolution-and-user-graphs.md) | 실행 설계안·변경 검토·경험 재사용 |
+| 06 | [근거·불확실성·완료 판정](ko/06-epistemic-control-and-outcome.md) | [Evidence, uncertainty, and completion checks](en/06-epistemic-control-and-outcome.md) | 근거·불확실성·성공 판정 / Evidence, uncertainty and outcomes |
+| 07 | [외부 도구와 절차의 검토·도입](ko/07-network-engineering.md) | [Reviewing external tools and procedures](en/07-network-engineering.md) | 선택적 능력 교환과 로컬 권한 |
+| 10 | [모델 선택과 데이터 전송 경계](ko/10-model-intelligence-and-multi-provider-orchestration.md) | [Model selection and data-transfer boundaries](en/10-model-intelligence-and-multi-provider-orchestration.md) | 공유 평가 근거·현장 호환성·모델 선택·자료 전송 |
 
 **구현 문서와는 구분합니다.** 공개 레포에는 구현 소스, 설치·API 참조, 재현 가능한 제품 검증 묶음이 없습니다.
 01·10의 개발 설명은 해당 문서의 개발 진술이며, 이번 문서 분류가 이를 새로 구현·검증했다는 뜻은 아닙니다.
@@ -79,14 +81,14 @@ The protocol is a pre-execution draft; the JSON is a template, not a dataset. No
 <a id="literature"></a>
 ## 5. 문헌자료와 이전 판본 / Literature and versions
 
-- [v0.9 장문 문헌자료](literature/organization_governance_theory.md): 선행연구, 용어, 설계 예시, 세부 명제와 한계를 대조할 보조 자료입니다. 대표 연구논문과 제목이 같아도 역할은 다릅니다.
-- [v0.6 연구논문 원문](https://github.com/j6t22t4gy4-spec/noruct/blob/35124074/docs/literature/organization_governance_theory.md): 당시 판본을 보존한 역사 링크입니다. 현재 대표 원고는 위의 working paper입니다.
+- [v0.9 장문 문헌자료](literature/organization_governance_theory.md): 선행연구, 용어, 설계 예시, 세부 명제와 한계를 대조할 보조 자료입니다. 이전 원고와 세부 문헌을 대조하는 자료이며 대표 연구 원고와 역할이 다릅니다.
+- [v0.6 연구논문 원문](https://github.com/j6t22t4gy4-spec/noruct/blob/35124074/docs/literature/organization_governance_theory.md): 당시 판본을 보존한 역사 링크입니다. 현재 대표 원고는 위 연구 원고입니다.
 - 인용된 외부 연구의 관찰과 수치를 Noruct의 실험 결과로 읽지 않습니다. 전체 인용의 독립 검증 완료를 주장하지 않습니다.
 
 <a id="scope"></a>
 ## 6. 개발 범위와 비주장 / Development scope and non-claims
 
-**[한국어 08](ko/08-current-development-status.md) · [English 08](en/08-current-development-status.md)**
+**[공개 문서의 범위와 확인되지 않은 주장](ko/08-current-development-status.md) · [Public scope and unverified claims](en/08-current-development-status.md)**
 
 파일명에 `current-development-status`가 남아 있지만 실제 문서의 역할은 공개 개념·개발 범위·비주장의 경계를 설명하는 것입니다.
 현재 구현 항목 목록이나 최신 릴리스 현황이 아닙니다. 본문의 마지막 검토일 **2026-08-15**는 그대로 유지하며, 이 문서 지도의 정리 날짜를 기능 검증일로 간주하지 않습니다.

@@ -1,9 +1,19 @@
-# 10 — Model Intelligence와 다중 Provider 오케스트레이션
+# 10 — 모델 선택과 데이터 전송 경계
+
+<a id="10--model-intelligence와-다중-provider-오케스트레이션"></a>
 
 > **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
 
 > 정본: [English](../en/10-model-intelligence-and-multi-provider-orchestration.md) · [← 조직은 직책이 아니라 의사결정 구조다](09-organization-as-decision-architecture.md) · [문서 인덱스](README.md)
+
+## 이 문서에서 다루는 질문
+
+**여러 모델 가운데 무엇을 고르고 어떤 자료를 보낼 수 있는가?**
+
+공유 평가와 현장 기록을 참고하되 권한·호환성·전송 제한을 먼저 적용합니다. 평가 점수가 사용 허가를 대신하지 않습니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
 
 ## 중심 명제
 

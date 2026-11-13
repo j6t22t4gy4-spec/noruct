@@ -1,9 +1,19 @@
-# 09 — Organization as Decision Architecture
+# 09 — Benefits and coordination costs of delegation
+
+<a id="09--organization-as-decision-architecture"></a>
 
 > **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
 
 > **Canonical:** English · [한국어](../ko/09-organization-as-decision-architecture.md) · [← Development Scope & Non-Claims](08-current-development-status.md) · [Documentation index](README.md) · [Next: Model Intelligence and Multi-Provider Orchestration →](10-model-intelligence-and-multi-provider-orchestration.md)
+
+## Question addressed
+
+**When does an additional agent help?**
+
+Compares delegation, handoff, and review costs with solo execution under matched tools and budgets. The research manuscript develops the theoretical argument.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Central claim
 

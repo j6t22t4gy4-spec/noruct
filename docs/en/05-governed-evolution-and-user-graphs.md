@@ -1,4 +1,6 @@
-# 05 — Governed Evolution & User Graphs
+# 05 — Changing workflows and reusing experience
+
+<a id="05--governed-evolution--user-graphs"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← Graph & Firm Engineering](04-graph-and-firm-engineering.md) · [Index](README.md) · [Next: Epistemic Control, Oracle & Outcome →](06-epistemic-control-and-outcome.md) · [한국어](../ko/05-governed-evolution-and-user-graphs.md)
 
 Noruct does not assume the runtime can always discover the best graph from scratch. Users may inspect, constrain, choose, fork, pin, or share reusable graph blueprints. The system may still compile a job-specific graph, but it must make changes legible and bounded.
+
+## Question addressed
+
+**When can a successful procedure be reused in later work?**
+
+Separates changes to a running job, reusable plans, and validated improvements. Guide 07 covers externally supplied material.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 

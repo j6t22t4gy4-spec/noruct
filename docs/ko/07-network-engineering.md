@@ -1,4 +1,6 @@
-# 07 — Network Engineering
+# 07 — 외부 도구와 절차의 검토·도입
+
+<a id="07--network-engineering"></a>
 
 > **문서 역할:** 아키텍처·설계 안내 · **상태:** 제품 개념과 목표 설계이며 연구논문·구현 검증 결과가 아닙니다.
 > [전체 문서 지도](../README.md) · [역할별 읽기 경로](../README.md#design) · [연구논문](../literature/organization_governance_manuscript.md)
@@ -7,6 +9,14 @@
 
 Network Engineering은 하나의 로컬 회사 위에 선택적으로 놓이는 계층입니다. 목표는 여러 사용자의 지식이나 권한을
 한데 모으는 것이 아니라, 검토 가능한 재사용 capability를 회사 사이에 안전하게 이동시키는 것입니다.
+
+## 이 문서에서 다루는 질문
+
+**다른 곳의 도구나 절차를 어떤 조건으로 가져오는가?**
+
+공유된 자료의 출처와 버전을 확인하고 로컬 권한 안에서 검토합니다. 네트워크 참여가 회사의 자료나 실행 권한을 넘겨주는 것은 아닙니다.
+
+[공통 용어](README.md#terms) · [목적별 읽기 순서](README.md#reading-paths)
 
 ## 초록
 

@@ -1,4 +1,6 @@
-# 00 — North Star
+# 00 — Purpose and operating principles
+
+<a id="00--north-star"></a>
 
 > **Document role:** Product concept guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#concepts) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -13,13 +15,21 @@ values and irreversible commitments.
 
 > **Workflows are temporary. Organizational capability compounds.**
 
+## Question addressed
+
+**What work should Noruct take on, and what remains with the person?**
+
+The goal is to divide work only where useful and retain validated procedures for later tasks. Guide 01 covers the execution design.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
+
 ## Abstract
 
 The problem is not merely how to make a model complete a longer task. It is how to preserve useful operational capability across tasks without turning every prior transcript, temporary plan, or model preference into a standing authority. Noruct proposes a persistent firm as the unit of continuity and a temporary work structure as the unit of execution.
 
 ## Problem statement
 
-Most agent systems make one of two opposite mistakes. A single general agent carries too much unstructured context and repeats avoidable failures. A fixed multi-agent arrangement preserves roles but forces every request through an organization whether or not the work warrants it. Both approaches blur what is durable, what is task-specific, and who is allowed to decide.
+Two failure modes motivate this design; they are not a claim about the prevalence of failures across commercial services. A single general agent carries too much unstructured context and repeats avoidable failures. A fixed multi-agent arrangement preserves roles but forces every request through an organization whether or not the work warrants it. Both approaches blur what is durable, what is task-specific, and who is allowed to decide.
 
 ```mermaid
 flowchart LR

@@ -1,6 +1,6 @@
 # Noruct
 
-Noruct is a runtime for a persistent AI firm: a user gives a goal, while the system keeps durable organizational capability and composes only the execution structure the goal needs.
+Noruct explores how an AI system can carry out a user’s work, verify the result, and reuse validated procedures without carrying over temporary plans as permanent authority. It separates enduring operating rules from the agents and workflows used for one task.
 
 > **Workflows are temporary. Organizational capability compounds.**
 
@@ -10,7 +10,7 @@ Noruct is a runtime for a persistent AI firm: a user gives a goal, while the sys
 
 | I want to… / 읽으려는 목적 | Start with / 진입 문서 | What it is / 문서의 역할 |
 | --- | --- | --- |
-| Read the research argument / 연구논문 읽기 | [Computational governance working paper / 계산적 거버넌스 연구논문](docs/literature/organization_governance_manuscript.md) | Korean theory-building manuscript; no original experiment results. |
+| Read the research argument / 연구논문 읽기 | [Agent delegation and execution authority / AI 에이전트의 분업과 실행 권한 설계](docs/literature/organization_governance_manuscript.md) | Korean research manuscript; no original experiment results. |
 | Understand Noruct / 제품 개념 이해 | [English concept and design guide](docs/en/README.md) · [한국어 개념·설계 안내](docs/ko/README.md) | Product concepts and intended behavior, not academic research papers. |
 | Inspect architecture / 설계 구조 보기 | [Design reading path / 설계 읽기 경로](docs/README.md#design) | Runtime, Employees, graphs, evolution, network and provider routing. |
 | Plan an evaluation / 실험 준비 | [Experiment path / 실험 경로](docs/README.md#experiments) | Draft protocol and blank record template; not results. |

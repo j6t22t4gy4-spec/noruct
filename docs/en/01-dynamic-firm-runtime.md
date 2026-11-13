@@ -1,4 +1,6 @@
-# 01 — Dynamic Firm Runtime
+# 01 — Work allocation and execution control
+
+<a id="01--dynamic-firm-runtime"></a>
 
 > **Document role:** Architecture and design guide · **Status:** Product concepts and intended design; not an academic research paper or verified release evidence.
 > [Document map](../README.md) · [Role reading path](../README.md#design) · [Research manuscript](../literature/organization_governance_manuscript.md)
@@ -6,6 +8,14 @@
 > [← North Star](00-north-star.md) · [Index](README.md) · [Next: Persistent Employee →](02-persistent-employee.md) · [한국어](../ko/01-dynamic-firm-runtime.md)
 
 A Dynamic Firm Runtime is an execution system that maintains a firm over time while creating, reshaping, and retiring the smallest job structure required for each request.
+
+## Question addressed
+
+**Who plans, permits, and verifies work after a request arrives?**
+
+Distinguishes persistent operating rules from individual executions. Guide 02 covers reusable workers; guide 03 covers evidence.
+
+[Shared terminology](README.md#terms) · [Reading paths](README.md#reading-paths)
 
 ## Abstract
 
